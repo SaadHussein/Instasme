@@ -22,7 +22,7 @@ const MainHeader = () => {
 	return (
 		<div
 			id="kt_app_header"
-			className="app-header d-flex flex-column flex-stack"
+			className={`app-header d-flex flex-column flex-stack ${classes.stickyHeader}`}
 		>
 			<div className="d-flex flex-stack flex-grow-1">
 				<div

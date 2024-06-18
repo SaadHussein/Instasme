@@ -6,6 +6,8 @@ import StockReport from "../../components/Global/MainContent/StockReport/StockRe
 import classes from "../../styles/global.module.css";
 import PieChart from "../../components/Global/MainContent/PieChartGraph/PieChart";
 import XYChart from "../../components/Global/MainContent/XYChart/XYChart";
+import Select from "../../components/Global/Select/Select";
+import SalesReport from "../../components/Global/MainContent/SalesReport/SalesReport";
 
 const MainPage = () => {
 	return (
@@ -18,6 +20,12 @@ const MainPage = () => {
 						id="kt_app_content_container"
 						class="app-container container-fluid"
 					>
+						<div className="w-50 mb-6">
+							<Select
+								label={"Select a Warehouse"}
+								options={["Warehouse One", "Warehouse Two"]}
+							/>
+						</div>
 						<div className="row g-5 g-xl-8">
 							<StatisticsCard />
 							<StatisticsCard />
@@ -35,6 +43,9 @@ const MainPage = () => {
 						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
 							<XYChart />
 							<PieChart />
+						</div>
+						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
+							<SalesReport />
 						</div>
 					</div>
 				</div>

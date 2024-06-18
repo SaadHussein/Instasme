@@ -15,7 +15,9 @@ const PagesOutlet = () => {
 				id="kt_app_wrapper"
 			>
 				<LeftSidebar />
-				<Outlet />
+				<div style={{ marginTop: "99px" }}>
+					<Outlet />
+				</div>
 				<RightAside />
 				<Footer />
 			</div>
