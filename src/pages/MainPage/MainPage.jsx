@@ -1,10 +1,11 @@
 import React from "react";
 import StatisticsCard from "../../components/Global/MainContent/StatisticsCard/StatisticsCard";
 import MultiBarGraph from "../../components/Global/MainContent/MultiBarGraph/MultiBarGraph";
-import SolidGaugeChart from "../../components/Global/MainContent/SolidGaugeChart/SolidGaugeChart";
 import TopSellingProduct from "../../components/Global/MainContent/TopSellingProduct/TopSellingProduct";
 import StockReport from "../../components/Global/MainContent/StockReport/StockReport";
 import classes from "../../styles/global.module.css";
+import PieChart from "../../components/Global/MainContent/PieChartGraph/PieChart";
+import XYChart from "../../components/Global/MainContent/XYChart/XYChart";
 
 const MainPage = () => {
 	return (
@@ -25,11 +26,15 @@ const MainPage = () => {
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10">
 							<MultiBarGraph />
-							<SolidGaugeChart />
+							<PieChart />
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
 							<TopSellingProduct />
 							<StockReport />
+						</div>
+						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
+							<XYChart />
+							<PieChart />
 						</div>
 					</div>
 				</div>

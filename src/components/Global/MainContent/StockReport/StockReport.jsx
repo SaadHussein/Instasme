@@ -60,7 +60,7 @@ const StockReport = () => {
 						</div>
 					</div>
 				</div>
-				<div className="card-body">
+				<div className="card-body" style={{ overflowX: "auto" }}>
 					<table
 						className="table align-middle table-row-dashed fs-6 gy-3"
 						id="kt_table_widget_5_table"

@@ -4,6 +4,7 @@ import MainHeader from "../../components/Global/Header/MainHeader";
 import LeftSidebar from "../../components/Global/LeftSidebar/LeftSidebar";
 import RightAside from "../../components/Global/RightAside/RightAside";
 import classes from "../../styles/global.module.css";
+import Footer from "../../components/Global/Footer/Footer";
 
 const PagesOutlet = () => {
 	return (
@@ -16,6 +17,7 @@ const PagesOutlet = () => {
 				<LeftSidebar />
 				<Outlet />
 				<RightAside />
+				<Footer />
 			</div>
 		</div>
 	);
