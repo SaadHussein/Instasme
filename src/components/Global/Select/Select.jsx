@@ -2,7 +2,7 @@ import React from "react";
 
 const Select = ({ label, options }) => {
 	return (
-		<div className="fv-row w-100 flex-md-root">
+		<div className="fv-row w-100 ">
 			{/* <label className="required form-label">{label}</label> */}
 			<label className="form-label">{label}</label>
 			<select
@@ -11,6 +11,7 @@ const Select = ({ label, options }) => {
 				data-control="select2"
 				data-hide-search="true"
 				data-placeholder="Select an option"
+				pla
 			>
 				<option></option>
 				{options.map((option) => (

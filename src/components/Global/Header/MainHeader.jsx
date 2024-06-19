@@ -48,12 +48,12 @@ const MainHeader = () => {
 					<a href="index.html" className="app-sidebar-logo">
 						<img
 							alt="Logo"
-							src="assets/media/logos/demo39.svg"
+							src="/assets/media/logos/demo39.svg"
 							className="h-25px theme-light-show"
 						/>
 						<img
 							alt="Logo"
-							src="assets/media/logos/demo39-dark.svg"
+							src="/assets/media/logos/demo39-dark.svg"
 							className="h-25px theme-dark-show"
 						/>
 					</a>
@@ -189,7 +189,7 @@ const MainHeader = () => {
 								dispatch(setIsMiniProfileMenuOpen({ value: false }));
 							}}
 						>
-							<img src="assets/media/avatars/300-2.jpg" alt="user" />
+							<img src="/assets/media/avatars/300-2.jpg" alt="user" />
 						</div>
 						<MiniProfileMenu />
 					</div>

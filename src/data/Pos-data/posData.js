@@ -1,20 +1,20 @@
 const PosData = [
     {
         cardData: {
-            img: "assets/media/svg/food-icons/spaghetti.svg",
+            img: "/assets/media/svg/food-icons/spaghetti.svg",
             title: "Lunch",
             numOfOptions: 8
         },
         categoriesInCard: [
 
             {
-                img: "assets/media/stock/food/img-2.jpg",
+                img: "/assets/media/stock/food/img-2.jpg",
                 title: "T-Bone Stake",
                 time: "16",
                 price: "16.50"
             },
             {
-                img: "assets/media/stock/food/img-9.jpg",
+                img: "/assets/media/stock/food/img-9.jpg",
                 title: "Soup of the Day",
                 time: "16",
                 price: "7.50"
@@ -23,7 +23,7 @@ const PosData = [
     },
     {
         cardData: {
-            img: "assets/media/svg/food-icons/salad.svg",
+            img: "/assets/media/svg/food-icons/salad.svg",
             title: "Salad",
             numOfOptions: 14
         },
@@ -31,13 +31,13 @@ const PosData = [
 
 
             {
-                img: "assets/media/stock/food/img-9.jpg",
+                img: "/assets/media/stock/food/img-9.jpg",
                 title: "Soup of the Day",
                 time: "16",
                 price: "7.50"
             },
             {
-                img: "assets/media/stock/food/img-4.jpg",
+                img: "/assets/media/stock/food/img-4.jpg",
                 title: "Chicken Breast",
                 time: "16",
                 price: "9.00"
@@ -46,7 +46,7 @@ const PosData = [
     },
     {
         cardData: {
-            img: "assets/media/svg/food-icons/cheeseburger.svg",
+            img: "/assets/media/svg/food-icons/cheeseburger.svg",
             title: "Burger",
             numOfOptions: 5
         },
@@ -54,13 +54,13 @@ const PosData = [
 
 
             {
-                img: "assets/media/stock/food/img-4.jpg",
+                img: "/assets/media/stock/food/img-4.jpg",
                 title: "Chicken Breast",
                 time: "16",
                 price: "9.00"
             },
             {
-                img: "assets/media/stock/food/img-8.jpg",
+                img: "/assets/media/stock/food/img-8.jpg",
                 title: "Ramen",
                 time: "16",
                 price: "14.90"
@@ -69,20 +69,20 @@ const PosData = [
     },
     {
         cardData: {
-            img: "assets/media/svg/food-icons/coffee.svg",
+            img: "/assets/media/svg/food-icons/coffee.svg",
             title: "Coffee",
             numOfOptions: 7
         },
         categoriesInCard: [
             {
-                img: "assets/media/stock/food/img-11.jpg",
+                img: "/assets/media/stock/food/img-11.jpg",
                 title: "Sweetey",
                 time: "16",
                 price: "11.40"
             },
 
             {
-                img: "assets/media/stock/food/img-8.jpg",
+                img: "/assets/media/stock/food/img-8.jpg",
                 title: "Ramen",
                 time: "16",
                 price: "14.90"
@@ -91,7 +91,7 @@ const PosData = [
     },
     {
         cardData: {
-            img: "assets/media/svg/food-icons/cheesecake.svg",
+            img: "/assets/media/svg/food-icons/cheesecake.svg",
             title: "Dessert",
             numOfOptions: 8
         },
@@ -99,13 +99,13 @@ const PosData = [
 
 
             {
-                img: "assets/media/stock/food/img-11.jpg",
+                img: "/assets/media/stock/food/img-11.jpg",
                 title: "Sweetey",
                 time: "16",
                 price: "11.40"
             },
             {
-                img: "assets/media/stock/food/img-2.jpg",
+                img: "/assets/media/stock/food/img-2.jpg",
                 title: "T-Bone Stake",
                 time: "16",
                 price: "16.50"

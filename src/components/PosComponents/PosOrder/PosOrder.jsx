@@ -27,7 +27,7 @@ const PosOrder = () => {
 									<td className="pe-0">
 										<div className="d-flex align-items-center">
 											<img
-												src="assets/media/stock/food/img-2.jpg"
+												src="/assets/media/stock/food/img-2.jpg"
 												className="w-50px h-50px rounded-3 me-3"
 												alt=""
 											/>
@@ -83,7 +83,7 @@ const PosOrder = () => {
 									<td className="pe-0">
 										<div className="d-flex align-items-center">
 											<img
-												src="assets/media/stock/food/img-9.jpg"
+												src="/assets/media/stock/food/img-9.jpg"
 												className="w-50px h-50px rounded-3 me-3"
 												alt=""
 											/>
@@ -139,7 +139,7 @@ const PosOrder = () => {
 									<td className="pe-0">
 										<div className="d-flex align-items-center">
 											<img
-												src="assets/media/stock/food/img-3.jpg"
+												src="/assets/media/stock/food/img-3.jpg"
 												className="w-50px h-50px rounded-3 me-3"
 												alt=""
 											/>
