@@ -5,6 +5,7 @@ import PagesOutlet from "./pages/Outlet/Outlet";
 import MainPage from "./pages/MainPage/MainPage";
 import Pos from "./pages/POS/Pos";
 import CreateExpense from "./pages/Accounting/CreateExpense/CreateExpense";
+import CreateDeposite from "./pages/Accounting/CreateDeposite/CreateDeposite";
 
 function App() {
 	return (
@@ -16,6 +17,10 @@ function App() {
 					<Route
 						path="/accounting/create-expense"
 						element={<CreateExpense />}
+					/>
+					<Route
+						path="/accounting/create-deposite"
+						element={<CreateDeposite />}
 					/>
 				</Route>
 			</Routes>
