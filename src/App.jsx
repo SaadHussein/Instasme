@@ -8,6 +8,7 @@ import CreateExpense from "./pages/Accounting/CreateExpense/CreateExpense";
 import CreateDeposite from "./pages/Accounting/CreateDeposite/CreateDeposite";
 import CreateAdjustment from "./pages/Adjustment/CreateAdjustment/CreateAdjustment";
 import CreateQuotations from "./pages/Quotations/CreateQuotations/CreateQuotations";
+import CreatePurchases from "./pages/Purchases/CreatePurchases/CreatePurchases";
 
 function App() {
 	return (
@@ -23,6 +24,10 @@ function App() {
 					<Route
 						path="/adjustment/create-adjustment"
 						element={<CreateAdjustment />}
+					/>
+					<Route
+						path="/purchases/create-purchase"
+						element={<CreatePurchases />}
 					/>
 					<Route
 						path="/accounting/create-expense"
