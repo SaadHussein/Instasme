@@ -1,8 +1,8 @@
 import React from "react";
-import classes from "../../styles/global.module.css";
-import PosToolbar from "../../components/PosComponents/PosToolbar";
-import PosItems from "../../components/PosComponents/PosItems/PostItems";
-import PosOrder from "../../components/PosComponents/PosOrder/PosOrder";
+import classes from "../../../styles/global.module.css";
+import PosToolbar from "../../../components/PosComponents/PosToolbar";
+import PosItems from "../../../components/PosComponents/PosItems/PostItems";
+import PosOrder from "../../../components/PosComponents/PosOrder/PosOrder";
 
 const Pos = () => {
 	return (
