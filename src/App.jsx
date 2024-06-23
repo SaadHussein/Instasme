@@ -10,6 +10,10 @@ import CreateAdjustment from "./pages/Adjustment/CreateAdjustment/CreateAdjustme
 import CreateQuotations from "./pages/Quotations/CreateQuotations/CreateQuotations";
 import CreatePurchases from "./pages/Purchases/CreatePurchases/CreatePurchases";
 import CreateSale from "./pages/Sales/CreateSale/CreateSale";
+import PaymentGateway from "./pages/Settings/PaymentGateway/PaymentGateway";
+import PosSettings from "./pages/Settings/PosSettings/PosSettings";
+import MailSettings from "./pages/Settings/MailSettings/MailSettings";
+import CreateTransfer from "./pages/Transfer/CreateTransfer/CreateTransfer";
 
 function App() {
 	return (
@@ -38,6 +42,16 @@ function App() {
 					<Route
 						path="/accounting/create-deposite"
 						element={<CreateDeposite />}
+					/>
+					<Route
+						path="/settings/payment-gateway"
+						element={<PaymentGateway />}
+					/>
+					<Route path="/settings/pos-settings" element={<PosSettings />} />
+					<Route path="/settings/mail-settings" element={<MailSettings />} />
+					<Route
+						path="/transfer/create-transfer"
+						element={<CreateTransfer />}
 					/>
 				</Route>
 			</Routes>

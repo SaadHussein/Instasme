@@ -1,32 +1,3 @@
-const menuDataItems = [
-    { title: "Default", link: "/" },
-    { title: "eCommerce", link: "/" },
-    { title: "Projects", link: "/" },
-    { title: "Online Courses", link: "/" },
-    { title: "Marketing", link: "/" },
-    { title: "Bidding", link: "/" },
-    { title: "POS System", link: "/pos" },
-    { title: "Call Center", link: "/" },
-    { title: "Logistics", link: "/" },
-    { title: "Website Analytics", link: "/" },
-    { title: "Finance Performance", link: "/" },
-    { title: "Store Analytics", link: "/" },
-    { title: "Social", link: "/" },
-    { title: "Delivery", link: "/" },
-    { title: "Crypto", link: "/" },
-    { title: "School", link: "/" },
-    { title: "Podcast", link: "/" },
-    { title: "Landing", link: "/" },
-];
-
-const help = [
-    { title: "Components", link: "/" },
-    { title: "Documentation", link: "/" },
-    { title: "Layout Builder", link: "/" },
-    { title: "Changelog v8.2.3", link: "/" },
-
-];
-
 const products = [
     { title: "Create Product", link: "/products/create-product" },
     { title: "All Product", link: "/products/all-products" },
@@ -70,4 +41,14 @@ const accounting = [
     { title: "Deposit Category", link: "/accounting/deposit-Category" },
 ];
 
-export { menuDataItems, help, adjustment, products, purchases, quotations, sales, accounting };
+const settings = [
+    { title: "Payment Gateway", link: "/settings/payment-gateway" },
+    { title: "POS Settings", link: "/settings/pos-settings" },
+    { title: "Mail Settings", link: "/settings/mail-settings" },
+];
+
+const transfer = [
+    { title: "Create Transfer", link: "/transfer/create-transfer" },
+];
+
+export { adjustment, products, purchases, quotations, sales, accounting, settings, transfer };

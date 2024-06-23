@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import classes from "./LeftSidebar.module.css";
 import {
-	menuDataItems,
 	accounting,
 	products,
 	adjustment,
 	quotations,
 	purchases,
 	sales,
+	settings,
+	transfer,
 } from "../../../data/menu-data/dataMenu";
-import MenuItem from "./MenuItem/MenuItem";
 import Menu from "./Menu/Menu";
 import { Link } from "react-router-dom";
 
 const LeftSidebar = () => {
-	const [isDasboardMenuItemOpen, setIsDasboardMenuItemOpen] = useState(false);
-	const [isHelpMenuItemOpen, setIsHelpMenuItemOpen] = useState(false);
 	return (
 		<div
 			id="kt_app_sidebar"
@@ -72,6 +70,8 @@ const LeftSidebar = () => {
 						<Menu menuItems={purchases} title={"Purchases"} />
 						<Menu menuItems={sales} title={"Sales"} />
 						<Menu menuItems={accounting} title={"Accounting"} />
+						<Menu menuItems={settings} title={"Settings"} />
+						<Menu menuItems={transfer} title={"Transfer"} />
 					</div>
 				</div>
 			</div>
