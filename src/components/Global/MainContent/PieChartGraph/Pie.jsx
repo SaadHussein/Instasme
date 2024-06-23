@@ -3,7 +3,23 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-const Pie = () => {
+const topSellingProductsData = [
+	{ category: "Strawberry", value: 2 },
+	{ category: "Macbook pro", value: 4 },
+	{ category: "sunglasses", value: 4 },
+	{ category: "earphones", value: 3 },
+	{ category: "Banana", value: 2 },
+];
+
+const topCustomersData = [
+	{ category: "Fred C. Rasmussen", value: 1 },
+	{ category: "walk-in-customer", value: 2 },
+	{ category: "Thomas M. Martin", value: 2 },
+	{ category: "Beverly B. Huber", value: 1 },
+	{ category: "Phyliss J. Polite", value: 1 },
+];
+
+const Pie = ({ dataFor }) => {
 	const chartDiv = useRef(null);
 
 	useEffect(() => {
@@ -34,15 +50,9 @@ const Pie = () => {
 		});
 
 		// Set data
-		series.data.setAll([
-			{ category: "Lithuania", value: 501.9 },
-			{ category: "Czechia", value: 301.9 },
-			{ category: "Ireland", value: 201.1 },
-			{ category: "Germany", value: 165.8 },
-			{ category: "Australia", value: 139.9 },
-			{ category: "Austria", value: 128.3 },
-			{ category: "UK", value: 99 },
-		]);
+		series.data.setAll(
+			dataFor === "customers" ? topCustomersData : topSellingProductsData
+		);
 
 		series.appear(1000, 100);
 

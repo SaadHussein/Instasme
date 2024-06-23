@@ -24,22 +24,28 @@ const SalesReport = () => {
 					>
 						<thead>
 							<tr className="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-								<th className="min-w-100px">Date</th>
-								<th className="text-end min-w-75px">No. Orders</th>
-								<th className="text-end min-w-75px">Products Sold</th>
-								<th className="text-end min-w-75px">Tax</th>
-								<th className="text-end min-w-100px">Total</th>
+								<th className="min-w-100px">Reference</th>
+								<th className="text-end min-w-100px">Customer</th>
+								<th className="text-end min-w-100px">Warehouse</th>
+								<th className="text-end min-w-75px">Status</th>
+								<th className="text-end min-w-75px">Grand Total</th>
+								<th className="text-end min-w-75px">Paid</th>
+								<th className="text-end min-w-75px">Due</th>
+								<th className="text-end min-w-75px">Payment Status</th>
 							</tr>
 						</thead>
 						<tbody className="fw-semibold text-gray-600">
 							<tr>
-								<td>Jun 24, 2024</td>
-								<td className="text-end pe-0">3</td>
-								<td className="text-end pe-0">8</td>
-								<td className="text-end pe-0">$81.00</td>
-								<td className="text-end">$542.00</td>
+								<td>SL_1119</td>
+								<td className="text-end pe-0">walk-in-customer</td>
+								<td className="text-end pe-0">Warehouse</td>
+								<td className="text-end pe-0">Status</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end">Paid</td>
 							</tr>
-							<tr>
+							{/* <tr>
 								<td>Feb 21, 2024</td>
 								<td className="text-end pe-0">10</td>
 								<td className="text-end pe-0">13</td>
@@ -73,7 +79,7 @@ const SalesReport = () => {
 								<td className="text-end pe-0">8</td>
 								<td className="text-end pe-0">$73.00</td>
 								<td className="text-end">$489.00</td>
-							</tr>
+							</tr> */}
 						</tbody>
 					</table>
 				</div>

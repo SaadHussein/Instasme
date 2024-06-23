@@ -1,18 +1,18 @@
 import React from "react";
 import Pie from "./Pie";
 
-const PieChart = () => {
+const PieChart = ({ chartTilte, dataFor }) => {
 	return (
 		<div className="col-xl-4 mb-5 mb-xl-10">
 			<div className="card card-flush h-xl-100">
 				<div className="card-header pt-7">
 					<h3 className="card-title align-items-start flex-column">
 						<span className="card-label fw-bold text-gray-900">
-							Departments
+							{chartTilte}
 						</span>
-						<span className="text-gray-500 pt-2 fw-semibold fs-6">
+						{/* <span className="text-gray-500 pt-2 fw-semibold fs-6">
 							Performance & achievements
-						</span>
+						</span> */}
 					</h3>
 					<div className="card-toolbar">
 						<button
@@ -108,7 +108,7 @@ const PieChart = () => {
 				</div>
 				<div className="card-body pt-5">
 					<div id="kt_charts_widget_14_chart" className="w-100 h-350px">
-						<Pie />
+						<Pie dataFor={dataFor} />
 					</div>
 				</div>
 			</div>

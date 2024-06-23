@@ -27,17 +27,13 @@ const XY = () => {
 
 		// The data
 		const data = [
-			{ year: "1930", italy: 1, germany: 5, uk: 3 },
-			{ year: "1934", italy: 1, germany: 2, uk: 6 },
-			{ year: "1938", italy: 2, germany: 3, uk: 1 },
-			{ year: "1950", italy: 3, germany: 4, uk: 1 },
-			{ year: "1954", italy: 5, germany: 1, uk: 2 },
-			{ year: "1958", italy: 3, germany: 2, uk: 1 },
-			{ year: "1962", italy: 1, germany: 2, uk: 3 },
-			{ year: "1966", italy: 2, germany: 1, uk: 5 },
-			{ year: "1970", italy: 3, germany: 5, uk: 2 },
-			{ year: "1974", italy: 4, germany: 3, uk: 6 },
-			{ year: "1978", italy: 1, germany: 2, uk: 4 },
+			{ day: "17-06-2024", PaymentSent: 640, PaymentReceived: 0 },
+			{ day: "18-06-2024", PaymentSent: 2270, PaymentReceived: 0 },
+			{ day: "19-06-2024", PaymentSent: 1000, PaymentReceived: 1736 },
+			{ day: "20-06-2024", PaymentSent: 3066, PaymentReceived: 1000 },
+			{ day: "21-06-2024", PaymentSent: 2000, PaymentReceived: 1792.8 },
+			{ day: "22-06-2024", PaymentSent: 960, PaymentReceived: 2000 },
+			{ day: "23-06-2024", PaymentSent: 1888, PaymentReceived: 1780 },
 		];
 
 		// Create axes
@@ -52,7 +48,7 @@ const XY = () => {
 
 		const xAxis = chart.xAxes.push(
 			am5xy.CategoryAxis.new(root, {
-				categoryField: "year",
+				categoryField: "day",
 				renderer: xRenderer,
 				tooltip: am5.Tooltip.new(root, {}),
 				snapTooltip: true,
@@ -91,7 +87,7 @@ const XY = () => {
 					xAxis: xAxis,
 					yAxis: yAxis,
 					valueYField: field,
-					categoryXField: "year",
+					categoryXField: "day",
 					tooltip: am5.Tooltip.new(root, {
 						pointerOrientation: "horizontal",
 						labelText: "[bold]{name}[/]\n{categoryX}: {valueY}",
@@ -120,9 +116,9 @@ const XY = () => {
 			series.appear(1000);
 		};
 
-		createSeries("Italy", "italy");
-		createSeries("Germany", "germany");
-		createSeries("UK", "uk");
+		// createSeries("PaymentSent", "Pnt Received");
+		createSeries("Payment Sent", "PaymentSent");
+		createSeries("Payment Received", "PaymentReceived");
 
 		// Add scrollbar
 		chart.set(

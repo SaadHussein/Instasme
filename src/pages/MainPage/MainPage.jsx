@@ -8,6 +8,9 @@ import PieChart from "../../components/Global/MainContent/PieChartGraph/PieChart
 import XYChart from "../../components/Global/MainContent/XYChart/XYChart";
 import Select from "../../components/Global/Select/Select";
 import SalesReport from "../../components/Global/MainContent/SalesReport/SalesReport";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { IoArrowRedoOutline } from "react-icons/io5";
+import { IoArrowUndoOutline } from "react-icons/io5";
 
 const MainPage = () => {
 	return (
@@ -27,14 +30,37 @@ const MainPage = () => {
 							/>
 						</div>
 						<div className="row g-5 g-xl-8">
-							<StatisticsCard />
-							<StatisticsCard />
-							<StatisticsCard />
-							<StatisticsCard />
+							<StatisticsCard
+								amount={"1,820.00"}
+								icon={<HiOutlineShoppingCart size={30} color="#1B84FF" />}
+								link={"/"}
+								title={"Sales"}
+							/>
+							<StatisticsCard
+								amount={"1,160.00"}
+								icon={<HiOutlineShoppingCart size={30} color="#1B84FF" />}
+								link={"/"}
+								title={"Purchases"}
+							/>
+							<StatisticsCard
+								amount={"0.00"}
+								icon={<IoArrowRedoOutline size={30} color="#1B84FF" />}
+								link={"/"}
+								title={"Sales Return"}
+							/>
+							<StatisticsCard
+								amount={"0.00"}
+								icon={<IoArrowUndoOutline size={30} color="#1B84FF" />}
+								link={"/"}
+								title={"Purchases Return"}
+							/>
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10">
 							<MultiBarGraph />
-							<PieChart />
+							<PieChart
+								chartTilte={"Top Selling Products (2024)"}
+								dataFor={"topProducts"}
+							/>
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
 							<TopSellingProduct />
@@ -42,7 +68,10 @@ const MainPage = () => {
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
 							<XYChart />
-							<PieChart />
+							<PieChart
+								chartTilte={"Top 5 Customers (June)"}
+								dataFor={"customers"}
+							/>
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
 							<SalesReport />

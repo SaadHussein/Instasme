@@ -29,6 +29,7 @@ const TopSellingProduct = () => {
 								<tr className="fs-7 fw-bold text-gray-500 border-bottom-0">
 									<th className="p-0 w-50px pb-1">ITEM</th>
 									<th className="ps-0 min-w-140px"></th>
+									<th className="ps-0 min-w-140px">TOTAL SALES</th>
 									<th className="text-end min-w-140px p-0 pb-1">TOTAL PRICE</th>
 								</tr>
 							</thead>
@@ -50,6 +51,11 @@ const TopSellingProduct = () => {
 										</a>
 										<span className="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">
 											Item: #XDG-2347
+										</span>
+									</td>
+									<td>
+										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-start">
+											4
 										</span>
 									</td>
 									<td>
@@ -78,6 +84,11 @@ const TopSellingProduct = () => {
 										</span>
 									</td>
 									<td>
+										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-start">
+											4
+										</span>
+									</td>
+									<td>
 										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-end">
 											$45.00
 										</span>
@@ -103,6 +114,11 @@ const TopSellingProduct = () => {
 										</span>
 									</td>
 									<td>
+										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-start">
+											3
+										</span>
+									</td>
+									<td>
 										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-end">
 											$168.00
 										</span>
@@ -125,6 +141,11 @@ const TopSellingProduct = () => {
 										</a>
 										<span className="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">
 											Item: #XDG-2347
+										</span>
+									</td>
+									<td>
+										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-start">
+											2
 										</span>
 									</td>
 									<td>

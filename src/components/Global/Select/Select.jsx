@@ -1,24 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import classes from "./Select.module.css";
 
-const Select = ({ label, options }) => {
+const Select = ({
+	label,
+	options,
+	defaultValue = "Select Value From Options",
+}) => {
+	const [showOptions, setShowOptions] = useState(false);
+	const [value, setValue] = useState(defaultValue);
 	return (
-		<div className="fv-row w-100 ">
-			{/* <label className="required form-label">{label}</label> */}
+		<div className={`fv-row w-100 ${classes.selectContainer}`}>
 			<label className="form-label">{label}</label>
-			<select
-				className="form-select mb-2"
-				name="tax"
-				data-control="select2"
-				data-hide-search="true"
-				data-placeholder="Select an option"
-				pla
+			<div
+				className={`form-select mb-2 ${classes.select}`}
+				name="select"
+				onClick={() => {
+					setShowOptions((prev) => !prev);
+				}}
 			>
-				<option></option>
+				{value}
+			</div>
+			<div
+				className={`${classes.optionsList} ${
+					showOptions ? `${classes.okShow}` : `${classes.showOptions}`
+				}`}
+			>
 				{options.map((option) => (
-					<option value={option}>{option}</option>
+					<div
+						className={`${classes.option}`}
+						onClick={() => {
+							setValue(option);
+							setShowOptions(false);
+						}}
+					>
+						{option}
+					</div>
 				))}
-			</select>
-			{/* <div className="text-muted fs-7">Set the product tax class.</div> */}
+			</div>
+			<div className="nav-icon i-Library-2"></div>
 		</div>
 	);
 };

@@ -31,31 +31,39 @@ const MultiBar = () => {
 
 		const data = [
 			{
-				year: "2021",
-				europe: 2.5,
-				namerica: 2.5,
-				asia: 2.1,
-				lamerica: 1,
-				meast: 0.8,
-				africa: 0.4,
+				day: "17-06-2024",
+				sales: 1736,
+				purchases: 2243,
 			},
 			{
-				year: "2022",
-				europe: 2.6,
-				namerica: 2.7,
-				asia: 2.2,
-				lamerica: 0.5,
-				meast: 0.4,
-				africa: 0.3,
+				day: "18-06-2024",
+				sales: 1650,
+				purchases: 2304,
 			},
 			{
-				year: "2023",
-				europe: 2.8,
-				namerica: 2.9,
-				asia: 2.4,
-				lamerica: 0.3,
-				meast: 0.9,
-				africa: 0.5,
+				day: "19-06-2024",
+				sales: 1874.8,
+				purchases: 2960,
+			},
+			{
+				day: "20-06-2024",
+				sales: 1792.8,
+				purchases: 2716,
+			},
+			{
+				day: "21-06-2024",
+				sales: 2648,
+				purchases: 2640,
+			},
+			{
+				day: "22-06-2024",
+				sales: 2320,
+				purchases: 2270,
+			},
+			{
+				day: "23-06-2024",
+				sales: 1780,
+				purchases: 1160,
 			},
 		];
 
@@ -67,7 +75,7 @@ const MultiBar = () => {
 
 		const xAxis = chart.xAxes.push(
 			am5xy.CategoryAxis.new(root, {
-				categoryField: "year",
+				categoryField: "day",
 				renderer: xRenderer,
 				tooltip: am5.Tooltip.new(root, {}),
 			})
@@ -94,7 +102,7 @@ const MultiBar = () => {
 					xAxis: xAxis,
 					yAxis: yAxis,
 					valueYField: fieldName,
-					categoryXField: "year",
+					categoryXField: "day",
 				})
 			);
 
@@ -125,12 +133,14 @@ const MultiBar = () => {
 			legend.data.push(series);
 		}
 
-		makeSeries("Europe", "europe");
-		makeSeries("North America", "namerica");
-		makeSeries("Asia", "asia");
-		makeSeries("Latin America", "lamerica");
-		makeSeries("Middle East", "meast");
-		makeSeries("Africa", "africa");
+		// makeSeries("Europe", "europe");
+		// makeSeries("North America", "namerica");
+		// makeSeries("Asia", "asia");
+		// makeSeries("Latin America", "lamerica");
+		// makeSeries("Middle East", "meast");
+		// makeSeries("Africa", "africa");
+		makeSeries("sales", "sales");
+		makeSeries("purchases", "purchases");
 
 		chart.appear(1000, 100);
 

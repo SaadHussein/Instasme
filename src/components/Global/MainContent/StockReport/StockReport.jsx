@@ -67,8 +67,8 @@ const StockReport = () => {
 					>
 						<thead>
 							<tr className="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-								<th className="min-w-150px">Item</th>
-								<th className="text-end pe-3 min-w-100px">Product ID</th>
+								<th className="min-w-150px">Product</th>
+								<th className="text-end pe-3 min-w-100px">Code</th>
 								<th className="text-end pe-3 min-w-150px">Date Added</th>
 								<th className="text-end pe-3 min-w-100px">Price</th>
 								<th className="text-end pe-3 min-w-100px">Status</th>

@@ -12,6 +12,13 @@ import {
 } from "../../../data/menu-data/dataMenu";
 import Menu from "./Menu/Menu";
 import { Link } from "react-router-dom";
+import { MdOutlineBook } from "react-icons/md";
+import { TfiMapAlt } from "react-icons/tfi";
+import { PiShoppingCartSimple } from "react-icons/pi";
+import { RiBillLine } from "react-icons/ri";
+import { TbArrowBackUp } from "react-icons/tb";
+import { IoSettingsOutline } from "react-icons/io5";
+import { FaWallet } from "react-icons/fa";
 
 const LeftSidebar = () => {
 	return (
@@ -64,14 +71,46 @@ const LeftSidebar = () => {
 							</div>
 						</Link>
 
-						<Menu menuItems={products} title={"Products"} />
-						<Menu menuItems={adjustment} title={"Adjustment"} />
-						<Menu menuItems={quotations} title={"Quotations"} />
-						<Menu menuItems={purchases} title={"Purchases"} />
-						<Menu menuItems={sales} title={"Sales"} />
-						<Menu menuItems={accounting} title={"Accounting"} />
-						<Menu menuItems={settings} title={"Settings"} />
-						<Menu menuItems={transfer} title={"Transfer"} />
+						<Menu
+							menuItems={products}
+							title={"Products"}
+							icon={<MdOutlineBook size={21} />}
+						/>
+						<Menu
+							menuItems={adjustment}
+							title={"Adjustment"}
+							icon={<TfiMapAlt size={21} />}
+						/>
+						<Menu
+							menuItems={quotations}
+							title={"Quotations"}
+							icon={<PiShoppingCartSimple size={21} />}
+						/>
+						<Menu
+							menuItems={purchases}
+							title={"Purchases"}
+							icon={<RiBillLine size={21} />}
+						/>
+						<Menu
+							menuItems={sales}
+							title={"Sales"}
+							icon={<PiShoppingCartSimple size={21} />}
+						/>
+						<Menu
+							menuItems={accounting}
+							title={"Accounting"}
+							icon={<FaWallet size={21} />}
+						/>
+						<Menu
+							menuItems={settings}
+							title={"Settings"}
+							icon={<IoSettingsOutline size={21} />}
+						/>
+						<Menu
+							menuItems={transfer}
+							title={"Transfer"}
+							icon={<TbArrowBackUp size={21} />}
+						/>
 					</div>
 				</div>
 			</div>

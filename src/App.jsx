@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
 import "./styles/style.bundle.css";
 import "./styles/datatables.bundle.css";
 import PagesOutlet from "./pages/Outlet/Outlet";

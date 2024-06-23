@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import classes from "../LeftSidebar.module.css";
 
-const Menu = ({ title, menuItems }) => {
+const Menu = ({ title, menuItems, icon }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	return (
 		<div
@@ -18,7 +18,8 @@ const Menu = ({ title, menuItems }) => {
 				}}
 			>
 				<span className="menu-icon">
-					<i className="ki-outline ki-briefcase fs-2"></i>
+					{/* <i className="ki-outline ki-briefcase fs-2"></i> */}
+					{icon}
 				</span>
 				<span className="menu-title">{title}</span>
 				<span className="menu-arrow"></span>
