@@ -15,6 +15,9 @@ import PaymentGateway from "./pages/Settings/PaymentGateway/PaymentGateway";
 import PosSettings from "./pages/Settings/PosSettings/PosSettings";
 import MailSettings from "./pages/Settings/MailSettings/MailSettings";
 import CreateTransfer from "./pages/Transfer/CreateTransfer/CreateTransfer";
+import CreateProduct from "./pages/Products/CreateProduct/CreateProduct";
+import PrintLabels from "./pages/Products/PrintLabels/PrintLabels";
+import ModuleSettings from "./pages/Settings/ModuleSettings/ModuleSettings";
 
 function App() {
 	return (
@@ -22,6 +25,8 @@ function App() {
 			<Routes>
 				<Route path="/" element={<PagesOutlet />}>
 					<Route path="/" element={<MainPage />} />
+					<Route path="/products/create-product" element={<CreateProduct />} />
+					<Route path="/products/print-labels" element={<PrintLabels />} />
 					<Route path="/sales/pos" element={<Pos />} />
 					<Route path="/sales/create-sale" element={<CreateSale />} />
 					<Route
@@ -50,6 +55,10 @@ function App() {
 					/>
 					<Route path="/settings/pos-settings" element={<PosSettings />} />
 					<Route path="/settings/mail-settings" element={<MailSettings />} />
+					<Route
+						path="/settings/module-settings"
+						element={<ModuleSettings />}
+					/>
 					<Route
 						path="/transfer/create-transfer"
 						element={<CreateTransfer />}

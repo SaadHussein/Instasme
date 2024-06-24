@@ -45,6 +45,7 @@ const settings = [
     { title: "Payment Gateway", link: "/settings/payment-gateway" },
     { title: "POS Settings", link: "/settings/pos-settings" },
     { title: "Mail Settings", link: "/settings/mail-settings" },
+    { title: "Module Settings", link: "/settings/module-settings" },
 ];
 
 const transfer = [
