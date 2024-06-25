@@ -1,0 +1,22 @@
+.widgetIcon {
+	color: white;
+	font-size: 42px;
+	background-color: rgba(255, 255, 255, 0.25);
+	text-align: center;
+	border-radius: 0 3px 3px 0;
+	position: absolute;
+	min-width: 100px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: inline-block;
+	line-height: 105px;
+}
+
+.titleSize {
+	font-size: 18px;
+}
+
+.numberSize {
+	font-size: 24px;
+}

@@ -52,4 +52,16 @@ const transfer = [
     { title: "Create Transfer", link: "/transfer/create-transfer" },
 ];
 
-export { adjustment, products, purchases, quotations, sales, accounting, settings, transfer };
+const reports = [
+    { title: "", link: "" }
+];
+
+const people = [
+    { title: "", link: "" }
+];
+
+const hrm = [
+    { title: "", link: "" }
+];
+
+export { adjustment, products, purchases, quotations, sales, accounting, settings, transfer, hrm, people, reports };

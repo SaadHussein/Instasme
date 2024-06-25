@@ -1,4 +1,8 @@
 import React from "react";
+import Completed from "../../Status/Completed";
+import Pending from "../../Status/Pending";
+import Ordered from "../../Status/Ordered";
+import Disabled from "../../Status/Disabled";
 
 const SalesReport = () => {
 	return (
@@ -25,12 +29,12 @@ const SalesReport = () => {
 						<thead>
 							<tr className="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
 								<th className="min-w-100px">Reference</th>
-								<th className="text-end min-w-100px">Customer</th>
-								<th className="text-end min-w-100px">Warehouse</th>
-								<th className="text-end min-w-75px">Status</th>
-								<th className="text-end min-w-75px">Grand Total</th>
-								<th className="text-end min-w-75px">Paid</th>
-								<th className="text-end min-w-75px">Due</th>
+								<th className="text-end min-w-100px pe-0">Customer</th>
+								<th className="text-end min-w-100px pe-0">Warehouse</th>
+								<th className="text-end min-w-75px pe-0">Status</th>
+								<th className="text-end min-w-75px pe-0">Grand Total</th>
+								<th className="text-end min-w-75px pe-0">Paid</th>
+								<th className="text-end min-w-75px pe-0">Due</th>
 								<th className="text-end min-w-75px">Payment Status</th>
 							</tr>
 						</thead>
@@ -39,11 +43,43 @@ const SalesReport = () => {
 								<td>SL_1119</td>
 								<td className="text-end pe-0">walk-in-customer</td>
 								<td className="text-end pe-0">Warehouse</td>
-								<td className="text-end pe-0">Status</td>
+								<td className="text-end pe-0">
+									<Completed text={"Completed"} />
+								</td>
 								<td className="text-end pe-0">81.00</td>
 								<td className="text-end pe-0">81.00</td>
 								<td className="text-end pe-0">81.00</td>
-								<td className="text-end">Paid</td>
+								<td className="text-end">
+									<Completed text={"Paid"} />
+								</td>
+							</tr>
+							<tr>
+								<td>SL_1119</td>
+								<td className="text-end pe-0">walk-in-customer</td>
+								<td className="text-end pe-0">Warehouse</td>
+								<td className="text-end pe-0">
+									<Pending text={"Pending"} />
+								</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end">
+									<Disabled text={"Partial"} />
+								</td>
+							</tr>
+							<tr>
+								<td>SL_1119</td>
+								<td className="text-end pe-0">walk-in-customer</td>
+								<td className="text-end pe-0">Warehouse</td>
+								<td className="text-end pe-0">
+									<Ordered text={"Ordered"} />
+								</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end pe-0">81.00</td>
+								<td className="text-end">
+									<Ordered text={"Unpaid"} />
+								</td>
 							</tr>
 							{/* <tr>
 								<td>Feb 21, 2024</td>

@@ -59,7 +59,7 @@ const Pie = ({ dataFor }) => {
 		return () => {
 			root.dispose();
 		};
-	}, []);
+	}, [dataFor]);
 
 	return (
 		<div

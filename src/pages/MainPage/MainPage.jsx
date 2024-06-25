@@ -11,6 +11,8 @@ import SalesReport from "../../components/Global/MainContent/SalesReport/SalesRe
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoArrowRedoOutline } from "react-icons/io5";
 import { IoArrowUndoOutline } from "react-icons/io5";
+import Statistics from "../../components/Global/MainContent/Statistics/Statistics";
+import { BsCartPlus } from "react-icons/bs";
 
 const MainPage = () => {
 	return (
@@ -29,8 +31,8 @@ const MainPage = () => {
 								options={["Warehouse One", "Warehouse Two"]}
 							/>
 						</div>
-						<div className="row g-5 g-xl-8">
-							<StatisticsCard
+						<div className="row mb-6">
+							{/* <StatisticsCard
 								amount={"1,820.00"}
 								icon={<HiOutlineShoppingCart size={30} color="#1B84FF" />}
 								link={"/"}
@@ -53,6 +55,30 @@ const MainPage = () => {
 								icon={<IoArrowUndoOutline size={30} color="#1B84FF" />}
 								link={"/"}
 								title={"Purchases Return"}
+							/> */}
+							<Statistics
+								title="Sales"
+								number="1780.00"
+								icon={<HiOutlineShoppingCart size={50} color="white" />}
+								backgroundColor="#f24f7c"
+							/>
+							<Statistics
+								title="Purchases"
+								number="1160.00"
+								backgroundColor="#716cb0"
+								icon={<BsCartPlus size={50} color="white" />}
+							/>
+							<Statistics
+								title="Sales Return"
+								number="0.00"
+								backgroundColor="#33b0e0"
+								icon={<IoArrowRedoOutline size={50} color="white" />}
+							/>
+							<Statistics
+								title="Purchases Return"
+								number="0.00"
+								backgroundColor="#3bc0c3"
+								icon={<IoArrowUndoOutline size={50} color="white" />}
 							/>
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10">
@@ -63,10 +89,10 @@ const MainPage = () => {
 							/>
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
-							<TopSellingProduct />
 							<StockReport />
+							<TopSellingProduct />
 						</div>
-						<div className="row g-5 g-xl-10 g-xl-10 mt-1">
+						<div className="row g-5 g-xl-10 g-xl-10 mt-1 mb-10">
 							<XYChart />
 							<PieChart
 								chartTilte={"Top 5 Customers (June)"}

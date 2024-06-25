@@ -9,16 +9,23 @@ import {
 	sales,
 	settings,
 	transfer,
+	hrm,
+	people,
+	reports,
 } from "../../../data/menu-data/dataMenu";
 import Menu from "./Menu/Menu";
 import { Link } from "react-router-dom";
-import { MdOutlineBook } from "react-icons/md";
+import { MdOutlineBook, MdPeople } from "react-icons/md";
 import { TfiMapAlt } from "react-icons/tfi";
 import { PiShoppingCartSimple } from "react-icons/pi";
-import { RiBillLine } from "react-icons/ri";
+import { RiBillLine, RiGovernmentLine } from "react-icons/ri";
 import { TbArrowBackUp } from "react-icons/tb";
-import { IoSettingsOutline } from "react-icons/io5";
-import { FaWallet } from "react-icons/fa";
+import {
+	IoArrowBackOutline,
+	IoArrowForward,
+	IoSettingsOutline,
+} from "react-icons/io5";
+import { FaChartLine, FaWallet } from "react-icons/fa";
 
 const LeftSidebar = () => {
 	return (
@@ -96,10 +103,67 @@ const LeftSidebar = () => {
 							title={"Sales"}
 							icon={<PiShoppingCartSimple size={21} />}
 						/>
+						<Link
+							to={"/"}
+							style={{
+								fontSize: "1.15rem",
+								color: "#252F4A",
+								fontWeight: "600",
+							}}
+						>
+							<div
+								data-kt-menu-trigger="click"
+								className={`menu-item here menu-accordion`}
+							>
+								<span className="menu-link">
+									<span className="menu-icon">
+										<IoArrowForward size={21} color="#99A1B7" />
+									</span>
+									<span className="menu-title">Sales Return</span>
+								</span>
+								<div className={`menu-sub menu-sub-accordion`}></div>
+							</div>
+						</Link>
+						<Link
+							to={"/"}
+							style={{
+								fontSize: "1.15rem",
+								color: "#252F4A",
+								fontWeight: "600",
+							}}
+						>
+							<div
+								data-kt-menu-trigger="click"
+								className={`menu-item here menu-accordion`}
+							>
+								<span className="menu-link">
+									<span className="menu-icon">
+										<IoArrowBackOutline size={21} color="#99A1B7" />
+									</span>
+									<span className="menu-title">Purchases Return</span>
+								</span>
+								<div className={`menu-sub menu-sub-accordion`}></div>
+							</div>
+						</Link>
+						<Menu
+							menuItems={hrm}
+							title={"HRM"}
+							icon={<RiGovernmentLine size={21} />}
+						/>
+						<Menu
+							menuItems={transfer}
+							title={"Transfer"}
+							icon={<TbArrowBackUp size={21} />}
+						/>
 						<Menu
 							menuItems={accounting}
 							title={"Accounting"}
 							icon={<FaWallet size={21} />}
+						/>
+						<Menu
+							menuItems={people}
+							title={"People"}
+							icon={<MdPeople size={21} />}
 						/>
 						<Menu
 							menuItems={settings}
@@ -107,9 +171,9 @@ const LeftSidebar = () => {
 							icon={<IoSettingsOutline size={21} />}
 						/>
 						<Menu
-							menuItems={transfer}
-							title={"Transfer"}
-							icon={<TbArrowBackUp size={21} />}
+							menuItems={reports}
+							title={"Reports"}
+							icon={<FaChartLine size={21} />}
 						/>
 					</div>
 				</div>

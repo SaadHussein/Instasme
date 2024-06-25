@@ -2,25 +2,14 @@ import React from "react";
 
 const TopSellingProduct = () => {
 	return (
-		<div className="col-xl-4 mb-5 mb-xl-10">
+		<div className="col-xl-4">
 			<div className="card card-flush h-md-100">
 				<div className="card-header pt-7">
 					<h3 className="card-title align-items-start flex-column">
 						<span className="card-label fw-bold text-gray-800">
 							Top Selling Products
 						</span>
-						<span className="text-gray-500 mt-1 fw-semibold fs-6">
-							8k social visitors
-						</span>
 					</h3>
-					<div className="card-toolbar">
-						<a
-							href="apps/ecommerce/catalog/categories.html"
-							className="btn btn-sm btn-light"
-						>
-							View All
-						</a>
-					</div>
 				</div>
 				<div className="card-body pt-4">
 					<div className="table-responsive">
@@ -29,7 +18,7 @@ const TopSellingProduct = () => {
 								<tr className="fs-7 fw-bold text-gray-500 border-bottom-0">
 									<th className="p-0 w-50px pb-1">ITEM</th>
 									<th className="ps-0 min-w-140px"></th>
-									<th className="ps-0 min-w-140px">TOTAL SALES</th>
+									<th className="p-0 pb-1 min-w-140px">TOTAL SALES</th>
 									<th className="text-end min-w-140px p-0 pb-1">TOTAL PRICE</th>
 								</tr>
 							</thead>
