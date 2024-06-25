@@ -7,7 +7,7 @@ const StockReport = () => {
 				<div className="card-header pt-7">
 					<h3 className="card-title align-items-start flex-column">
 						<span className="card-label fw-bold text-gray-900">
-							Stock Report
+							Stock Alert
 						</span>
 					</h3>
 				</div>

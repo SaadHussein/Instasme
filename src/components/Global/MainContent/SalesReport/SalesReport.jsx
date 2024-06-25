@@ -42,7 +42,7 @@ const SalesReport = () => {
 							<tr>
 								<td>SL_1119</td>
 								<td className="text-end pe-0">walk-in-customer</td>
-								<td className="text-end pe-0">Warehouse</td>
+								<td className="text-end pe-0">Warehouse 1</td>
 								<td className="text-end pe-0">
 									<Completed text={"Completed"} />
 								</td>
@@ -56,7 +56,7 @@ const SalesReport = () => {
 							<tr>
 								<td>SL_1119</td>
 								<td className="text-end pe-0">walk-in-customer</td>
-								<td className="text-end pe-0">Warehouse</td>
+								<td className="text-end pe-0">Warehouse 2</td>
 								<td className="text-end pe-0">
 									<Pending text={"Pending"} />
 								</td>
@@ -70,7 +70,7 @@ const SalesReport = () => {
 							<tr>
 								<td>SL_1119</td>
 								<td className="text-end pe-0">walk-in-customer</td>
-								<td className="text-end pe-0">Warehouse</td>
+								<td className="text-end pe-0">Warehouse 1</td>
 								<td className="text-end pe-0">
 									<Ordered text={"Ordered"} />
 								</td>

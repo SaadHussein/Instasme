@@ -10,7 +10,7 @@ const LineChart = () => {
 			trigger: "axis",
 		},
 		legend: {
-			data: ["Sales", "Purchases"],
+			data: ["Payment Sent", "Payment Received"],
 		},
 		grid: {
 			left: "3%",
@@ -41,12 +41,12 @@ const LineChart = () => {
 		},
 		series: [
 			{
-				name: "Sales",
+				name: "Payment Sent",
 				type: "line",
 				data: [640, 2270, 1000, 3066, 2000, 960, 1888],
 			},
 			{
-				name: "Purchases",
+				name: "Payment Received",
 				type: "line",
 				data: [0, 0, 1736, 1000, 1792.8, 2000, 1780],
 			},
