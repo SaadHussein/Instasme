@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classes from "./Select.module.css";
 
 const Select = ({
@@ -6,7 +6,9 @@ const Select = ({
 	options,
 	defaultValue = "Select Value From Options",
 }) => {
+	const ref = useRef();
 	const [showOptions, setShowOptions] = useState(false);
+	useOnClickOutside(ref, () => setShowOptions(false));
 	const [value, setValue] = useState(defaultValue);
 	return (
 		<div className={`fv-row w-100 ${classes.selectContainer}`}>
@@ -21,6 +23,7 @@ const Select = ({
 				<p className={`${classes.placeHolder}`}>{value}</p>
 			</div>
 			<div
+				ref={ref}
 				className={`${classes.optionsList} ${
 					showOptions ? `${classes.okShow}` : `${classes.showOptions}`
 				}`}
@@ -41,5 +44,22 @@ const Select = ({
 		</div>
 	);
 };
+
+function useOnClickOutside(ref, handler) {
+	useEffect(() => {
+		const listener = (event) => {
+			if (!ref.current || ref.current.contains(event.target)) {
+				return;
+			}
+			handler(event);
+		};
+		document.addEventListener("mousedown", listener);
+		document.addEventListener("touchstart", listener);
+		return () => {
+			document.removeEventListener("mousedown", listener);
+			document.removeEventListener("touchstart", listener);
+		};
+	}, [ref, handler]);
+}
 
 export default Select;

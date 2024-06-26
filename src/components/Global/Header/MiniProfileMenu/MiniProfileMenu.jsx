@@ -2,6 +2,7 @@ import React from "react";
 import { setIsMiniProfileMenuOpen } from "../../../../redux/globalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./MiniProfileMenu.module.css";
+import { Link } from "react-router-dom";
 
 const MiniProfileMenu = () => {
 	const dispatch = useDispatch();
@@ -24,41 +25,30 @@ const MiniProfileMenu = () => {
 			<div className="menu-item px-3">
 				<div className="menu-content d-flex align-items-center px-3">
 					<div className="symbol symbol-50px me-5">
-						<img alt="Logo" src="assets/media/avatars/300-2.jpg" />
+						<img alt="Logo" src="/assets/media/avatars/300-2.jpg" />
 					</div>
 					<div className="d-flex flex-column">
 						<div className="fw-bold d-flex align-items-center fs-5">
 							Max Smith
-							<span className="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">
-								Pro
-							</span>
 						</div>
-						<a
-							href="#"
-							className="fw-semibold text-muted text-hover-primary fs-7"
-						>
-							max@kt.com
-						</a>
+						<div className="fw-semibold text-muted text-hover-primary fs-7">
+							Super Admin
+						</div>
 					</div>
 				</div>
 			</div>
 			<div className="separator my-2"></div>
 			<div className="menu-item px-5">
-				<a href="account/overview.html" className="menu-link px-5">
+				<Link to="/" className="menu-link px-5">
 					My Profile
-				</a>
+				</Link>
 			</div>
 			<div className="menu-item px-5">
-				<a href="apps/projects/list.html" className="menu-link px-5">
-					<span className="menu-text">My Projects</span>
-					<span className="menu-badge">
-						<span className="badge badge-light-danger badge-circle fw-bold fs-7">
-							3
-						</span>
-					</span>
-				</a>
+				<Link to="/" className="menu-link px-5">
+					Settings
+				</Link>
 			</div>
-			<div
+			{/* <div
 				className="menu-item px-5"
 				data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
 				data-kt-menu-placement="left-start"
@@ -117,12 +107,12 @@ const MiniProfileMenu = () => {
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className="menu-item px-5">
+			</div> */}
+			{/* <div className="menu-item px-5">
 				<a href="account/statements.html" className="menu-link px-5">
 					My Statements
 				</a>
-			</div>
+			</div> */}
 			<div className="separator my-2"></div>
 			<div
 				className="menu-item px-5"
@@ -198,7 +188,7 @@ const MiniProfileMenu = () => {
 							English
 							<img
 								className="w-15px h-15px rounded-1 ms-2"
-								src="assets/media/flags/united-states.svg"
+								src="/assets/media/flags/united-states.svg"
 								alt=""
 							/>
 						</span>
@@ -213,7 +203,7 @@ const MiniProfileMenu = () => {
 							<span className="symbol symbol-20px me-4">
 								<img
 									className="rounded-1"
-									src="assets/media/flags/united-states.svg"
+									src="/assets/media/flags/united-states.svg"
 									alt=""
 								/>
 							</span>
@@ -225,7 +215,7 @@ const MiniProfileMenu = () => {
 							<span className="symbol symbol-20px me-4">
 								<img
 									className="rounded-1"
-									src="assets/media/flags/spain.svg"
+									src="/assets/media/flags/spain.svg"
 									alt=""
 								/>
 							</span>
@@ -237,7 +227,7 @@ const MiniProfileMenu = () => {
 							<span className="symbol symbol-20px me-4">
 								<img
 									className="rounded-1"
-									src="assets/media/flags/germany.svg"
+									src="/assets/media/flags/germany.svg"
 									alt=""
 								/>
 							</span>
@@ -249,7 +239,7 @@ const MiniProfileMenu = () => {
 							<span className="symbol symbol-20px me-4">
 								<img
 									className="rounded-1"
-									src="assets/media/flags/japan.svg"
+									src="/assets/media/flags/japan.svg"
 									alt=""
 								/>
 							</span>
@@ -261,7 +251,7 @@ const MiniProfileMenu = () => {
 							<span className="symbol symbol-20px me-4">
 								<img
 									className="rounded-1"
-									src="assets/media/flags/france.svg"
+									src="/assets/media/flags/france.svg"
 									alt=""
 								/>
 							</span>
@@ -270,9 +260,12 @@ const MiniProfileMenu = () => {
 					</div>
 				</div>
 			</div>
-			<div className="menu-item px-5 my-1">
-				<a href="account/settings.html" className="menu-link px-5">
-					Account Settings
+			<div className="menu-item px-5">
+				<a
+					href="authentication/layouts/corporate/sign-in.html"
+					className="menu-link px-5"
+				>
+					Sign Out
 				</a>
 			</div>
 			<div className="menu-item px-5">
@@ -280,7 +273,7 @@ const MiniProfileMenu = () => {
 					href="authentication/layouts/corporate/sign-in.html"
 					className="menu-link px-5"
 				>
-					Sign Out
+					Enable RTL
 				</a>
 			</div>
 		</div>

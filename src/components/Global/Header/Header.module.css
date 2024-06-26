@@ -4,6 +4,15 @@
 .stickyHeader {
 }
 
+.icon {
+	color: #99a1b7 !important;
+	transition: all 0.3s ease-in-out !important;
+}
+
+.icon:hover {
+	color: #056ee9 !important;
+}
+
 @media screen and (min-width: 992px) {
 	.separator {
 		margin-right: 80px !important;

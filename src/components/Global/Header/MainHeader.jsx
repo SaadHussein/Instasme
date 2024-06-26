@@ -11,6 +11,9 @@ import {
 } from "../../../redux/globalSlice";
 import MiniProfileMenu from "./MiniProfileMenu/MiniProfileMenu";
 import classes from "./Header.module.css";
+import { FaCashRegister } from "react-icons/fa6";
+import { FaArrowsAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MainHeader = () => {
 	const [isQuickLinkMenuOpen, setIsQuickLinkMenuOpen] = useState(false);
@@ -134,9 +137,16 @@ const MainHeader = () => {
 								dispatch(setIsNotificationMenuOpen({ value: false }));
 							}}
 						>
-							<i className="ki-outline ki-calendar fs-1"></i>
+							{/* <i className="ki-outline ki-calendar fs-1"></i> */}
+							<Link to={"/sales/pos"}>
+								<FaCashRegister
+									size={21}
+									color="#99A1B7"
+									className={`${classes.icon}`}
+								/>
+							</Link>
 						</div>
-						<NotificationMenu />
+						{/* <NotificationMenu /> */}
 					</div>
 					<div className="app-navbar-item ms-2 ms-lg-6">
 						<div
@@ -153,12 +163,17 @@ const MainHeader = () => {
 								setIsQuickLinkMenuOpen(false);
 							}}
 						>
-							<i className="ki-outline ki-abstract-26 fs-1"></i>
+							{/* <i className="ki-outline ki-abstract-26 fs-1"></i> */}
+							<FaArrowsAlt
+								size={21}
+								color="#99A1B7"
+								className={`${classes.icon}`}
+							/>
 						</div>
-						<QuickLinkMenu
+						{/* <QuickLinkMenu
 							isQuickLinkMenuOpen={isQuickLinkMenuOpen}
 							setIsQuickLinkMenuOpen={setIsQuickLinkMenuOpen}
-						/>
+						/> */}
 					</div>
 					<div className="app-navbar-item ms-2 ms-lg-6">
 						<div

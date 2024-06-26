@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./RightAside.module.css";
+import { Link } from "react-router-dom";
 
 const RightAside = () => {
 	return (
@@ -24,42 +25,15 @@ const RightAside = () => {
 				data-kt-scroll-wrappers="#kt_app_aside_wrapper"
 				data-kt-scroll-offset="5px"
 			>
-				<a
-					href="apps/calendar.html"
-					className="btn btn-icon btn-color-primary bg-hover-body h-45px w-45px flex-shrink-0"
-					data-bs-toggle="tooltip"
-					title="Calendar"
-					data-bs-custom-className="tooltip-inverse"
-				>
-					<i className="ki-outline ki-calendar fs-2x"></i>
-				</a>
-				<a
-					href="account/overview.html"
+				<Link
+					to="/"
 					className="btn btn-icon btn-color-warning bg-hover-body h-45px w-45px flex-shrink-0"
 					data-bs-toggle="tooltip"
 					title="Profile"
 					data-bs-custom-className="tooltip-inverse"
 				>
 					<i className="ki-outline ki-address-book fs-2x"></i>
-				</a>
-				<a
-					href="apps/ecommerce/catalog/products.html"
-					className="btn btn-icon btn-color-success bg-hover-body h-45px w-45px flex-shrink-0"
-					data-bs-toggle="tooltip"
-					title="Messages"
-					data-bs-custom-className="tooltip-inverse"
-				>
-					<i className="ki-outline ki-tablet-ok fs-2x"></i>
-				</a>
-				<a
-					href="apps/inbox/listing.html"
-					className="btn btn-icon btn-color-dark bg-hover-body h-45px w-45px flex-shrink-0"
-					data-bs-toggle="tooltip"
-					title="Products"
-					data-bs-custom-className="tooltip-inverse"
-				>
-					<i className="ki-outline ki-calendar-add fs-2x"></i>
-				</a>
+				</Link>
 			</div>
 		</div>
 	);
