@@ -23,6 +23,10 @@ const PieEChart = ({ dataFor }) => {
 		// 	subtext: "Fake Data",
 		// 	left: "center",
 		// },
+		textStyle: {
+			fontSize: 14,
+			fontWeight: 600,
+		},
 		tooltip: {
 			trigger: "item",
 			formatter:

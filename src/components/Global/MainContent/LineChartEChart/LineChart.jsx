@@ -6,10 +6,15 @@ const LineChart = () => {
 		// title: {
 		// 	text: "Stacked Line",
 		// },
+		textStyle: {
+			fontSize: 13,
+			fontWeight: 600,
+		},
 		tooltip: {
 			trigger: "axis",
 		},
 		legend: {
+			left: "right",
 			data: ["Payment Sent", "Payment Received"],
 		},
 		grid: {
@@ -26,6 +31,9 @@ const LineChart = () => {
 		xAxis: {
 			type: "category",
 			boundaryGap: false,
+			axisLabel: {
+				fontSize: 13,
+			},
 			data: [
 				"17-06-2024",
 				"18-06-2024",
@@ -38,6 +46,9 @@ const LineChart = () => {
 		},
 		yAxis: {
 			type: "value",
+			axisLabel: {
+				fontSize: 13,
+			},
 		},
 		series: [
 			{

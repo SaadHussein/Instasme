@@ -15,17 +15,19 @@ const MultiBar = () => {
 			am5xy.XYChart.new(root, {
 				panX: false,
 				panY: false,
-				paddingLeft: 0,
 				wheelX: "panX",
 				wheelY: "zoomX",
-				layout: root.verticalLayout,
 			})
 		);
 
+		chart
+			.get("colors")
+			.set("colors", [am5.color(0x3bc0c3), am5.color(0x716cb0)]);
+
 		const legend = chart.children.push(
 			am5.Legend.new(root, {
-				centerX: am5.p50,
-				x: am5.p50,
+				centerX: am5.p100,
+				x: am5.p100,
 			})
 		);
 
@@ -107,7 +109,7 @@ const MultiBar = () => {
 			);
 
 			series.columns.template.setAll({
-				tooltipText: "{name}, {categoryX}:{valueY}",
+				tooltipText: "{name}: LE {categoryX} | {valueY}",
 				width: am5.percent(90),
 				tooltipY: 0,
 				strokeOpacity: 0,
@@ -133,14 +135,8 @@ const MultiBar = () => {
 			legend.data.push(series);
 		}
 
-		// makeSeries("Europe", "europe");
-		// makeSeries("North America", "namerica");
-		// makeSeries("Asia", "asia");
-		// makeSeries("Latin America", "lamerica");
-		// makeSeries("Middle East", "meast");
-		// makeSeries("Africa", "africa");
-		makeSeries("sales", "sales");
-		makeSeries("purchases", "purchases");
+		makeSeries("Sales", "sales");
+		makeSeries("Purchases", "purchases");
 
 		chart.appear(1000, 100);
 

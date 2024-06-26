@@ -16,6 +16,12 @@
 	position: relative;
 }
 
+.placeHolder {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .optionsList {
 	border: 1px solid #f9f9f9;
 	border-radius: 8px;

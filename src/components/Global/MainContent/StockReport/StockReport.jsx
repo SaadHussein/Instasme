@@ -18,11 +18,11 @@ const StockReport = () => {
 					>
 						<thead>
 							<tr className="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-								<th className="min-w-150px">Code</th>
-								<th className="text-end pe-3 min-w-100px">Product</th>
-								<th className="text-end pe-3 min-w-150px">Warehouse</th>
-								<th className="text-end pe-3 min-w-100px">Quantity</th>
-								<th className="text-end pe-3 min-w-100px">Alert Quantity</th>
+								<th className="min-w-30px">Code</th>
+								<th className="text-start pe-3 min-w-150px">Product</th>
+								<th className="text-start pe-3 min-w-140px">Warehouse</th>
+								<th className="text-start pe-3 min-w-120px">Quantity</th>
+								<th className="text-start pe-3 min-w-100px">Alert Quantity</th>
 							</tr>
 						</thead>
 						<tbody className="fw-bold text-gray-600">
@@ -32,12 +32,12 @@ const StockReport = () => {
 										70171027
 									</div>
 								</td>
-								<td className="text-end">Banana</td>
-								<td className="text-end">Warehouse 1</td>
-								<td className="text-end">10</td>
-								<td className="text-end">
+								<td className="text-start">Banana</td>
+								<td className="text-start">Warehouse 1</td>
+								<td className="text-start">10</td>
+								<td className="text-start">
 									<span className="badge py-3 px-4 fs-7 badge-light-danger">
-										10
+										10 PCS
 									</span>
 								</td>
 							</tr>
@@ -47,12 +47,12 @@ const StockReport = () => {
 										80256894
 									</div>
 								</td>
-								<td className="text-end">Orange</td>
-								<td className="text-end">Warehouse 2</td>
-								<td className="text-end">47</td>
-								<td className="text-end">
+								<td className="text-start">Orange</td>
+								<td className="text-start">Warehouse 2</td>
+								<td className="text-start">47</td>
+								<td className="text-start">
 									<span className="badge py-3 px-4 fs-7 badge-light-danger">
-										50
+										50 PCS
 									</span>
 								</td>
 							</tr>
@@ -62,12 +62,12 @@ const StockReport = () => {
 										80256894
 									</div>
 								</td>
-								<td className="text-end">Orange</td>
-								<td className="text-end">Warehouse 1</td>
-								<td className="text-end">47</td>
-								<td className="text-end">
+								<td className="text-start">Orange</td>
+								<td className="text-start">Warehouse 1</td>
+								<td className="text-start">47</td>
+								<td className="text-start">
 									<span className="badge py-3 px-4 fs-7 badge-light-danger">
-										50
+										50 PCS
 									</span>
 								</td>
 							</tr>

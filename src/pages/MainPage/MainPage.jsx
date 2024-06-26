@@ -60,25 +60,29 @@ const MainPage = () => {
 								title="Sales"
 								number="1780.00"
 								icon={<HiOutlineShoppingCart size={50} color="white" />}
-								backgroundColor="#f24f7c"
+								backgroundColor="#3bc0c3"
+								link={"/sales/all-sales"}
 							/>
 							<Statistics
 								title="Purchases"
 								number="1160.00"
 								backgroundColor="#716cb0"
 								icon={<BsCartPlus size={50} color="white" />}
+								link={"/purchases/all-purchases"}
 							/>
 							<Statistics
 								title="Sales Return"
 								number="0.00"
 								backgroundColor="#33b0e0"
 								icon={<IoArrowRedoOutline size={50} color="white" />}
+								link={"/purchases-return"}
 							/>
 							<Statistics
 								title="Purchases Return"
 								number="0.00"
-								backgroundColor="#3bc0c3"
+								backgroundColor="#f24f7c"
 								icon={<IoArrowUndoOutline size={50} color="white" />}
+								link={"/sales-return"}
 							/>
 						</div>
 						<div className="row g-5 g-xl-10 g-xl-10">

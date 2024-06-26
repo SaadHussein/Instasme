@@ -18,6 +18,10 @@ import CreateTransfer from "./pages/Transfer/CreateTransfer/CreateTransfer";
 import CreateProduct from "./pages/Products/CreateProduct/CreateProduct";
 import PrintLabels from "./pages/Products/PrintLabels/PrintLabels";
 import ModuleSettings from "./pages/Settings/ModuleSettings/ModuleSettings";
+import AllSales from "./pages/Sales/AllSales/AllSales";
+import AllPurchases from "./pages/Purchases/AllPurchases/AllPurchases";
+import SalesReturn from "./pages/SalesReturn/SalesReturn";
+import PurchasesReturn from "./pages/PurchasesReturn/PurchasesReturn";
 
 function App() {
 	return (
@@ -28,6 +32,9 @@ function App() {
 					<Route path="/products/create-product" element={<CreateProduct />} />
 					<Route path="/products/print-labels" element={<PrintLabels />} />
 					<Route path="/sales/pos" element={<Pos />} />
+					<Route path="/sales-return" element={<SalesReturn />} />
+					<Route path="/purchases-return" element={<PurchasesReturn />} />
+					<Route path="/sales/all-sales" element={<AllSales />} />
 					<Route path="/sales/create-sale" element={<CreateSale />} />
 					<Route
 						path="/quotations/create-quotation"
@@ -41,6 +48,7 @@ function App() {
 						path="/purchases/create-purchase"
 						element={<CreatePurchases />}
 					/>
+					<Route path="/purchases/all-purchases" element={<AllPurchases />} />
 					<Route
 						path="/accounting/create-expense"
 						element={<CreateExpense />}

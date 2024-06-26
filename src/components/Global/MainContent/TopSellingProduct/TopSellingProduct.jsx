@@ -17,9 +17,9 @@ const TopSellingProduct = () => {
 							<thead>
 								<tr className="fs-7 fw-bold text-gray-500 border-bottom-0">
 									<th className="p-0 w-50px pb-1">ITEM</th>
-									<th className="ps-0 min-w-140px"></th>
-									<th className="p-0 pb-1 min-w-140px">TOTAL SALES</th>
-									<th className="text-end min-w-140px p-0 pb-1">TOTAL PRICE</th>
+									<th className="ps-0 min-w-200px"></th>
+									<th className="p-0 pb-1 min-w-120px">TOTAL SALES</th>
+									<th className="text-end min-w-145px p-0 pb-1">TOTAL PRICE</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -49,7 +49,7 @@ const TopSellingProduct = () => {
 									</td>
 									<td>
 										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-end">
-											$72.00
+											LE 72.00
 										</span>
 									</td>
 								</tr>
@@ -79,7 +79,7 @@ const TopSellingProduct = () => {
 									</td>
 									<td>
 										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-end">
-											$45.00
+											LE 45.00
 										</span>
 									</td>
 								</tr>
@@ -109,7 +109,7 @@ const TopSellingProduct = () => {
 									</td>
 									<td>
 										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-end">
-											$168.00
+											LE 168.00
 										</span>
 									</td>
 								</tr>
@@ -139,7 +139,7 @@ const TopSellingProduct = () => {
 									</td>
 									<td>
 										<span className="text-gray-800 fw-bold d-block fs-6 ps-0 text-end">
-											$72.00
+											LE 72.00
 										</span>
 									</td>
 								</tr>
