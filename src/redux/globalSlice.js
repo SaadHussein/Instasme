@@ -4,7 +4,8 @@ const initialState = {
     isNotificationMenuOpen: false,
     isQuickLinksMenuOpen: false,
     isSearchResultsMenuOpen: false,
-    isMiniProfileMenuOpen: false
+    isMiniProfileMenuOpen: false,
+    isFullScreen: false
 };
 
 export const globalSlice = createSlice({
@@ -23,9 +24,12 @@ export const globalSlice = createSlice({
         setIsMiniProfileMenuOpen(state, action) {
             state.isMiniProfileMenuOpen = action.payload.value;
         },
+        setIsFullScreen(state, action) {
+            state.isFullScreen = action.payload.value;
+        },
     }
 });
 
-export const { setIsNotificationMenuOpen, setIsQuickLinksMenuOpen, setIsSearchResultsMenuOpen, setIsMiniProfileMenuOpen } = globalSlice.actions;
+export const { setIsNotificationMenuOpen, setIsQuickLinksMenuOpen, setIsSearchResultsMenuOpen, setIsMiniProfileMenuOpen, setIsFullScreen } = globalSlice.actions;
 
 export default globalSlice.reducer;

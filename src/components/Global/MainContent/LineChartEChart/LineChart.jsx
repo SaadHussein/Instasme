@@ -3,9 +3,6 @@ import ReactECharts from "echarts-for-react";
 import "echarts/i18n/langFR";
 const LineChart = () => {
 	const option = {
-		// title: {
-		// 	text: "Stacked Line",
-		// },
 		textStyle: {
 			fontSize: 13,
 			fontWeight: 600,
@@ -14,7 +11,7 @@ const LineChart = () => {
 			trigger: "axis",
 		},
 		legend: {
-			left: "right",
+			right: "3.75%",
 			data: ["Payment Sent", "Payment Received"],
 		},
 		grid: {
@@ -23,11 +20,6 @@ const LineChart = () => {
 			bottom: "3%",
 			containLabel: true,
 		},
-		// toolbox: {
-		// 	feature: {
-		// 		saveAsImage: {},
-		// 	},
-		// },
 		xAxis: {
 			type: "category",
 			boundaryGap: false,

@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./styles/style.bundle.css";
@@ -22,10 +23,28 @@ import AllSales from "./pages/Sales/AllSales/AllSales";
 import AllPurchases from "./pages/Purchases/AllPurchases/AllPurchases";
 import SalesReturn from "./pages/SalesReturn/SalesReturn";
 import PurchasesReturn from "./pages/PurchasesReturn/PurchasesReturn";
+import { useSelector } from "react-redux";
 
 function App() {
+	const isFullScreen = useSelector((state) => state.global.isFullScreen);
+
+	const toggleFull = () => {
+		const isFullScreen = document.fullscreenElement;
+		const web = document.getElementById("our-website");
+		console.log(web);
+
+		if (isFullScreen) {
+			document.exitFullscreen();
+		} else {
+			web.requestFullscreen();
+		}
+	};
+
+	useEffect(() => {
+		toggleFull();
+	}, [isFullScreen]);
 	return (
-		<>
+		<main>
 			<Routes>
 				<Route path="/" element={<PagesOutlet />}>
 					<Route path="/" element={<MainPage />} />
@@ -73,7 +92,7 @@ function App() {
 					/>
 				</Route>
 			</Routes>
-		</>
+		</main>
 	);
 }
 

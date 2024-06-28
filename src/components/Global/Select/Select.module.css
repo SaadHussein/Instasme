@@ -30,9 +30,15 @@
 	top: 102%;
 	left: 0;
 	z-index: 1000;
-	width: 100%;
+	width: 50%;
 	box-shadow: 1px 1px 25px 0 rgba(0, 0, 0, 0.3);
 	transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
+	.optionsList {
+		width: 100%;
+	}
 }
 
 .option {

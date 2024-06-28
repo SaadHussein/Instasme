@@ -29,9 +29,9 @@ const SalesReport = () => {
 								<th className="text-start min-w-150px pe-0">Customer</th>
 								<th className="text-start min-w-150px pe-0">Warehouse</th>
 								<th className="text-start min-w-75px pe-0">Status</th>
-								<th className="text-start min-w-75px pe-0">Grand Total</th>
-								<th className="text-start min-w-60px pe-0">Paid</th>
-								<th className="text-start min-w-60px pe-0">Due</th>
+								<th className="text-start min-w-80px pe-0">Grand Total</th>
+								<th className="text-start min-w-80px pe-0">Paid</th>
+								<th className="text-start min-w-80px pe-0">Due</th>
 								<th className="text-start min-w-75px">Payment Status</th>
 							</tr>
 						</thead>

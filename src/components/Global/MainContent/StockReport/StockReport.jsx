@@ -18,7 +18,7 @@ const StockReport = () => {
 					>
 						<thead>
 							<tr className="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-								<th className="min-w-30px">Code</th>
+								<th className="min-w-30px max-w-40px">Code</th>
 								<th className="text-start pe-3 min-w-150px">Product</th>
 								<th className="text-start pe-3 min-w-140px">Warehouse</th>
 								<th className="text-start pe-3 min-w-120px">Quantity</th>

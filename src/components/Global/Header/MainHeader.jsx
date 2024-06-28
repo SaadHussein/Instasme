@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import NotificationMenu from "./NotificationMenu/NotificationMenu";
 import QuickLinkMenu from "./QuickLinkMenu/QuickLinkMenu";
 import SearchResultsMenu from "./SearchResultsMenu/SearchResultsMenu";
@@ -8,6 +8,7 @@ import {
 	setIsQuickLinksMenuOpen,
 	setIsSearchResultsMenuOpen,
 	setIsMiniProfileMenuOpen,
+	setIsFullScreen,
 } from "../../../redux/globalSlice";
 import MiniProfileMenu from "./MiniProfileMenu/MiniProfileMenu";
 import classes from "./Header.module.css";
@@ -16,6 +17,7 @@ import { FaArrowsAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const MainHeader = () => {
+	const isFullScreen = useSelector((state) => state.global.isFullScreen);
 	const [isQuickLinkMenuOpen, setIsQuickLinkMenuOpen] = useState(false);
 	const [isSearchMenuOpen, setIsSearchMenuOpen] = useState(false);
 	const dispatch = useDispatch();
@@ -168,6 +170,10 @@ const MainHeader = () => {
 								size={21}
 								color="#99A1B7"
 								className={`${classes.icon}`}
+								id="full-screen-btn"
+								onClick={() => {
+									dispatch(setIsFullScreen({ value: !isFullScreen }));
+								}}
 							/>
 						</div>
 						{/* <QuickLinkMenu

@@ -17,6 +17,7 @@ const MultiBar = () => {
 				panY: false,
 				wheelX: "panX",
 				wheelY: "zoomX",
+				layout: root.verticalLayout,
 			})
 		);
 
@@ -26,8 +27,9 @@ const MultiBar = () => {
 
 		const legend = chart.children.push(
 			am5.Legend.new(root, {
-				centerX: am5.p100,
-				x: am5.p100,
+				centerX: am5.p50,
+				x: am5.p50,
+				y: am5.percent(95),
 			})
 		);
 

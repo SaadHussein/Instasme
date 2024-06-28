@@ -1,0 +1,9 @@
+.selectWidth {
+	width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+	.selectWidth {
+		width: 100%;
+	}
+}

@@ -3,6 +3,7 @@ import { setIsMiniProfileMenuOpen } from "../../../../redux/globalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./MiniProfileMenu.module.css";
 import { Link } from "react-router-dom";
+import CheckInput from "../../CheckInput/CheckInput";
 
 const MiniProfileMenu = () => {
 	const dispatch = useDispatch();
@@ -261,19 +262,19 @@ const MiniProfileMenu = () => {
 				</div>
 			</div>
 			<div className="menu-item px-5">
-				<a
-					href="authentication/layouts/corporate/sign-in.html"
-					className="menu-link px-5"
+				<div
+					// href="authentication/layouts/corporate/sign-in.html"
+					className="menu-link px-5 d-flex align-items-center justify-content-between"
 				>
-					Sign Out
-				</a>
+					Enable RTL <CheckInput />
+				</div>
 			</div>
 			<div className="menu-item px-5">
 				<a
 					href="authentication/layouts/corporate/sign-in.html"
 					className="menu-link px-5"
 				>
-					Enable RTL
+					Sign Out
 				</a>
 			</div>
 		</div>
