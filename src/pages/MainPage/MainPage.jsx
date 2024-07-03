@@ -33,30 +33,6 @@ const MainPage = () => {
 							/>
 						</div>
 						<div className="row mb-6">
-							{/* <StatisticsCard
-								amount={"1,820.00"}
-								icon={<HiOutlineShoppingCart size={30} color="#1B84FF" />}
-								link={"/"}
-								title={"Sales"}
-							/>
-							<StatisticsCard
-								amount={"1,160.00"}
-								icon={<HiOutlineShoppingCart size={30} color="#1B84FF" />}
-								link={"/"}
-								title={"Purchases"}
-							/>
-							<StatisticsCard
-								amount={"0.00"}
-								icon={<IoArrowRedoOutline size={30} color="#1B84FF" />}
-								link={"/"}
-								title={"Sales Return"}
-							/>
-							<StatisticsCard
-								amount={"0.00"}
-								icon={<IoArrowUndoOutline size={30} color="#1B84FF" />}
-								link={"/"}
-								title={"Purchases Return"}
-							/> */}
 							<Statistics
 								title="Sales"
 								number="1780.00"

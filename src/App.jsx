@@ -43,6 +43,7 @@ function App() {
 	useEffect(() => {
 		toggleFull();
 	}, [isFullScreen]);
+
 	return (
 		<main>
 			<Routes>
