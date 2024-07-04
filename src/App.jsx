@@ -26,6 +26,7 @@ import PurchasesReturn from "./pages/PurchasesReturn/PurchasesReturn";
 import { useSelector } from "react-redux";
 import AllProducts from "./pages/Products/AllProducts/AllProducts";
 import AllAdjustment from "./pages/Adjustment/AllAdjustment/AllAdjustment";
+import ListDeposite from "./pages/Accounting/ListDeposite/ListDeposite";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -84,6 +85,7 @@ function App() {
 						path="/accounting/create-deposite"
 						element={<CreateDeposite />}
 					/>
+					<Route path="/accounting/list-deposite" element={<ListDeposite />} />
 					<Route
 						path="/settings/payment-gateway"
 						element={<PaymentGateway />}
