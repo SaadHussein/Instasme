@@ -1,54 +1,13 @@
 import React from "react";
 import classes from "../../../styles/global.module.css";
 import Toolbar from "../../Accounting/Toolbar";
-import MainTable from "../../../components/Global/MainTable/MainTable";
 import { FaSearch } from "react-icons/fa";
 import Input from "../../../components/Global/Input/Input";
 import Button from "../../../components/Global/Button/Button";
 import privateClasses from "./AllProducts.module.css";
-
-const productsTableHeaders = [
-	{
-		name: "Image",
-		width: "75",
-	},
-	{
-		name: "Type",
-		width: "75",
-	},
-	{
-		name: "Name",
-		width: "100",
-	},
-	{
-		name: "Code",
-		width: "75",
-	},
-	{
-		name: "Brand",
-		width: "75",
-	},
-	{
-		name: "Category",
-		width: "75",
-	},
-	{
-		name: "Cost",
-		width: "75",
-	},
-	{
-		name: "Price",
-		width: "75",
-	},
-	{
-		name: "Unit",
-		width: "75",
-	},
-	{
-		name: "Quantity",
-		width: "75",
-	},
-];
+import AllProductsTable from "../../../components/Products/AllProducts/AllProductsTable";
+import Select from "../../../components/Global/Select/Select";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const AllProducts = () => {
 	return (
@@ -77,7 +36,33 @@ const AllProducts = () => {
 								<Button text={"Create"} />
 							</div>
 						</div>
-						<MainTable tableHeader={productsTableHeaders} />
+						<AllProductsTable />
+						<div className="d-flex align-items-center justify-content-between">
+							<div className="d-flex align-items-center justify-content-start w-50 gap-3">
+								<p className={`${privateClasses.numberPerPage}`}>
+									Rows Per Page:{" "}
+								</p>
+								<div className="w-150px">
+									<Select defaultValue="10" options={[10, 20, 30, 40, 50]} />
+								</div>
+							</div>
+							<div className="d-flex align-items-center justify-content-end gap-4">
+								<MdKeyboardArrowLeft
+									size={20}
+									className={`${privateClasses.paginationArrow}`}
+								/>
+								<p
+									className={`${privateClasses.paginationNumber} ${privateClasses.paginationNumberActive}`}
+								>
+									1
+								</p>
+								<p className={`${privateClasses.paginationNumber}`}>2</p>
+								<MdKeyboardArrowRight
+									size={20}
+									className={`${privateClasses.paginationArrow}`}
+								/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
