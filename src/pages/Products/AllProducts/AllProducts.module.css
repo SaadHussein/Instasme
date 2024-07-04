@@ -1,0 +1,11 @@
+.tableHeader {
+	flex-direction: row;
+}
+
+@media screen and (max-width: 1200px) {
+	.tableHeader {
+		flex-direction: column;
+		align-items: start !important;
+		justify-content: start !important;
+	}
+}

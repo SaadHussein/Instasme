@@ -1,0 +1,7 @@
+.showList {
+	position: fixed;
+	inset: 0 0 auto auto;
+	z-index: 1000;
+	margin: 0px;
+	transform: translate(-141.867px, 406.4px);
+}

@@ -24,6 +24,7 @@ import AllPurchases from "./pages/Purchases/AllPurchases/AllPurchases";
 import SalesReturn from "./pages/SalesReturn/SalesReturn";
 import PurchasesReturn from "./pages/PurchasesReturn/PurchasesReturn";
 import { useSelector } from "react-redux";
+import AllProducts from "./pages/Products/AllProducts/AllProducts";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -51,6 +52,7 @@ function App() {
 					<Route path="/" element={<MainPage />} />
 					<Route path="/products/create-product" element={<CreateProduct />} />
 					<Route path="/products/print-labels" element={<PrintLabels />} />
+					<Route path="/products/all-products" element={<AllProducts />} />
 					<Route path="/sales/pos" element={<Pos />} />
 					<Route path="/sales-return" element={<SalesReturn />} />
 					<Route path="/purchases-return" element={<PurchasesReturn />} />
