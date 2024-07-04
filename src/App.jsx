@@ -25,6 +25,7 @@ import SalesReturn from "./pages/SalesReturn/SalesReturn";
 import PurchasesReturn from "./pages/PurchasesReturn/PurchasesReturn";
 import { useSelector } from "react-redux";
 import AllProducts from "./pages/Products/AllProducts/AllProducts";
+import AllAdjustment from "./pages/Adjustment/AllAdjustment/AllAdjustment";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -65,6 +66,10 @@ function App() {
 					<Route
 						path="/adjustment/create-adjustment"
 						element={<CreateAdjustment />}
+					/>
+					<Route
+						path="/adjustment/all-adjustments"
+						element={<AllAdjustment />}
 					/>
 					<Route
 						path="/purchases/create-purchase"
