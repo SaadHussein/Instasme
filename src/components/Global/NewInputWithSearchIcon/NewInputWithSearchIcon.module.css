@@ -1,0 +1,16 @@
+.searchIcon {
+	top: 52.5%;
+}
+
+.inputDisplay {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.searchInput {
+	position: relative;
+	width: 100%;
+	gap: 16px;
+}

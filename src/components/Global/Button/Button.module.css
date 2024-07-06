@@ -1,0 +1,24 @@
+.button {
+	padding: 10px !important;
+	color: white;
+}
+
+.button:hover {
+	color: white;
+}
+
+.danger {
+	background-color: #f8285a !important;
+}
+
+.danger:hover {
+	background-color: #d81a48 !important;
+}
+
+.success {
+	background-color: #17c653 !important;
+}
+
+.success:hover {
+	background-color: #04b440 !important;
+}
