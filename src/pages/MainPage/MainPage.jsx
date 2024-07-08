@@ -14,6 +14,7 @@ import { IoArrowRedoOutline } from "react-icons/io5";
 import { IoArrowUndoOutline } from "react-icons/io5";
 import Statistics from "../../components/Global/MainContent/Statistics/Statistics";
 import { BsCartPlus } from "react-icons/bs";
+import LabelHeaderReactSelect from "../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 
 const MainPage = () => {
 	return (
@@ -27,9 +28,18 @@ const MainPage = () => {
 						class="app-container container-fluid"
 					>
 						<div className={`${mainPageClasses.selectWidth} mb-6`}>
-							<Select
+							{/* <Select
 								label={"Select a Warehouse"}
 								options={["Warehouse One", "Warehouse Two"]}
+							/> */}
+							<LabelHeaderReactSelect
+								label={"Select a Warehouse"}
+								name={"Warehouse"}
+								placeholder="Select Value From Options"
+								options={[
+									{ value: "Warehouse One", label: "Warehouse One" },
+									{ value: "Warehouse Two", label: "Warehouse Two" },
+								]}
 							/>
 						</div>
 						<div className="row mb-6">

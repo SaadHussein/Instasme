@@ -1,0 +1,52 @@
+.select {
+	height: 42px;
+}
+
+.showOptions {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.okShow {
+	opacity: 1;
+	visibility: visible;
+}
+
+.selectContainer {
+	position: relative;
+}
+
+.placeHolder {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.optionsList {
+	border: 1px solid #f9f9f9;
+	border-radius: 8px;
+	background-color: white;
+	position: absolute;
+	top: 102%;
+	left: 0;
+	z-index: 1000;
+	width: 50%;
+	box-shadow: 1px 1px 25px 0 rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
+	.optionsList {
+		width: 100%;
+	}
+}
+
+.option {
+	padding: 12px;
+	transition: all 0.3s ease-in-out;
+}
+
+.option:hover {
+	background-color: rgb(251, 248, 248);
+	color: #1b84ff;
+}
