@@ -7,8 +7,55 @@ import Button from "../../../components/Global/Button/Button";
 import privateClasses from "./AllProducts.module.css";
 import AllProductsTable from "../../../components/Products/AllProducts/AllProductsTable";
 import Select from "../../../components/Global/Select/Select";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import {
+	MdAcUnit,
+	MdKeyboardArrowLeft,
+	MdKeyboardArrowRight,
+	MdOutlineBrandingWatermark,
+} from "react-icons/md";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { AiOutlineProduct, AiOutlineStock } from "react-icons/ai";
+import { IoCreateOutline, IoPrint } from "react-icons/io5";
+import { BiCategoryAlt } from "react-icons/bi";
+
+const ProductsPage = [
+	{
+		title: "All Products",
+		link: "/products/all-products",
+		icon: <AiOutlineProduct className="fs-2 me-2" />,
+	},
+	{
+		title: "Create Product",
+		link: "/products/create-product",
+		icon: <IoCreateOutline className="fs-2 me-2" />,
+	},
+	{
+		title: "Print Labels",
+		link: "/products/print-labels",
+		icon: <IoPrint className="fs-2 me-2" />,
+	},
+	{
+		title: "Count Stock",
+		link: "/products/count-stock",
+		icon: <AiOutlineStock className="fs-2 me-2" />,
+	},
+	{
+		title: "Category",
+		link: "/products/Category",
+		icon: <BiCategoryAlt className="fs-2 me-2" />,
+	},
+	{
+		title: "Brand",
+		link: "/products/brand",
+		icon: <MdOutlineBrandingWatermark className="fs-2 me-2" />,
+	},
+	{
+		title: "Unit",
+		link: "/products/unit",
+		icon: <MdAcUnit className="fs-2 me-2" />,
+	},
+];
 
 const AllProducts = () => {
 	return (
@@ -17,11 +64,20 @@ const AllProducts = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar title={"All Products"} path={["Products", "All Products"]} />
+					{/* <PagesNavigationBar pages={ProductsPage} /> */}
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"All Products"}
+							path={["Products", "All Products"]}
+						/>
+						<PagesNavigationBar pages={ProductsPage} />
+					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"
-							class="app-container container-fluid"
+							className="app-container container-fluid"
 						>
 							<div
 								className={`d-flex align-items-center justify-content-between mb-8 ${privateClasses.tableHeader}`}
