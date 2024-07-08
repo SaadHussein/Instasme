@@ -9,6 +9,22 @@ import Select from "../../../components/Global/Select/Select";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import AdjustmentTable from "../../../components/Adjustment/AdjustmentTable/AdjustmentTable";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { AiOutlineProduct } from "react-icons/ai";
+import { IoCreateOutline } from "react-icons/io5";
+
+const AdjustmentsPages = [
+	{
+		title: "All Adjustments",
+		link: "/adjustment/all-adjustments",
+		icon: <AiOutlineProduct className="fs-2 me-2" />,
+	},
+	{
+		title: "Create Adjustment",
+		link: "/adjustment/create-adjustment",
+		icon: <IoCreateOutline className="fs-2 me-2" />,
+	},
+];
 
 const AllAdjustment = () => {
 	return (
@@ -17,10 +33,15 @@ const AllAdjustment = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar
-						title={"All Adjustments"}
-						path={["Adjustments", "All Adjustments"]}
-					/>
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"All Adjustments"}
+							path={["Adjustments", "All Adjustments"]}
+						/>
+						<PagesNavigationBar pages={AdjustmentsPages} />
+					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"

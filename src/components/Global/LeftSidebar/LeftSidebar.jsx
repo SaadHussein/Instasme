@@ -26,6 +26,7 @@ import {
 	IoSettingsOutline,
 } from "react-icons/io5";
 import { FaChartLine, FaWallet } from "react-icons/fa";
+import MenuItemToPage from "./MenuItemToPage/MenuItemToPage";
 
 const LeftSidebar = () => {
 	return (
@@ -78,16 +79,19 @@ const LeftSidebar = () => {
 							</div>
 						</Link>
 
-						<Menu
+						<MenuItemToPage
 							menuItems={products}
 							title={"Products"}
 							icon={<MdOutlineBook size={21} />}
+							link={"/products/all-products"}
 						/>
-						<Menu
-							menuItems={adjustment}
+						<MenuItemToPage
+							menuItems={products}
 							title={"Adjustment"}
 							icon={<TfiMapAlt size={21} />}
+							link={"/adjustment/all-adjustments"}
 						/>
+
 						<Menu
 							menuItems={quotations}
 							title={"Quotations"}

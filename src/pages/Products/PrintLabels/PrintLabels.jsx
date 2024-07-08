@@ -9,10 +9,55 @@ import NewSelect from "../../../components/Global/RowSelect/RowSelect";
 import pageClasses from "./PrintLabels.module.css";
 import NewInputWithSearchIcon from "../../../components/Global/NewInputWithSearchIcon/NewInputWithSearchIcon";
 import { RxUpdate } from "react-icons/rx";
-import { MdOutlineResetTv } from "react-icons/md";
-import { IoPrint } from "react-icons/io5";
+import {
+	MdAcUnit,
+	MdOutlineBrandingWatermark,
+	MdOutlineResetTv,
+} from "react-icons/md";
+import { IoCreateOutline, IoPrint } from "react-icons/io5";
 import ReactSelect from "../../../components/Global/ReactSelect/ReactSelect";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import { BiCategoryAlt } from "react-icons/bi";
+import { AiOutlineProduct, AiOutlineStock } from "react-icons/ai";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+
+const ProductsPage = [
+	{
+		title: "All Products",
+		link: "/products/all-products",
+		icon: <AiOutlineProduct className="fs-2 me-2" />,
+	},
+	{
+		title: "Create Product",
+		link: "/products/create-product",
+		icon: <IoCreateOutline className="fs-2 me-2" />,
+	},
+	{
+		title: "Print Labels",
+		link: "/products/print-labels",
+		icon: <IoPrint className="fs-2 me-2" />,
+	},
+	{
+		title: "Count Stock",
+		link: "/products/count-stock",
+		icon: <AiOutlineStock className="fs-2 me-2" />,
+	},
+	{
+		title: "Category",
+		link: "/products/Category",
+		icon: <BiCategoryAlt className="fs-2 me-2" />,
+	},
+	{
+		title: "Brand",
+		link: "/products/brand",
+		icon: <MdOutlineBrandingWatermark className="fs-2 me-2" />,
+	},
+	{
+		title: "Unit",
+		link: "/products/unit",
+		icon: <MdAcUnit className="fs-2 me-2" />,
+	},
+];
 
 const PrintLabels = () => {
 	return (
@@ -21,6 +66,11 @@ const PrintLabels = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
+					<div
+						className={`w-100 d-flex align-items-center justify-content-end mt-1 ${pageClasses.navPages}`}
+					>
+						<PagesNavigationBar pages={ProductsPage} />
+					</div>
 					<div
 						style={{ backgroundColor: "white" }}
 						className={`w-100 d-flex align-items-center justify-content-between ${pageClasses.responsiveHeader}`}

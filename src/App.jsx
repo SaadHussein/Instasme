@@ -27,6 +27,7 @@ import { useSelector } from "react-redux";
 import AllProducts from "./pages/Products/AllProducts/AllProducts";
 import AllAdjustment from "./pages/Adjustment/AllAdjustment/AllAdjustment";
 import ListDeposite from "./pages/Accounting/ListDeposite/ListDeposite";
+import AllQuotations from "./pages/Quotations/AllQuotations/AllQuotations";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -63,6 +64,10 @@ function App() {
 					<Route
 						path="/quotations/create-quotation"
 						element={<CreateQuotations />}
+					/>
+					<Route
+						path="/quotations/all-quotations"
+						element={<AllQuotations />}
 					/>
 					<Route
 						path="/adjustment/create-adjustment"

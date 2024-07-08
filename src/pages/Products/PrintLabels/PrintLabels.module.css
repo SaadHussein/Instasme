@@ -20,6 +20,10 @@
 .responsiveHeader {
 }
 
+.navPages {
+	background-color: white;
+}
+
 @media screen and (max-width: 1140px) {
 	.selectsResponsive {
 		flex-direction: column;
