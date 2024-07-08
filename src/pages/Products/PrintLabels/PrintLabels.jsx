@@ -11,6 +11,7 @@ import NewInputWithSearchIcon from "../../../components/Global/NewInputWithSearc
 import { RxUpdate } from "react-icons/rx";
 import { MdOutlineResetTv } from "react-icons/md";
 import { IoPrint } from "react-icons/io5";
+import ReactSelect from "../../../components/Global/ReactSelect/ReactSelect";
 
 const PrintLabels = () => {
 	return (
@@ -20,21 +21,21 @@ const PrintLabels = () => {
 			<div className="d-flex flex-column flex-column-fluid">
 				<div
 					style={{ backgroundColor: "white" }}
-					className="w-100 d-flex align-items-center justify-content-between"
+					className={`w-100 d-flex align-items-center justify-content-between ${pageClasses.responsiveHeader}`}
 				>
 					<Toolbar title={"Print Labels"} path={["Products", "Print Labels"]} />
 
 					<div
-						className={`d-flex align-items-start justify-content-start gap-6 ${pageClasses.buttons}`}
+						className={`d-flex align-items-start justify-content-start gap-3 ${pageClasses.buttons}`}
 					>
 						<Button
 							text={"Update"}
 							hoverState="success"
 							icon={
 								<RxUpdate
-									size={21}
+									size={18}
 									style={{
-										marginRight: "12px",
+										marginRight: "4px",
 										fontWeight: "500",
 									}}
 								/>
@@ -45,9 +46,9 @@ const PrintLabels = () => {
 							hoverState="danger"
 							icon={
 								<MdOutlineResetTv
-									size={21}
+									size={18}
 									style={{
-										marginRight: "12px",
+										marginRight: "4px",
 										fontWeight: "500",
 									}}
 								/>
@@ -58,9 +59,9 @@ const PrintLabels = () => {
 							color="#1B84FF"
 							icon={
 								<IoPrint
-									size={21}
+									size={18}
 									style={{
-										marginRight: "10px",
+										marginRight: "4px",
 										fontWeight: "500",
 									}}
 								/>
@@ -73,19 +74,29 @@ const PrintLabels = () => {
 						id="kt_app_content_container"
 						class="app-container container-fluid"
 					>
-						<div className="d-flex align-items-center justify-content-between w-100 gap-10">
+						<div
+							className={`d-flex align-items-center justify-content-between w-100 gap-10 ${pageClasses.selectsResponsive}`}
+						>
 							<div className={`card card-flush ${pageClasses.cardPadding}`}>
-								<NewSelect
+								<ReactSelect
 									label={"Warehouse:"}
-									options={["Warehouse 1", "Warehouse 2"]}
-									defaultValue="Choose Warehouse"
+									placeholder={"Choose Warehouse"}
+									options={[
+										{ value: "Warehouse 1", label: "Warehouse 1" },
+										{ value: "Warehouse 2", label: "Warehouse 2" },
+									]}
+									name={"warehouse"}
 								/>
 							</div>
 							<div className={`card card-flush ${pageClasses.cardPadding}`}>
-								<NewSelect
+								<ReactSelect
 									label={"Paper Size:"}
-									options={["Size 1", "Size 2"]}
-									defaultValue="Paper Size"
+									placeholder={"Choose a Paper Size:"}
+									options={[
+										{ value: "Size 1", label: "Size 1" },
+										{ value: "Size 2", label: "Size 2" },
+									]}
+									name={"paper-size"}
 								/>
 							</div>
 						</div>

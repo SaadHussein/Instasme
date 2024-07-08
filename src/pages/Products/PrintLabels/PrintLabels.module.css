@@ -10,4 +10,27 @@
 
 .buttons {
 	margin-right: 35px !important;
+	margin-top: 7px !important;
+}
+
+.selectsResponsive {
+	flex-direction: row;
+}
+
+.responsiveHeader {
+}
+
+@media screen and (max-width: 1140px) {
+	.selectsResponsive {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.responsiveHeader {
+		flex-direction: column;
+		align-items: start !important;
+		justify-content: start !important;
+		padding: 0 20px !important;
+	}
 }

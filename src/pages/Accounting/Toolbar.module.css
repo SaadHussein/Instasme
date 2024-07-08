@@ -1,0 +1,8 @@
+.toolbar {
+}
+
+@media screen and (max-width: 460px) {
+	.toolbar {
+		padding: 0 !important;
+	}
+}

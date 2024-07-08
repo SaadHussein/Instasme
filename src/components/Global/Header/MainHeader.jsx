@@ -68,7 +68,7 @@ const MainHeader = () => {
 					id="kt_app_header_navbar"
 				>
 					<div className="app-navbar-item d-flex align-items-stretch flex-lg-grow-1">
-						<div
+						{/* <div
 							id="kt_header_search"
 							className="header-search d-flex align-items-center w-lg-350px"
 							data-kt-search-keypress="true"
@@ -124,7 +124,7 @@ const MainHeader = () => {
 								isSearchMenuOpen={isSearchMenuOpen}
 								setIsSearchMenuOpen={setIsSearchMenuOpen}
 							/>
-						</div>
+						</div> */}
 					</div>
 					<div className="app-navbar-item ms-2 ms-lg-6">
 						<div

@@ -1,6 +1,9 @@
 .button {
-	padding: 10px !important;
+	padding: 6px 8px !important;
 	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .button:hover {

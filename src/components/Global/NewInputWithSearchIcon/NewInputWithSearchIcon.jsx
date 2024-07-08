@@ -7,7 +7,7 @@ const NewInputWithSearchIcon = ({ label, placeholder, type }) => {
 			className={`fv-row w-100 ${classes.inputDisplay}`}
 			style={{ position: "relative" }}
 		>
-			<label className="fs-6 fw-semibold form-label mt-3">
+			<label className={`fs-6 form-label mt-3 ${classes.label}`}>
 				<span className="required">{label}</span>
 			</label>
 			<div className={`${classes.searchInput}`}>
