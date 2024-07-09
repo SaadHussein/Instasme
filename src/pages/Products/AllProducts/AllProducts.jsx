@@ -89,11 +89,6 @@ const AllProducts = () => {
 							>
 								<SearchInputIvonInside />
 								<div className="d-flex align-items-center justify-content-end gap-2">
-									{/* <Button text={"Filter"} color="" />
-									<Button text={"PDF"} />
-									<Button text={"EXCEL"} />
-									<Button text={"Import Products"} />
-									<Button text={"Create"} /> */}
 									<DateRange />
 									<ExportButtonAndList />
 								</div>

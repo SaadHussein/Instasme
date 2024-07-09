@@ -86,7 +86,13 @@ const AllProductsTable = () => {
 					{/* <thead className="border-gray-200 fs-5 fw-semibold bg-lighten"> */}
 					<thead className="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
 						<tr>
-							<th className="w-10px pe-2">
+							<th
+								className="w-10px pe-2"
+								style={{
+									position: "relative",
+									top: "-5px",
+								}}
+							>
 								<div className="form-check form-check-sm form-check-custom form-check-solid me-3">
 									<input
 										className="form-check-input"
@@ -100,6 +106,10 @@ const AllProductsTable = () => {
 
 							<th
 								className={`min-w-75px text-start cursor-pointer text-hover-primary`}
+								style={{
+									position: "relative",
+									top: "-4px",
+								}}
 							>
 								Image
 							</th>
@@ -642,7 +652,7 @@ const AllProductsTable = () => {
 							<th
 								className="text-start min-w-110px cursor-pointer text-hover-primary position-relative"
 								style={{
-									top: "-3px",
+									top: "-4px",
 								}}
 							>
 								Actions
@@ -650,8 +660,9 @@ const AllProductsTable = () => {
 						</tr>
 					</thead>
 					<tbody className="fs-6 fw-semibold text-gray-600">
-						{products.map((item) => (
+						{products.map((item, index) => (
 							<ProductRow
+								key={index}
 								image={item.image}
 								name={item.name}
 								type={item.type}
@@ -662,6 +673,7 @@ const AllProductsTable = () => {
 								price={item.price}
 								unit={item.unit}
 								quantity={item.quantity}
+								index={index}
 							/>
 						))}
 					</tbody>
