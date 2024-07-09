@@ -34,16 +34,33 @@ const ProductRow = ({
 					}}
 				/>
 			</td>
-			<td>{type}</td>
-			<td>{name}</td>
-			<td>{code}</td>
-			<td>{brand}</td>
-			<td>{category}</td>
-			<td className="text-success">${cost}</td>
-			<td className="text-success">${price}</td>
-			<td>{unit}</td>
-			<td>{quantity}</td>
+			<td className="text-gray-800 text-hover-primary fw-bold">{type}</td>
+			<td className="text-gray-800 text-hover-primary fw-bold">{name}</td>
+			<td className="text-gray-800 text-hover-primary fw-bold">{code}</td>
+			<td className="fw-bold text-gray-600">{brand}</td>
+			<td className="fw-bold text-gray-600">{category}</td>
+			<td className="text-primary fw-bold">${cost}</td>
+			<td className="text-primary fw-bold">${price}</td>
+			<td className="fw-bold text-gray-600">{unit}</td>
+			<td className="fw-bold text-gray-600">{quantity}</td>
 			<td className="text-start">
+				<div className="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary">
+					Actions
+					<i className="ki-outline ki-down fs-5 ms-1"></i>
+				</div>
+				<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4">
+					<div className="menu-item px-3">
+						<div className="menu-link px-3">View</div>
+					</div>
+					<div className="menu-item px-3">
+						<div className="menu-link px-3">Edit</div>
+					</div>
+					<div className="menu-item px-3">
+						<div className="menu-link px-3">Delete</div>
+					</div>
+				</div>
+			</td>
+			{/* <td className="text-start">
 				<Link>
 					<FaRegEye size={20} className="me-3" />
 				</Link>
@@ -55,7 +72,7 @@ const ProductRow = ({
 					color="#F8285A"
 					className={`${classes.deleteIcon}`}
 				/>
-			</td>
+			</td> */}
 		</tr>
 	);
 };

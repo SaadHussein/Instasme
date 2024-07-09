@@ -18,6 +18,11 @@ import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/Pa
 import { AiOutlineProduct, AiOutlineStock } from "react-icons/ai";
 import { IoCreateOutline, IoPrint } from "react-icons/io5";
 import { BiCategoryAlt } from "react-icons/bi";
+import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
+import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
+import TablePagination from "../../../components/Global/TablePagination/TablePagination";
+import DateRange from "../../../components/Global/DateRange/DateRange";
+import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
 
 const ProductsPage = [
 	{
@@ -82,44 +87,37 @@ const AllProducts = () => {
 							<div
 								className={`d-flex align-items-center justify-content-between mb-8 ${privateClasses.tableHeader}`}
 							>
-								<div className="d-flex align-items-center justify-content-start gap-4">
-									<FaSearch size={24} />
-									<Input placeholder={"Search This Table"} />
-								</div>
+								<SearchInputIvonInside />
 								<div className="d-flex align-items-center justify-content-end gap-2">
-									<Button text={"Filter"} color="" />
+									{/* <Button text={"Filter"} color="" />
 									<Button text={"PDF"} />
 									<Button text={"EXCEL"} />
 									<Button text={"Import Products"} />
-									<Button text={"Create"} />
+									<Button text={"Create"} /> */}
+									<DateRange />
+									<ExportButtonAndList />
 								</div>
 							</div>
 							<AllProductsTable />
 							<div className="d-flex align-items-center justify-content-between">
 								<div className="d-flex align-items-center justify-content-start w-50 gap-3">
-									<p className={`${privateClasses.numberPerPage}`}>
-										Rows Per Page:{" "}
-									</p>
 									<div className="w-150px">
-										<Select defaultValue="10" options={[10, 20, 30, 40, 50]} />
+										<LabelHeaderReactSelect
+											defaultValue={10}
+											label={""}
+											name={"Rows-Per-Page"}
+											placeholder={10}
+											options={[
+												{ value: 10, label: 10 },
+												{ value: 20, label: 20 },
+												{ value: 30, label: 30 },
+												{ value: 40, label: 40 },
+												{ value: 50, label: 50 },
+											]}
+										/>
 									</div>
 								</div>
-								<div className="d-flex align-items-center justify-content-end gap-4">
-									<MdKeyboardArrowLeft
-										size={20}
-										className={`${privateClasses.paginationArrow}`}
-									/>
-									<p
-										className={`${privateClasses.paginationNumber} ${privateClasses.paginationNumberActive}`}
-									>
-										1
-									</p>
-									<p className={`${privateClasses.paginationNumber}`}>2</p>
-									<MdKeyboardArrowRight
-										size={20}
-										className={`${privateClasses.paginationArrow}`}
-									/>
-								</div>
+								<TablePagination />
 							</div>
 						</div>
 					</div>
