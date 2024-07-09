@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ProductRow = ({
 	image,
@@ -15,6 +15,22 @@ const ProductRow = ({
 }) => {
 	const [showActionsList, setShowActionsList] = useState(false);
 	const actionListRef = useRef();
+
+	const handleClickOutside = (event) => {
+		if (
+			actionListRef.current &&
+			!actionListRef.current.contains(event.target)
+		) {
+			setShowActionsList(false);
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
 
 	return (
 		<tr>
@@ -42,7 +58,7 @@ const ProductRow = ({
 			<td className="text-primary fw-bold">${price}</td>
 			<td className="fw-bold text-gray-600">{unit}</td>
 			<td className="fw-bold text-gray-600">{quantity}</td>
-			<td className="text-start">
+			<td className="text-end">
 				<div
 					className={`btn btn-sm btn-light btn-flex btn-center btn-active-light-primary fs-6 ${
 						showActionsList ? "show fs-6" : ""
@@ -60,7 +76,7 @@ const ProductRow = ({
 					}`}
 					ref={actionListRef}
 					style={{
-						zIndex: "107",
+						zIndex: 107,
 						position: "fixed",
 						inset: "0px 0px auto auto",
 						margin: "0px",

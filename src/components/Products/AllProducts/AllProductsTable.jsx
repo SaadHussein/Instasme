@@ -650,7 +650,7 @@ const AllProductsTable = () => {
 								</p>
 							</th>
 							<th
-								className="text-start min-w-110px cursor-pointer text-hover-primary position-relative"
+								className="text-end min-w-110px cursor-pointer text-hover-primary position-relative"
 								style={{
 									top: "-4px",
 								}}
