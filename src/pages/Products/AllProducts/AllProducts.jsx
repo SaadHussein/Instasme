@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../../../styles/global.module.css";
 import Toolbar from "../../Accounting/Toolbar";
 import { FaSearch } from "react-icons/fa";
@@ -23,6 +23,7 @@ import SearchInputIvonInside from "../../../components/Global/SearchInputIvonIns
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
 import DateRange from "../../../components/Global/DateRange/DateRange";
 import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
+import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
 
 const ProductsPage = [
 	{
@@ -62,7 +63,31 @@ const ProductsPage = [
 	},
 ];
 
+const columnsTable = [
+	{ label: "Image", visible: true },
+	{ label: "Type", visible: true },
+	{ label: "Name", visible: true },
+	{ label: "Code", visible: true },
+	{ label: "Brand", visible: true },
+	{ label: "Category", visible: true },
+	{ label: "Cost", visible: true },
+	{ label: "Price", visible: true },
+	{ label: "Unit", visible: true },
+	{ label: "Quantity", visible: true },
+	{ label: "Actions", visible: true },
+];
+
 const AllProducts = () => {
+	const [columns, setColumns] = useState([...columnsTable]);
+
+	const changeLabelVisiblity = (label) => {
+		const updatedColumns = columns.map((column) =>
+			column.label === label ? { ...column, visible: !column.visible } : column
+		);
+
+		setColumns([...updatedColumns]);
+	};
+
 	return (
 		<LoadingWrapper>
 			<div
@@ -91,9 +116,13 @@ const AllProducts = () => {
 								<div className="d-flex align-items-center justify-content-end gap-2">
 									<DateRange />
 									<ExportButtonAndList />
+									<ColumnVisibility
+										columns={columns}
+										changeLabelVisiblity={changeLabelVisiblity}
+									/>
 								</div>
 							</div>
-							<AllProductsTable />
+							<AllProductsTable columnsVisible={columns} />
 							<div className="d-flex align-items-center justify-content-between">
 								<div className="d-flex align-items-center justify-content-start w-50 gap-3">
 									<div className="w-150px">
