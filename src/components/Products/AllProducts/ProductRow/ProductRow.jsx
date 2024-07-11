@@ -16,6 +16,7 @@ const ProductRow = ({
 	columnsVisible,
 }) => {
 	const [showActionsList, setShowActionsList] = useState(false);
+	const [count, setCount] = useState(0);
 	const actionListRef = useRef();
 
 	const handleClickOutside = (event) => {
@@ -31,6 +32,16 @@ const ProductRow = ({
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setCount(1);
+		}, 3000);
+
+		return () => {
+			clearTimeout(timer);
 		};
 	}, []);
 
@@ -97,7 +108,12 @@ const ProductRow = ({
 					column.label === "Cost" &&
 					column.visible && (
 						<td className="text-end text-primary fw-bold">
-							$<CountUp start={0} end={cost} duration={3} />
+							$
+							{count === 0 ? (
+								<CountUp start={0} end={cost} duration={3} />
+							) : (
+								cost
+							)}
 						</td>
 					)
 			)}
@@ -106,7 +122,12 @@ const ProductRow = ({
 					column.label === "Price" &&
 					column.visible && (
 						<td className="text-end text-primary fw-bold">
-							$<CountUp start={0} end={price} duration={3} />
+							$
+							{count === 0 ? (
+								<CountUp start={0} end={price} duration={3} />
+							) : (
+								price
+							)}
 						</td>
 					)
 			)}
@@ -115,7 +136,11 @@ const ProductRow = ({
 					column.label === "Unit" &&
 					column.visible && (
 						<td className="text-end fw-bold text-gray-600">
-							<CountUp start={0} end={unit} duration={3} />
+							{count === 0 ? (
+								<CountUp start={0} end={unit} duration={3} />
+							) : (
+								unit
+							)}
 						</td>
 					)
 			)}
@@ -124,7 +149,11 @@ const ProductRow = ({
 					column.label === "Quantity" &&
 					column.visible && (
 						<td className="text-end fw-bold text-gray-600">
-							<CountUp start={0} end={quantity} duration={3} />
+							{count === 0 ? (
+								<CountUp start={0} end={quantity} duration={3} />
+							) : (
+								quantity
+							)}
 						</td>
 					)
 			)}

@@ -6,34 +6,7 @@ import {
 } from "react-icons/md";
 import classes from "./AllProductsTable.module.css";
 
-const tableProducts = [
-	{
-		image: "/brandmarks.png",
-		type: "Fruit",
-		name: "Banana",
-		code: "12345678",
-		brand: "Fruits Brand",
-		category: "Fruits",
-		cost: 70,
-		price: 70,
-		unit: 20,
-		quantity: 87,
-	},
-	{
-		image: "/brandmarks.png",
-		type: "Vegitables",
-		name: "Tomato",
-		code: "23456788",
-		brand: "Vegitables Brand",
-		category: "Vegitables",
-		cost: 80,
-		price: 80,
-		unit: 25,
-		quantity: 90,
-	},
-];
-
-const AllProductsTable = ({ columnsVisible }) => {
+const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 	const [products, setProducts] = useState([...tableProducts]);
 	const [sortItem, setSortItem] = useState("");
 	const [order, setOrder] = useState("no-order");

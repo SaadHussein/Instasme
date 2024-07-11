@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "../../../styles/global.module.css";
 import Toolbar from "../../Accounting/Toolbar";
 import { FaSearch } from "react-icons/fa";
@@ -77,8 +77,36 @@ const columnsTable = [
 	{ label: "Actions", visible: true },
 ];
 
+const tableProducts = [
+	{
+		image: "/brandmarks.png",
+		type: "Fruit",
+		name: "Banana",
+		code: "12345678",
+		brand: "Fruits Brand",
+		category: "Fruits",
+		cost: 70,
+		price: 70,
+		unit: 20,
+		quantity: 87,
+	},
+	{
+		image: "/brandmarks.png",
+		type: "Vegitables",
+		name: "Tomato",
+		code: "23456788",
+		brand: "Vegitables Brand",
+		category: "Vegitables",
+		cost: 80,
+		price: 80,
+		unit: 25,
+		quantity: 90,
+	},
+];
+
 const AllProducts = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
+	const [productExcel, setProductsExcel] = useState([]);
 
 	const changeLabelVisiblity = (label) => {
 		const updatedColumns = columns.map((column) =>
@@ -87,6 +115,23 @@ const AllProducts = () => {
 
 		setColumns([...updatedColumns]);
 	};
+
+	useEffect(() => {
+		const excelData = tableProducts.map((row) => [
+			row.image,
+			row.type,
+			row.name,
+			row.code,
+			row.brand,
+			row.category,
+			row.cost,
+			row.price,
+			row.unit,
+			row.quantity,
+		]);
+
+		setProductsExcel(excelData);
+	}, []);
 
 	return (
 		<LoadingWrapper>
@@ -115,14 +160,21 @@ const AllProducts = () => {
 								<SearchInputIvonInside />
 								<div className="d-flex align-items-center justify-content-end gap-2">
 									<DateRange />
-									<ExportButtonAndList />
+									<ExportButtonAndList
+										tableProducts={tableProducts}
+										productTable={productExcel}
+										productTableHead={columnsTable}
+									/>
 									<ColumnVisibility
 										columns={columns}
 										changeLabelVisiblity={changeLabelVisiblity}
 									/>
 								</div>
 							</div>
-							<AllProductsTable columnsVisible={columns} />
+							<AllProductsTable
+								columnsVisible={columns}
+								tableProducts={tableProducts}
+							/>
 							<div className="d-flex align-items-center justify-content-between">
 								<div className="d-flex align-items-center justify-content-start w-50 gap-3">
 									<div className="w-150px">
