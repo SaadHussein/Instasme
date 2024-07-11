@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from "react";
 import classes from "../../../styles/global.module.css";
 import Toolbar from "../../Accounting/Toolbar";
-import { FaSearch } from "react-icons/fa";
-import Input from "../../../components/Global/Input/Input";
-import Button from "../../../components/Global/Button/Button";
 import privateClasses from "./AllProducts.module.css";
 import AllProductsTable from "../../../components/Products/AllProducts/AllProductsTable";
-import Select from "../../../components/Global/Select/Select";
-import {
-	MdAcUnit,
-	MdKeyboardArrowLeft,
-	MdKeyboardArrowRight,
-	MdOutlineBrandingWatermark,
-} from "react-icons/md";
+import { MdAcUnit, MdOutlineBrandingWatermark } from "react-icons/md";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
 import { AiOutlineProduct, AiOutlineStock } from "react-icons/ai";
@@ -155,10 +146,12 @@ const AllProducts = () => {
 							className="app-container container-fluid"
 						>
 							<div
-								className={`d-flex align-items-center justify-content-between mb-8 ${privateClasses.tableHeader}`}
+								className={`d-flex align-items-start justify-content-between mb-8 gap-2 ${privateClasses.tableHeader}`}
 							>
 								<SearchInputIvonInside />
-								<div className="d-flex align-items-center justify-content-end gap-2">
+								<div
+									className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
+								>
 									<DateRange />
 									<ExportButtonAndList
 										tableProducts={tableProducts}
@@ -175,8 +168,12 @@ const AllProducts = () => {
 								columnsVisible={columns}
 								tableProducts={tableProducts}
 							/>
-							<div className="d-flex align-items-center justify-content-between">
-								<div className="d-flex align-items-center justify-content-start w-50 gap-3">
+							<div
+								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
+							>
+								<div
+									className={`d-flex align-items-center justify-content-start w-50 gap-3 ${privateClasses.rowSelect}`}
+								>
 									<div className="w-150px">
 										<LabelHeaderReactSelect
 											defaultValue={10}

@@ -5,3 +5,13 @@
 .list {
 	position: absolute;
 }
+
+.btnListContainer {
+}
+
+@media screen and (max-width: 575px) {
+	.listContainer,
+	.btnListContainer {
+		width: 100% !important;
+	}
+}

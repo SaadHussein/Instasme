@@ -1,3 +1,4 @@
+import { useWindowWidth } from "@react-hook/window-size";
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 
@@ -16,6 +17,7 @@ const ProductRow = ({
 	columnsVisible,
 }) => {
 	const [showActionsList, setShowActionsList] = useState(false);
+	const width = useWindowWidth();
 	const [count, setCount] = useState(0);
 	const actionListRef = useRef();
 
@@ -183,7 +185,28 @@ const ProductRow = ({
 									position: "fixed",
 									inset: "0px 0px auto auto",
 									margin: "0px",
-									transform: `translate(-140px, ${380 + index * 80}px)`,
+									transform: `translate(${width > 990 ? -140 : -40}px, ${
+										(width > 1453
+											? 375
+											: width <= 1453 && width > 1307
+											? 422.5
+											: width <= 1307 && width > 1200
+											? 420
+											: width <= 1200 && width > 990
+											? 520
+											: width <= 990 && width > 832
+											? 505
+											: width <= 832 && width > 553
+											? 547.5
+											: width <= 553 && width > 541
+											? 565
+											: width <= 541 && width > 428
+											? 565
+											: width <= 428 && width > 366
+											? 607.5
+											: 607.5) +
+										index * 80
+									}px)`,
 								}}
 							>
 								<div className="menu-item px-3">
@@ -207,3 +230,7 @@ const ProductRow = ({
 };
 
 export default ProductRow;
+
+//1453 1307 1200 832 553 541 373 366
+
+//1455

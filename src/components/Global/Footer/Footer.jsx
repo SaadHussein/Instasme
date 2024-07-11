@@ -4,7 +4,7 @@ import classes from "./Footer.module.css";
 
 const Footer = () => {
 	return (
-		<div id="kt_app_footer" className="app-footer">
+		<div id="kt_app_footer" className={`app-footer `}>
 			{/* <div className="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3"> */}
 			<div className="app-container container-fluid d-flex flex-column align-items-center justify-content-start py-3">
 				<div className="d-flex align-items-start justify-content-start w-100">
@@ -12,7 +12,9 @@ const Footer = () => {
 						ERP INSTASME - Inventory - POS - Warehouses - Vendors - Sales - HR
 					</p>
 				</div>
-				<div className="d-flex align-items-center justify-content-between w-100">
+				<div
+					className={`d-flex align-items-center justify-content-between w-100 ${classes.footer}`}
+				>
 					<div className="d-flex align-items-center justify-content-start gap-3">
 						<img
 							src="/brandmarks.png"

@@ -24,7 +24,7 @@ const ColumnVisibility = ({ columns, changeLabelVisiblity }) => {
 				type="button"
 				className={`btn btn-primary width-full-invoices fs-6  ${
 					showVisibleList ? "show" : ""
-				}`}
+				} ${classes.btnListContainer}`}
 				onClick={() => {
 					setShowVisibleList((prev) => !prev);
 				}}

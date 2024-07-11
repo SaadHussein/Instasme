@@ -7,3 +7,13 @@
 	top: 46px;
 	left: 0;
 }
+
+.btnExport {
+}
+
+@media screen and (max-width: 575px) {
+	.exportContainer,
+	.btnExport {
+		width: 100% !important;
+	}
+}

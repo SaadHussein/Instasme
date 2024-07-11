@@ -2,3 +2,14 @@
 	width: 55px;
 	height: 55px;
 }
+
+.footer {
+}
+
+@media screen and (max-width: 455px) {
+	.footer {
+		flex-direction: column !important;
+		justify-content: start !important;
+		align-items: start !important;
+	}
+}

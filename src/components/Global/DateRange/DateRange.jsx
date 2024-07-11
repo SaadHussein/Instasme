@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
+import classes from "./DateRange.module.css";
 
 const DateRange = () => {
 	const [dateRange, setDateRange] = useState("");
@@ -9,7 +10,7 @@ const DateRange = () => {
 	};
 
 	return (
-		<div className="input-group w-250px">
+		<div className={`input-group w-250px ${classes.dateRange}`}>
 			<Flatpickr
 				className="form-control form-control-solid rounded rounded-end-0"
 				options={{

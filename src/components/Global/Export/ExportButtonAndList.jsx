@@ -109,7 +109,7 @@ const ExportButtonAndList = ({
 				type="button"
 				className={`btn btn-light-primary width-full-invoices fs-6  ${
 					showExportList ? "show" : ""
-				}`}
+				} ${classes.btnExport}`}
 				onClick={() => {
 					setShowExportList((prev) => !prev);
 				}}

@@ -3,7 +3,7 @@ import classes from "./Toolbar.module.css";
 
 const Toolbar = ({ title, path }) => {
 	return (
-		<div id="kt_app_toolbar" className="app-toolbar pt-6 pb-2">
+		<div id="kt_app_toolbar" className={`app-toolbar pt-6 pb-2 ${classes}`}>
 			<div
 				id="kt_app_toolbar_container"
 				className={`app-container container-fluid d-flex align-items-stretch ${classes.toolbar}`}
