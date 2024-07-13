@@ -144,7 +144,7 @@ const SalesReturnTableRow = ({
 				(column) =>
 					column.label === "Actions" &&
 					column.visible && (
-						<td className="text-end fw-bold text-gray-600">Actions</td>
+						<td className="text-end fw-bold text-gray-600">No Actions</td>
 					)
 			)}
 			{/* {columnsVisible.map(
