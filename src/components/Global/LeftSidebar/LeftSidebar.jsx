@@ -15,7 +15,11 @@ import {
 } from "../../../data/menu-data/dataMenu";
 import Menu from "./Menu/Menu";
 import { Link } from "react-router-dom";
-import { MdOutlineBook, MdPeople } from "react-icons/md";
+import {
+	MdOutlineBook,
+	MdOutlineCompareArrows,
+	MdPeople,
+} from "react-icons/md";
 import { TfiMapAlt } from "react-icons/tfi";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import { RiBillLine, RiGovernmentLine } from "react-icons/ri";
@@ -80,13 +84,11 @@ const LeftSidebar = () => {
 						</Link>
 
 						<MenuItemToPage
-							menuItems={products}
 							title={"Products"}
 							icon={<MdOutlineBook size={21} />}
 							link={"/products/all-products"}
 						/>
 						<MenuItemToPage
-							menuItems={products}
 							title={"Adjustment"}
 							icon={<TfiMapAlt size={21} />}
 							link={"/adjustment/all-adjustments"}
@@ -107,8 +109,13 @@ const LeftSidebar = () => {
 							title={"Sales"}
 							icon={<PiShoppingCartSimple size={21} />}
 						/>
-						<Link
-							to={"/"}
+						<MenuItemToPage
+							title={"Returns"}
+							icon={<MdOutlineCompareArrows size={21} />}
+							link={"/returns/sales-return"}
+						/>
+						{/* <Link
+							to={"/returns/sales-return"}
 							style={{
 								fontSize: "1.15rem",
 								color: "#252F4A",
@@ -129,7 +136,7 @@ const LeftSidebar = () => {
 							</div>
 						</Link>
 						<Link
-							to={"/"}
+							to={"/returns/purchases-return"}
 							style={{
 								fontSize: "1.15rem",
 								color: "#252F4A",
@@ -148,7 +155,7 @@ const LeftSidebar = () => {
 								</span>
 								<div className={`menu-sub menu-sub-accordion`}></div>
 							</div>
-						</Link>
+						</Link> */}
 						<Menu
 							menuItems={hrm}
 							title={"HRM"}

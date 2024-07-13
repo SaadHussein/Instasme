@@ -28,6 +28,8 @@ import AllProducts from "./pages/Products/AllProducts/AllProducts";
 import AllAdjustment from "./pages/Adjustment/AllAdjustment/AllAdjustment";
 import ListDeposite from "./pages/Accounting/ListDeposite/ListDeposite";
 import AllQuotations from "./pages/Quotations/AllQuotations/AllQuotations";
+import SalesReturns from "./pages/Returns/SalesReturns/SalesReturns";
+import PurchasesReturns from "./pages/Returns/PurchasesReturns/PurchasesReturns";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -104,6 +106,11 @@ function App() {
 					<Route
 						path="/transfer/create-transfer"
 						element={<CreateTransfer />}
+					/>
+					<Route path="/returns/sales-return" element={<SalesReturns />} />
+					<Route
+						path="/returns/purchases-return"
+						element={<PurchasesReturns />}
 					/>
 				</Route>
 			</Routes>

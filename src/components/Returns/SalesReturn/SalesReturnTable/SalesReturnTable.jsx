@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import ProductRow from "./ProductRow/ProductRow";
+import classes from "./SalesReturnTable.module.css";
 import {
 	MdOutlineKeyboardArrowDown,
 	MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
-import classes from "./AllProductsTable.module.css";
+import SalesReturnTableRow from "../SalesReturnTableRow/SalesReturnTableRow";
 
-const AllProductsTable = ({ columnsVisible, tableProducts }) => {
-	const [products, setProducts] = useState([...tableProducts]);
+const SalesReturnTable = ({ columnsVisible, salesReturnsTable }) => {
+	const [salesReturns, setSalesReturns] = useState([...salesReturnsTable]);
 	const [sortItem, setSortItem] = useState("");
 	const [order, setOrder] = useState("no-order");
 
 	const sortUponItem = () => {
 		if (order === "no-order") {
 			setOrder("ascending");
-			setProducts(() => {
-				products.sort((a, b) => {
+			setSalesReturns(() => {
+				salesReturns.sort((a, b) => {
 					if (a[sortItem] < b[sortItem]) {
 						return -1;
 					}
@@ -26,12 +26,12 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 					return 0;
 				});
 
-				return [...products];
+				return [...salesReturns];
 			});
 		} else if (order === "ascending") {
 			setOrder("descending");
-			setProducts(() => {
-				products.sort((a, b) => {
+			setSalesReturns(() => {
+				salesReturns.sort((a, b) => {
 					if (a[sortItem] < b[sortItem]) {
 						return 1;
 					}
@@ -41,12 +41,12 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 					return 0;
 				});
 
-				return [...products];
+				return [...salesReturns];
 			});
 		} else if (order === "descending") {
 			setOrder("no-order");
 			setSortItem("");
-			setProducts([...tableProducts]);
+			setSalesReturns([...salesReturnsTable]);
 		}
 	};
 	return (
@@ -79,62 +79,45 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 
 							{columnsVisible.map((column) => {
 								return (
-									column.label === "Image" &&
-									column.visible && (
-										<th
-											className={`min-w-75px text-start cursor-pointer text-hover-primary`}
-											style={{
-												position: "relative",
-												top: "-4px",
-											}}
-										>
-											Image
-										</th>
-									)
-								);
-							})}
-
-							{columnsVisible.map((column) => {
-								return (
-									column.label === "Type" &&
+									column.label === "Date" &&
 									column.visible && (
 										<th
 											className={`min-w-75px text-start cursor-pointer text-hover-primary`}
 											onClick={() => {
-												setSortItem("type");
+												setSortItem("date");
 												sortUponItem();
 											}}
 										>
 											<p
 												className={`${classes.tableHeader} d-flex align-items-center justify-content-start mt-1`}
 											>
-												Type{" "}
+												Date{" "}
 												<div
 													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
 												>
 													<MdOutlineKeyboardArrowUp
 														size={18}
 														color={`${
-															sortItem === "type" && order === "ascending"
+															sortItem === "date" && order === "ascending"
 																? "#1b84ff"
-																: sortItem !== "type" || sortItem === ""
+																: sortItem !== "date" || sortItem === ""
 																? "#99A1B7"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "type" && order === "ascending"
+																sortItem === "date" && order === "ascending"
 																	? "1"
-																	: sortItem !== "type" || sortItem === ""
+																	: sortItem !== "date" || sortItem === ""
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "9px",
 															visibility:
-																sortItem === "type" && order === "ascending"
+																sortItem === "date" && order === "ascending"
 																	? "visible"
-																	: sortItem !== "type" || sortItem === ""
+																	: sortItem !== "date" || sortItem === ""
 																	? "visible"
 																	: "hidden",
 														}}
@@ -143,20 +126,20 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 													<MdOutlineKeyboardArrowDown
 														size={18}
 														color={`${
-															sortItem === "type" && order === "descending"
+															sortItem === "date" && order === "descending"
 																? "#1b84ff"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "type" && order === "descending"
+																sortItem === "date" && order === "descending"
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "-10px",
 															visibility:
-																sortItem === "type" && order === "descending"
+																sortItem === "date" && order === "descending"
 																	? "visible"
 																	: "hidden",
 														}}
@@ -170,45 +153,47 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 
 							{columnsVisible.map((column) => {
 								return (
-									column.label === "Name" &&
+									column.label === "Reference" &&
 									column.visible && (
 										<th
 											className={`min-w-100px text-startcursor-pointer text-hover-primary `}
 											onClick={() => {
-												setSortItem("name");
+												setSortItem("reference");
 												sortUponItem();
 											}}
 										>
 											<p
 												className={`${classes.tableHeader} d-flex align-items-center justify-content-start`}
 											>
-												Name{" "}
+												Reference{" "}
 												<div
 													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
 												>
 													<MdOutlineKeyboardArrowUp
 														size={18}
 														color={`${
-															sortItem === "name" && order === "ascending"
+															sortItem === "reference" && order === "ascending"
 																? "#1b84ff"
-																: sortItem !== "name" || sortItem === ""
+																: sortItem !== "reference" || sortItem === ""
 																? "#99A1B7"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "name" && order === "ascending"
+																sortItem === "reference" &&
+																order === "ascending"
 																	? "1"
-																	: sortItem !== "name" || sortItem === ""
+																	: sortItem !== "reference" || sortItem === ""
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "9px",
 															visibility:
-																sortItem === "name" && order === "ascending"
+																sortItem === "reference" &&
+																order === "ascending"
 																	? "visible"
-																	: sortItem !== "name" || sortItem === ""
+																	: sortItem !== "reference" || sortItem === ""
 																	? "visible"
 																	: "hidden",
 														}}
@@ -217,20 +202,22 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 													<MdOutlineKeyboardArrowDown
 														size={18}
 														color={`${
-															sortItem === "name" && order === "descending"
+															sortItem === "reference" && order === "descending"
 																? "#1b84ff"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "name" && order === "descending"
+																sortItem === "reference" &&
+																order === "descending"
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "-10px",
 															visibility:
-																sortItem === "name" && order === "descending"
+																sortItem === "reference" &&
+																order === "descending"
 																	? "visible"
 																	: "hidden",
 														}}
@@ -244,45 +231,45 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 
 							{columnsVisible.map((column) => {
 								return (
-									column.label === "Code" &&
+									column.label === "Customer" &&
 									column.visible && (
 										<th
 											className={`min-w-75px text-start cursor-pointer text-hover-primary`}
 											onClick={() => {
-												setSortItem("code");
+												setSortItem("customer");
 												sortUponItem();
 											}}
 										>
 											<p
 												className={`${classes.tableHeader} d-flex align-items-center justify-content-start`}
 											>
-												Code{" "}
+												Customer{" "}
 												<div
 													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
 												>
 													<MdOutlineKeyboardArrowUp
 														size={18}
 														color={`${
-															sortItem === "code" && order === "ascending"
+															sortItem === "customer" && order === "ascending"
 																? "#1b84ff"
-																: sortItem !== "code" || sortItem === ""
+																: sortItem !== "customer" || sortItem === ""
 																? "#99A1B7"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "code" && order === "ascending"
+																sortItem === "customer" && order === "ascending"
 																	? "1"
-																	: sortItem !== "code" || sortItem === ""
+																	: sortItem !== "customer" || sortItem === ""
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "9px",
 															visibility:
-																sortItem === "code" && order === "ascending"
+																sortItem === "customer" && order === "ascending"
 																	? "visible"
-																	: sortItem !== "code" || sortItem === ""
+																	: sortItem !== "customer" || sortItem === ""
 																	? "visible"
 																	: "hidden",
 														}}
@@ -290,20 +277,22 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 													<MdOutlineKeyboardArrowDown
 														size={18}
 														color={`${
-															sortItem === "code" && order === "descending"
+															sortItem === "customer" && order === "descending"
 																? "#1b84ff"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "code" && order === "descending"
+																sortItem === "customer" &&
+																order === "descending"
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "-10px",
 															visibility:
-																sortItem === "code" && order === "descending"
+																sortItem === "customer" &&
+																order === "descending"
 																	? "visible"
 																	: "hidden",
 														}}
@@ -317,45 +306,47 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 
 							{columnsVisible.map(
 								(column) =>
-									column.label === "Brand" &&
+									column.label === "Warehouse" &&
 									column.visible && (
 										<th
 											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
 											onClick={() => {
-												setSortItem("brand");
+												setSortItem("warehouse");
 												sortUponItem();
 											}}
 										>
 											<p
 												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
 											>
-												Brand{" "}
+												Warehouse{" "}
 												<div
 													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
 												>
 													<MdOutlineKeyboardArrowUp
 														size={18}
 														color={`${
-															sortItem === "brand" && order === "ascending"
+															sortItem === "warehouse" && order === "ascending"
 																? "#1b84ff"
-																: sortItem !== "brand" || sortItem === ""
+																: sortItem !== "warehouse" || sortItem === ""
 																? "#99A1B7"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "brand" && order === "ascending"
+																sortItem === "warehouse" &&
+																order === "ascending"
 																	? "1"
-																	: sortItem !== "brand" || sortItem === ""
+																	: sortItem !== "warehouse" || sortItem === ""
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "9px",
 															visibility:
-																sortItem === "brand" && order === "ascending"
+																sortItem === "warehouse" &&
+																order === "ascending"
 																	? "visible"
-																	: sortItem !== "brand" || sortItem === ""
+																	: sortItem !== "warehouse" || sortItem === ""
 																	? "visible"
 																	: "hidden",
 														}}
@@ -364,86 +355,13 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 													<MdOutlineKeyboardArrowDown
 														size={18}
 														color={`${
-															sortItem === "brand" && order === "descending"
+															sortItem === "warehouse" && order === "descending"
 																? "#1b84ff"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "brand" && order === "descending"
-																	? "1"
-																	: "0",
-															marginLeft: "8px",
-															position: "relative",
-															top: "-10px",
-															visibility:
-																sortItem === "brand" && order === "descending"
-																	? "visible"
-																	: "hidden",
-														}}
-													/>
-												</div>
-											</p>
-										</th>
-									)
-							)}
-
-							{columnsVisible.map(
-								(column) =>
-									column.label === "Category" &&
-									column.visible && (
-										<th
-											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
-											onClick={() => {
-												setSortItem("category");
-												sortUponItem();
-											}}
-										>
-											<p
-												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
-											>
-												Category{" "}
-												<div
-													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
-												>
-													<MdOutlineKeyboardArrowUp
-														size={18}
-														color={`${
-															sortItem === "category" && order === "ascending"
-																? "#1b84ff"
-																: sortItem !== "category" || sortItem === ""
-																? "#99A1B7"
-																: ""
-														}`}
-														style={{
-															opacity:
-																sortItem === "category" && order === "ascending"
-																	? "1"
-																	: sortItem !== "category" || sortItem === ""
-																	? "1"
-																	: "0",
-															marginLeft: "8px",
-															position: "relative",
-															top: "9px",
-															visibility:
-																sortItem === "category" && order === "ascending"
-																	? "visible"
-																	: sortItem !== "category" || sortItem === ""
-																	? "visible"
-																	: "hidden",
-														}}
-													/>
-
-													<MdOutlineKeyboardArrowDown
-														size={18}
-														color={`${
-															sortItem === "category" && order === "descending"
-																? "#1b84ff"
-																: ""
-														}`}
-														style={{
-															opacity:
-																sortItem === "category" &&
+																sortItem === "warehouse" &&
 																order === "descending"
 																	? "1"
 																	: "0",
@@ -451,7 +369,7 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 															position: "relative",
 															top: "-10px",
 															visibility:
-																sortItem === "category" &&
+																sortItem === "warehouse" &&
 																order === "descending"
 																	? "visible"
 																	: "hidden",
@@ -465,45 +383,45 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 
 							{columnsVisible.map(
 								(column) =>
-									column.label === "Cost" &&
+									column.label === "Sale Ref" &&
 									column.visible && (
 										<th
 											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
 											onClick={() => {
-												setSortItem("cost");
+												setSortItem("saleRef");
 												sortUponItem();
 											}}
 										>
 											<p
 												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
 											>
-												Cost{" "}
+												Sale Ref{" "}
 												<div
 													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
 												>
 													<MdOutlineKeyboardArrowUp
 														size={18}
 														color={`${
-															sortItem === "cost" && order === "ascending"
+															sortItem === "saleRef" && order === "ascending"
 																? "#1b84ff"
-																: sortItem !== "cost" || sortItem === ""
+																: sortItem !== "saleRef" || sortItem === ""
 																? "#99A1B7"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "cost" && order === "ascending"
+																sortItem === "saleRef" && order === "ascending"
 																	? "1"
-																	: sortItem !== "cost" || sortItem === ""
+																	: sortItem !== "saleRef" || sortItem === ""
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "9px",
 															visibility:
-																sortItem === "cost" && order === "ascending"
+																sortItem === "saleRef" && order === "ascending"
 																	? "visible"
-																	: sortItem !== "cost" || sortItem === ""
+																	: sortItem !== "saleRef" || sortItem === ""
 																	? "visible"
 																	: "hidden",
 														}}
@@ -512,20 +430,20 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 													<MdOutlineKeyboardArrowDown
 														size={18}
 														color={`${
-															sortItem === "cost" && order === "descending"
+															sortItem === "saleRef" && order === "descending"
 																? "#1b84ff"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "cost" && order === "descending"
+																sortItem === "saleRef" && order === "descending"
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "-10px",
 															visibility:
-																sortItem === "cost" && order === "descending"
+																sortItem === "saleRef" && order === "descending"
 																	? "visible"
 																	: "hidden",
 														}}
@@ -538,66 +456,67 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 
 							{columnsVisible.map(
 								(column) =>
-									column.label === "Price" &&
+									column.label === "Status" &&
 									column.visible && (
 										<th
 											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
 											onClick={() => {
-												setSortItem("price");
+												setSortItem("status");
 												sortUponItem();
 											}}
 										>
 											<p
 												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
 											>
-												Price{" "}
+												Status{" "}
 												<div
 													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
 												>
 													<MdOutlineKeyboardArrowUp
 														size={18}
 														color={`${
-															sortItem === "price" && order === "ascending"
+															sortItem === "status" && order === "ascending"
 																? "#1b84ff"
-																: sortItem !== "price" || sortItem === ""
+																: sortItem !== "status" || sortItem === ""
 																? "#99A1B7"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "price" && order === "ascending"
+																sortItem === "status" && order === "ascending"
 																	? "1"
-																	: sortItem !== "price" || sortItem === ""
+																	: sortItem !== "status" || sortItem === ""
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "9px",
 															visibility:
-																sortItem === "price" && order === "ascending"
+																sortItem === "status" && order === "ascending"
 																	? "visible"
-																	: sortItem !== "price" || sortItem === ""
+																	: sortItem !== "status" || sortItem === ""
 																	? "visible"
 																	: "hidden",
 														}}
 													/>
+
 													<MdOutlineKeyboardArrowDown
 														size={18}
 														color={`${
-															sortItem === "price" && order === "descending"
+															sortItem === "status" && order === "descending"
 																? "#1b84ff"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "price" && order === "descending"
+																sortItem === "status" && order === "descending"
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "-10px",
 															visibility:
-																sortItem === "price" && order === "descending"
+																sortItem === "status" && order === "descending"
 																	? "visible"
 																	: "hidden",
 														}}
@@ -610,45 +529,47 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 
 							{columnsVisible.map(
 								(column) =>
-									column.label === "Unit" &&
+									column.label === "Grand Total" &&
 									column.visible && (
 										<th
 											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
 											onClick={() => {
-												setSortItem("unit");
+												setSortItem("grandTotal");
 												sortUponItem();
 											}}
 										>
 											<p
 												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
 											>
-												Unit{" "}
+												Grand Total{" "}
 												<div
 													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
 												>
 													<MdOutlineKeyboardArrowUp
 														size={18}
 														color={`${
-															sortItem === "unit" && order === "ascending"
+															sortItem === "grandTotal" && order === "ascending"
 																? "#1b84ff"
-																: sortItem !== "unit" || sortItem === ""
+																: sortItem !== "grandTotal" || sortItem === ""
 																? "#99A1B7"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "unit" && order === "ascending"
+																sortItem === "grandTotal" &&
+																order === "ascending"
 																	? "1"
-																	: sortItem !== "unit" || sortItem === ""
+																	: sortItem !== "grandTotal" || sortItem === ""
 																	? "1"
 																	: "0",
 															marginLeft: "8px",
 															position: "relative",
 															top: "9px",
 															visibility:
-																sortItem === "unit" && order === "ascending"
+																sortItem === "grandTotal" &&
+																order === "ascending"
 																	? "visible"
-																	: sortItem !== "unit" || sortItem === ""
+																	: sortItem !== "grandTotal" || sortItem === ""
 																	? "visible"
 																	: "hidden",
 														}}
@@ -656,85 +577,14 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 													<MdOutlineKeyboardArrowDown
 														size={18}
 														color={`${
-															sortItem === "unit" && order === "descending"
+															sortItem === "grandTotal" &&
+															order === "descending"
 																? "#1b84ff"
 																: ""
 														}`}
 														style={{
 															opacity:
-																sortItem === "unit" && order === "descending"
-																	? "1"
-																	: "0",
-															marginLeft: "8px",
-															position: "relative",
-															top: "-10px",
-															visibility:
-																sortItem === "unit" && order === "descending"
-																	? "visible"
-																	: "hidden",
-														}}
-													/>
-												</div>
-											</p>
-										</th>
-									)
-							)}
-
-							{columnsVisible.map(
-								(column) =>
-									column.label === "Quantity" &&
-									column.visible && (
-										<th
-											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
-											onClick={() => {
-												setSortItem("quantity");
-												sortUponItem();
-											}}
-										>
-											<p
-												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
-											>
-												Quantity{" "}
-												<div
-													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
-												>
-													<MdOutlineKeyboardArrowUp
-														size={18}
-														color={`${
-															sortItem === "quantity" && order === "ascending"
-																? "#1b84ff"
-																: sortItem !== "quantity" || sortItem === ""
-																? "#99A1B7"
-																: ""
-														}`}
-														style={{
-															opacity:
-																sortItem === "quantity" && order === "ascending"
-																	? "1"
-																	: sortItem !== "quantity" || sortItem === ""
-																	? "1"
-																	: "0",
-															marginLeft: "8px",
-															position: "relative",
-															top: "9px",
-															visibility:
-																sortItem === "quantity" && order === "ascending"
-																	? "visible"
-																	: sortItem !== "quantity" || sortItem === ""
-																	? "visible"
-																	: "hidden",
-														}}
-													/>
-													<MdOutlineKeyboardArrowDown
-														size={18}
-														color={`${
-															sortItem === "quantity" && order === "descending"
-																? "#1b84ff"
-																: ""
-														}`}
-														style={{
-															opacity:
-																sortItem === "quantity" &&
+																sortItem === "grandTotal" &&
 																order === "descending"
 																	? "1"
 																	: "0",
@@ -742,7 +592,233 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 															position: "relative",
 															top: "-10px",
 															visibility:
-																sortItem === "quantity" &&
+																sortItem === "grandTotal" &&
+																order === "descending"
+																	? "visible"
+																	: "hidden",
+														}}
+													/>
+												</div>
+											</p>
+										</th>
+									)
+							)}
+
+							{columnsVisible.map(
+								(column) =>
+									column.label === "Paid" &&
+									column.visible && (
+										<th
+											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
+											onClick={() => {
+												setSortItem("paid");
+												sortUponItem();
+											}}
+										>
+											<p
+												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
+											>
+												Paid{" "}
+												<div
+													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
+												>
+													<MdOutlineKeyboardArrowUp
+														size={18}
+														color={`${
+															sortItem === "paid" && order === "ascending"
+																? "#1b84ff"
+																: sortItem !== "paid" || sortItem === ""
+																? "#99A1B7"
+																: ""
+														}`}
+														style={{
+															opacity:
+																sortItem === "paid" && order === "ascending"
+																	? "1"
+																	: sortItem !== "paid" || sortItem === ""
+																	? "1"
+																	: "0",
+															marginLeft: "8px",
+															position: "relative",
+															top: "9px",
+															visibility:
+																sortItem === "paid" && order === "ascending"
+																	? "visible"
+																	: sortItem !== "paid" || sortItem === ""
+																	? "visible"
+																	: "hidden",
+														}}
+													/>
+													<MdOutlineKeyboardArrowDown
+														size={18}
+														color={`${
+															sortItem === "paid" && order === "descending"
+																? "#1b84ff"
+																: ""
+														}`}
+														style={{
+															opacity:
+																sortItem === "paid" && order === "descending"
+																	? "1"
+																	: "0",
+															marginLeft: "8px",
+															position: "relative",
+															top: "-10px",
+															visibility:
+																sortItem === "paid" && order === "descending"
+																	? "visible"
+																	: "hidden",
+														}}
+													/>
+												</div>
+											</p>
+										</th>
+									)
+							)}
+
+							{columnsVisible.map(
+								(column) =>
+									column.label === "Due" &&
+									column.visible && (
+										<th
+											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
+											onClick={() => {
+												setSortItem("due");
+												sortUponItem();
+											}}
+										>
+											<p
+												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
+											>
+												Due{" "}
+												<div
+													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
+												>
+													<MdOutlineKeyboardArrowUp
+														size={18}
+														color={`${
+															sortItem === "due" && order === "ascending"
+																? "#1b84ff"
+																: sortItem !== "due" || sortItem === ""
+																? "#99A1B7"
+																: ""
+														}`}
+														style={{
+															opacity:
+																sortItem === "due" && order === "ascending"
+																	? "1"
+																	: sortItem !== "due" || sortItem === ""
+																	? "1"
+																	: "0",
+															marginLeft: "8px",
+															position: "relative",
+															top: "9px",
+															visibility:
+																sortItem === "due" && order === "ascending"
+																	? "visible"
+																	: sortItem !== "due" || sortItem === ""
+																	? "visible"
+																	: "hidden",
+														}}
+													/>
+													<MdOutlineKeyboardArrowDown
+														size={18}
+														color={`${
+															sortItem === "due" && order === "descending"
+																? "#1b84ff"
+																: ""
+														}`}
+														style={{
+															opacity:
+																sortItem === "due" && order === "descending"
+																	? "1"
+																	: "0",
+															marginLeft: "8px",
+															position: "relative",
+															top: "-10px",
+															visibility:
+																sortItem === "due" && order === "descending"
+																	? "visible"
+																	: "hidden",
+														}}
+													/>
+												</div>
+											</p>
+										</th>
+									)
+							)}
+
+							{columnsVisible.map(
+								(column) =>
+									column.label === "Payment Status" &&
+									column.visible && (
+										<th
+											className="text-end min-w-70px cursor-pointer text-hover-primary pe-0"
+											onClick={() => {
+												setSortItem("payment-status");
+												sortUponItem();
+											}}
+										>
+											<p
+												className={`${classes.tableHeader} d-flex align-items-center justify-content-end`}
+											>
+												Payment Status{" "}
+												<div
+													className={`d-flex flex-column align-items-center justify-content-center ${classes.marginIcon}`}
+												>
+													<MdOutlineKeyboardArrowUp
+														size={18}
+														color={`${
+															sortItem === "payment-status" &&
+															order === "ascending"
+																? "#1b84ff"
+																: sortItem !== "payment-status" ||
+																  sortItem === ""
+																? "#99A1B7"
+																: ""
+														}`}
+														style={{
+															opacity:
+																sortItem === "payment-status" &&
+																order === "ascending"
+																	? "1"
+																	: sortItem !== "payment-status" ||
+																	  sortItem === ""
+																	? "1"
+																	: "0",
+															marginLeft: "8px",
+															position: "relative",
+															top: "9px",
+															visibility:
+																sortItem === "payment-status" &&
+																order === "ascending"
+																	? "visible"
+																	: sortItem !== "payment-status" ||
+																	  sortItem === ""
+																	? "visible"
+																	: "hidden",
+														}}
+													/>
+
+													<MdOutlineKeyboardArrowDown
+														size={18}
+														color={`${
+															sortItem === "payment-status" &&
+															order === "descending"
+																? "#1b84ff"
+																: ""
+														}`}
+														style={{
+															opacity:
+																sortItem === "payment-status" &&
+																order === "descending"
+																	? "1"
+																	: "0",
+															marginLeft: "8px",
+															position: "relative",
+															top: "-10px",
+															visibility:
+																sortItem === "payment-status" &&
 																order === "descending"
 																	? "visible"
 																	: "hidden",
@@ -771,20 +847,20 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 						</tr>
 					</thead>
 					<tbody className="fs-6 fw-semibold text-gray-600">
-						{products.map((item, index) => (
-							<ProductRow
+						{salesReturns.map((item, index) => (
+							<SalesReturnTableRow
 								columnsVisible={columnsVisible}
 								key={index + item.code}
-								image={item.image}
-								name={item.name}
-								type={item.type}
-								code={item.code}
-								brand={item.brand}
-								category={item.category}
-								cost={item.cost}
-								price={item.price}
-								unit={item.unit}
-								quantity={item.quantity}
+								date={item.date}
+								customer={item.customer}
+								due={item.due}
+								grandTotal={item.grandTotal}
+								paid={item.paid}
+								paymentStatus={item.paymentStatus}
+								reference={item.reference}
+								saleRef={item.saleRef}
+								status={item.status}
+								warehouse={item.warehouse}
 								index={index}
 							/>
 						))}
@@ -795,4 +871,4 @@ const AllProductsTable = ({ columnsVisible, tableProducts }) => {
 	);
 };
 
-export default AllProductsTable;
+export default SalesReturnTable;

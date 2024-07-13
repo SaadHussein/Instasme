@@ -3,7 +3,7 @@ import MenuItem from "../MenuItem/MenuItem";
 import classes from "../LeftSidebar.module.css";
 import { Link } from "react-router-dom";
 
-const MenuItemToPage = ({ title, menuItems, icon, link }) => {
+const MenuItemToPage = ({ title, icon, link }) => {
 	// const [isMenuOpen, setIsMenuOpen] = useState(false);
 	return (
 		// <Link to={link}>

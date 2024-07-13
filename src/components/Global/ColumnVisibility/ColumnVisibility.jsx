@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import classes from "./ColumnVisibility.module.css";
 
-const ColumnVisibility = ({ columns, changeLabelVisiblity }) => {
+const ColumnVisibility = ({ columns = [], changeLabelVisiblity = [] }) => {
 	const [showVisibleList, setShowVisibleList] = useState(false);
 	const visibleList = useRef();
 
