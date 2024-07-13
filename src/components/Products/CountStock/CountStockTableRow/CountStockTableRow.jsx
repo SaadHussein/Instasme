@@ -1,52 +1,7 @@
-import { useWindowWidth } from "@react-hook/window-size";
-import React, { useEffect, useRef, useState } from "react";
-import CountUp from "react-countup";
+import React from "react";
+import classes from "./CountStockTableRow.module.css";
 
-const ProductRow = ({
-	image,
-	type,
-	name,
-	code,
-	brand,
-	category,
-	cost,
-	price,
-	unit,
-	quantity,
-	index,
-	columnsVisible,
-}) => {
-	const [showActionsList, setShowActionsList] = useState(false);
-	const width = useWindowWidth();
-	const [count, setCount] = useState(0);
-	const actionListRef = useRef();
-
-	const handleClickOutside = (event) => {
-		if (
-			actionListRef.current &&
-			!actionListRef.current.contains(event.target)
-		) {
-			setShowActionsList(false);
-		}
-	};
-
-	useEffect(() => {
-		document.addEventListener("mousedown", handleClickOutside);
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
-	}, []);
-
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setCount(1);
-		}, 3000);
-
-		return () => {
-			clearTimeout(timer);
-		};
-	}, []);
-
+const CountStockTableRow = ({ columnsVisible, date, warehouse, file }) => {
 	return (
 		<tr>
 			<td>
@@ -56,42 +11,28 @@ const ProductRow = ({
 			</td>
 			{columnsVisible.map(
 				(column) =>
-					column.label === "Image" &&
+					column.label === "Date" &&
 					column.visible && (
-						<td>
-							<img
-								src={image}
-								alt="Product"
-								style={{
-									width: "50px",
-									height: "50px",
-								}}
-							/>
+						<td className="text-gray-800 text-hover-primary fw-bold">{date}</td>
+					)
+			)}
+			{columnsVisible.map(
+				(column) =>
+					column.label === "Warehouse" &&
+					column.visible && (
+						<td className="text-gray-800 text-hover-primary fw-bold">
+							{warehouse}
 						</td>
 					)
 			)}
 			{columnsVisible.map(
 				(column) =>
-					column.label === "Type" &&
+					column.label === "File" &&
 					column.visible && (
-						<td className="text-gray-800 text-hover-primary fw-bold">{type}</td>
+						<td className="text-gray-800 text-hover-primary fw-bold">{file}</td>
 					)
 			)}
-			{columnsVisible.map(
-				(column) =>
-					column.label === "Name" &&
-					column.visible && (
-						<td className="text-gray-800 text-hover-primary fw-bold">{name}</td>
-					)
-			)}
-			{columnsVisible.map(
-				(column) =>
-					column.label === "Code" &&
-					column.visible && (
-						<td className="text-gray-800 text-hover-primary fw-bold">{code}</td>
-					)
-			)}
-			{columnsVisible.map(
+			{/* {columnsVisible.map(
 				(column) =>
 					column.label === "Brand" &&
 					column.visible && (
@@ -224,9 +165,9 @@ const ProductRow = ({
 							</div>
 						</td>
 					)
-			)}
+			)} */}
 		</tr>
 	);
 };
 
-export default ProductRow;
+export default CountStockTableRow;
