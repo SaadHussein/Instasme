@@ -31,6 +31,7 @@ import AllQuotations from "./pages/Quotations/AllQuotations/AllQuotations";
 import SalesReturns from "./pages/Returns/SalesReturns/SalesReturns";
 import PurchasesReturns from "./pages/Returns/PurchasesReturns/PurchasesReturns";
 import CountStock from "./pages/Products/CountStock/CountStock";
+import Category from "./pages/Products/Category/Category";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -60,6 +61,7 @@ function App() {
 					<Route path="/products/print-labels" element={<PrintLabels />} />
 					<Route path="/products/all-products" element={<AllProducts />} />
 					<Route path="/products/count-stock" element={<CountStock />} />
+					<Route path="/products/category" element={<Category />} />
 					<Route path="/sales/pos" element={<Pos />} />
 					<Route path="/sales-return" element={<SalesReturn />} />
 					<Route path="/purchases-return" element={<PurchasesReturn />} />

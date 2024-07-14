@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import privateClasses from "./Category.module.css";
 import classes from "../../../styles/global.module.css";
+import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
 import Toolbar from "../../Accounting/Toolbar";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
 import { AiOutlineProduct, AiOutlineStock } from "react-icons/ai";
 import { IoCreateOutline, IoPrint } from "react-icons/io5";
 import { BiCategoryAlt } from "react-icons/bi";
 import { MdAcUnit, MdOutlineBrandingWatermark } from "react-icons/md";
+import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
+import { FiPlusCircle } from "react-icons/fi";
+import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
-import privateClasses from "./CountStock.module.css";
 import Button from "../../../components/Global/Button/Button";
-import { FiPlusCircle } from "react-icons/fi";
-import CountStockTable from "../../../components/Products/CountStock/CountStockTable/CountStockTable";
-import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
+import CategoryTable from "../../../components/Products/Category/CategoryTable/CategoryTable";
 
 const ProductsPage = [
 	{
@@ -54,26 +54,20 @@ const ProductsPage = [
 	},
 ];
 
-const countStockTable = [
+const categoryTableItems = [
 	{
-		date: "12-3-2025",
-		warehouse: "Warehouse One",
-		file: "File One",
-	},
-	{
-		date: "13-3-2025",
-		warehouse: "Warehouse Two",
-		file: "File Two",
+		categoryName: "Apple",
+		categoryCode: "23874567789",
 	},
 ];
 
 const columnsTable = [
-	{ label: "Date", visible: true },
-	{ label: "Warehouse", visible: true },
-	{ label: "File", visible: true },
+	{ label: "Category Code", visible: true },
+	{ label: "Category Name", visible: true },
+	{ label: "Actions", visible: true },
 ];
 
-const CountStock = () => {
+const Category = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -92,7 +86,7 @@ const CountStock = () => {
 					<div
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
-						<Toolbar title={"Count Stock"} path={["Products", "Count Stock"]} />
+						<Toolbar title={"Category"} path={["Products", "Category"]} />
 						<PagesNavigationBar pages={ProductsPage} />
 					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
@@ -108,7 +102,7 @@ const CountStock = () => {
 									className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
 								>
 									<Button
-										text={"Count"}
+										text={"Create"}
 										className="btn btn-primary width-full-invoices fs-6"
 										color="#1B84FF"
 										isFullInMobile={true}
@@ -128,9 +122,9 @@ const CountStock = () => {
 									/>
 								</div>
 							</div>
-							<CountStockTable
+							<CategoryTable
 								columnsVisible={columns}
-								countStockTable={countStockTable}
+								categoryTableItems={categoryTableItems}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -164,4 +158,4 @@ const CountStock = () => {
 	);
 };
 
-export default CountStock;
+export default Category;

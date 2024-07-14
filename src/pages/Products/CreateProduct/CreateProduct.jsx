@@ -32,7 +32,7 @@ const ProductsPage = [
 	},
 	{
 		title: "Category",
-		link: "/products/Category",
+		link: "/products/category",
 		icon: <BiCategoryAlt className="fs-2 me-2" />,
 	},
 	{
