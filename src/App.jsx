@@ -38,6 +38,8 @@ import Company from "./pages/HRM/Company/Company";
 import Departments from "./pages/HRM/Departments/Departments";
 import Designation from "./pages/HRM/Designation/Designation";
 import OfficeShift from "./pages/HRM/OfficeShift/OfficeShift";
+import ListAccounts from "./pages/Accounting/ListAccounts/ListAccounts";
+import TransferMoney from "./pages/Accounting/TransferMoney/TransferMoney";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -105,6 +107,11 @@ function App() {
 						element={<CreateDeposite />}
 					/>
 					<Route path="/accounting/list-deposite" element={<ListDeposite />} />
+					<Route path="/accounting/list-accounts" element={<ListAccounts />} />
+					<Route
+						path="/accounting/transfer-money"
+						element={<TransferMoney />}
+					/>
 					<Route
 						path="/settings/payment-gateway"
 						element={<PaymentGateway />}
