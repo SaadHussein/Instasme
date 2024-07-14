@@ -99,7 +99,7 @@ const BrandTable = ({ brandTableItems, columnsVisible }) => {
 									column.label === "Brand Name" &&
 									column.visible && (
 										<th
-											className={`min-w-100px text-startcursor-pointer text-hover-primary `}
+											className={`min-w-100px text-start cursor-pointer text-hover-primary `}
 											onClick={() => {
 												setSortItem("brandName");
 												sortUponItem();
@@ -177,7 +177,7 @@ const BrandTable = ({ brandTableItems, columnsVisible }) => {
 									column.label === "Brand Description" &&
 									column.visible && (
 										<th
-											className={`min-w-100px text-startcursor-pointer text-hover-primary `}
+											className={`min-w-100px text-start cursor-pointer text-hover-primary `}
 											onClick={() => {
 												setSortItem("brandDescription");
 												sortUponItem();
