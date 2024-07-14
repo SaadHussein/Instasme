@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
-import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
-import { FiPlusCircle } from "react-icons/fi";
-import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
-import Toolbar from "../../Accounting/Toolbar";
-import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
 import { PiBagSimpleLight } from "react-icons/pi";
 import { FaStore } from "react-icons/fa6";
-import privateClasses from "./Departments.module.css";
-import classes from "../../../styles/global.module.css";
-import DepartmentsTable from "../../../components/HRM/Departments/DepartmentsTable/DepartmentsTable";
-import Button from "../../../components/Global/Button/Button";
 import { RxColorWheel } from "react-icons/rx";
+import classes from "./Designation.module.css";
+import privateClasses from "./Designation.module.css";
+import Toolbar from "../../Accounting/Toolbar";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
+import Button from "../../../components/Global/Button/Button";
+import { FiPlusCircle } from "react-icons/fi";
+import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
+import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
+import TablePagination from "../../../components/Global/TablePagination/TablePagination";
+import DesignationTable from "../../../components/HRM/Designation/DesignationTable/DesignationTable";
 
 const HRMPage = [
 	{
@@ -34,21 +34,21 @@ const HRMPage = [
 ];
 
 const columnsTable = [
-	{ label: "Department", visible: true },
-	{ label: "Department Head", visible: true },
+	{ label: "Designation", visible: true },
 	{ label: "Company", visible: true },
+	{ label: "Department", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const departmentTableItems = [
+const designationTableItems = [
 	{
-		department: "Frontend Development",
-		departmentHead: "Mr. Hani Thabet",
+		designation: "Design",
 		company: "Brandmarks",
+		department: "Frontend Development",
 	},
 ];
 
-const Departments = () => {
+const Designation = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -67,7 +67,7 @@ const Departments = () => {
 					<div
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
-						<Toolbar title={"Departments"} path={["HRM", "Departments"]} />
+						<Toolbar title={"Designation"} path={["HRM", "Designation"]} />
 						<PagesNavigationBar pages={HRMPage} />
 					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
@@ -103,9 +103,9 @@ const Departments = () => {
 									/>
 								</div>
 							</div>
-							<DepartmentsTable
+							<DesignationTable
 								columnsVisible={columns}
-								departmentTableItems={departmentTableItems}
+								designationTableItems={designationTableItems}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -139,4 +139,4 @@ const Departments = () => {
 	);
 };
 
-export default Departments;
+export default Designation;

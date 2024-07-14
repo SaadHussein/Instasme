@@ -36,6 +36,7 @@ import Brand from "./pages/Products/Brand/Brand";
 import Unit from "./pages/Products/Unit/Unit";
 import Company from "./pages/HRM/Company/Company";
 import Departments from "./pages/HRM/Departments/Departments";
+import Designation from "./pages/HRM/Designation/Designation";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -124,6 +125,7 @@ function App() {
 					/>
 					<Route path="/hrm/company" element={<Company />} />
 					<Route path="/hrm/departments" element={<Departments />} />
+					<Route path="/hrm/designation" element={<Designation />} />
 				</Route>
 			</Routes>
 		</main>

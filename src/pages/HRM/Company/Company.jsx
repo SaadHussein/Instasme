@@ -13,6 +13,7 @@ import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactS
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
 import CompanyTable from "../../../components/HRM/Company/CompanyTable/CompanyTable";
 import { FaStore } from "react-icons/fa6";
+import { RxColorWheel } from "react-icons/rx";
 
 const HRMPage = [
 	{
@@ -24,6 +25,11 @@ const HRMPage = [
 		title: "Departments",
 		link: "/hrm/departments",
 		icon: <FaStore className="fs-2 me-2" />,
+	},
+	{
+		title: "Designation",
+		link: "/hrm/designation",
+		icon: <RxColorWheel className="fs-2 me-2" />,
 	},
 ];
 
