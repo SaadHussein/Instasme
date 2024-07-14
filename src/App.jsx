@@ -32,6 +32,7 @@ import SalesReturns from "./pages/Returns/SalesReturns/SalesReturns";
 import PurchasesReturns from "./pages/Returns/PurchasesReturns/PurchasesReturns";
 import CountStock from "./pages/Products/CountStock/CountStock";
 import Category from "./pages/Products/Category/Category";
+import Brand from "./pages/Products/Brand/Brand";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -62,6 +63,7 @@ function App() {
 					<Route path="/products/all-products" element={<AllProducts />} />
 					<Route path="/products/count-stock" element={<CountStock />} />
 					<Route path="/products/category" element={<Category />} />
+					<Route path="/products/brand" element={<Brand />} />
 					<Route path="/sales/pos" element={<Pos />} />
 					<Route path="/sales-return" element={<SalesReturn />} />
 					<Route path="/purchases-return" element={<PurchasesReturn />} />
