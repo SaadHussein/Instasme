@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import Toolbar from "../Toolbar";
 import classes from "../../../styles/global.module.css";
-import privateClasses from "./ListDeposite.module.css";
+import privateClasses from "./AllExpenses.module.css";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import Toolbar from "../Toolbar";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
-import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
-import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
-import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
-import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
-import DateRange from "../../../components/Global/DateRange/DateRange";
 import { BsFiles } from "react-icons/bs";
 import { VscNewFile } from "react-icons/vsc";
-import ListDepositeTable from "../../../components/Accounting/ListDeposite/ListDepositeTable/ListDepositeTable";
+import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
+import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
+import DateRange from "../../../components/Global/DateRange/DateRange";
+import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
+import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
+import TablePagination from "../../../components/Global/TablePagination/TablePagination";
+import AllExpensesTable from "../../../components/Accounting/AllExpenses/AllExpensesTable/AllExpensesTable";
 
 const AccountingPage = [
 	{
@@ -60,25 +60,27 @@ const AccountingPage = [
 const columnsTable = [
 	{ label: "Date", visible: true },
 	{ label: "Reference", visible: true },
+	{ label: "Account", visible: true },
 	{ label: "Amount", visible: true },
 	{ label: "Category", visible: true },
-	{ label: "Account", visible: true },
 	{ label: "Details", visible: true },
+	{ label: "Warehouse", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const listDepositeTable = [
+const allExpensesTable = [
 	{
 		date: "07-07-2024",
 		reference: "DEP_1111",
+		account: "Bank 1",
 		amount: 5000.0,
 		category: "Advertising and Marketing",
-		account: "Bank 1",
 		details: "Deposit to Bank 1",
+		warehouse: "Warehouse 1",
 	},
 ];
 
-const ListDeposite = () => {
+const AllExpenses = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -100,8 +102,8 @@ const ListDeposite = () => {
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
 						<Toolbar
-							title={"List Deposite"}
-							path={["Products", "List Deposite"]}
+							title={"All Expenses"}
+							path={["Products", "All Expenses"]}
 						/>
 						<PagesNavigationBar pages={AccountingPage} />
 					</div>
@@ -125,9 +127,9 @@ const ListDeposite = () => {
 									/>
 								</div>
 							</div>
-							<ListDepositeTable
+							<AllExpensesTable
 								columnsVisible={columns}
-								listDepositeTable={listDepositeTable}
+								allExpensesTable={allExpensesTable}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -161,4 +163,4 @@ const ListDeposite = () => {
 	);
 };
 
-export default ListDeposite;
+export default AllExpenses;

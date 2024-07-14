@@ -42,6 +42,7 @@ import ListAccounts from "./pages/Accounting/ListAccounts/ListAccounts";
 import TransferMoney from "./pages/Accounting/TransferMoney/TransferMoney";
 import ExpenseCategory from "./pages/Accounting/ExpenseCategory/ExpenseCategory";
 import DepositeCategory from "./pages/Accounting/DepositeCategory/DepositeCategory";
+import AllExpenses from "./pages/Accounting/AllExpenses/AllExpenses";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -110,6 +111,7 @@ function App() {
 					/>
 					<Route path="/accounting/list-deposite" element={<ListDeposite />} />
 					<Route path="/accounting/list-accounts" element={<ListAccounts />} />
+					<Route path="/accounting/all-expenses" element={<AllExpenses />} />
 					<Route
 						path="/accounting/transfer-money"
 						element={<TransferMoney />}
