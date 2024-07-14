@@ -34,6 +34,7 @@ import CountStock from "./pages/Products/CountStock/CountStock";
 import Category from "./pages/Products/Category/Category";
 import Brand from "./pages/Products/Brand/Brand";
 import Unit from "./pages/Products/Unit/Unit";
+import Company from "./pages/HRM/Company/Company";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -120,6 +121,7 @@ function App() {
 						path="/returns/purchases-return"
 						element={<PurchasesReturns />}
 					/>
+					<Route path="/hrm/company" element={<Company />} />
 				</Route>
 			</Routes>
 		</main>

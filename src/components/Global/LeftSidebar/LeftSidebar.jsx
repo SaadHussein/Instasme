@@ -156,11 +156,16 @@ const LeftSidebar = () => {
 								<div className={`menu-sub menu-sub-accordion`}></div>
 							</div>
 						</Link> */}
-						<Menu
+						<MenuItemToPage
+							title={"HRM"}
+							icon={<RiGovernmentLine size={21} />}
+							link={"/hrm/company"}
+						/>
+						{/* <Menu
 							menuItems={hrm}
 							title={"HRM"}
 							icon={<RiGovernmentLine size={21} />}
-						/>
+						/> */}
 						<Menu
 							menuItems={transfer}
 							title={"Transfer"}
