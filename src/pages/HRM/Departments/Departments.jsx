@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
-import classes from "../../../styles/global.module.css";
-import privateClasses from "./Company.module.css";
-import Toolbar from "../../Accounting/Toolbar";
-import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
-import { PiBagSimpleLight } from "react-icons/pi";
-import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
-import Button from "../../../components/Global/Button/Button";
-import { FiPlusCircle } from "react-icons/fi";
-import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import CompanyTable from "../../../components/HRM/Company/CompanyTable/CompanyTable";
+import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
+import { FiPlusCircle } from "react-icons/fi";
+import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
+import Toolbar from "../../Accounting/Toolbar";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import { PiBagSimpleLight } from "react-icons/pi";
 import { FaStore } from "react-icons/fa6";
+import privateClasses from "./Departments.module.css";
+import classes from "../../../styles/global.module.css";
+import DepartmentsTable from "../../../components/HRM/Departments/DepartmentsTable/DepartmentsTable";
+import Button from "../../../components/Global/Button/Button";
 
 const HRMPage = [
 	{
@@ -28,23 +28,21 @@ const HRMPage = [
 ];
 
 const columnsTable = [
-	{ label: "Name", visible: true },
-	{ label: "Phone", visible: true },
-	{ label: "Country", visible: true },
-	{ label: "Email", visible: true },
+	{ label: "Department", visible: true },
+	{ label: "Department Head", visible: true },
+	{ label: "Company", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const companyTableItems = [
+const departmentTableItems = [
 	{
-		name: "Brandmarks",
-		phone: "+20123456789",
-		country: "Egypt",
-		email: "Brandmarks2024@gmail.com",
+		department: "Frontend Development",
+		departmentHead: "Mr. Hani Thabet",
+		company: "Brandmarks",
 	},
 ];
 
-const Company = () => {
+const Departments = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -99,9 +97,9 @@ const Company = () => {
 									/>
 								</div>
 							</div>
-							<CompanyTable
+							<DepartmentsTable
 								columnsVisible={columns}
-								companyTableItems={companyTableItems}
+								departmentTableItems={departmentTableItems}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -135,4 +133,4 @@ const Company = () => {
 	);
 };
 
-export default Company;
+export default Departments;

@@ -35,6 +35,7 @@ import Category from "./pages/Products/Category/Category";
 import Brand from "./pages/Products/Brand/Brand";
 import Unit from "./pages/Products/Unit/Unit";
 import Company from "./pages/HRM/Company/Company";
+import Departments from "./pages/HRM/Departments/Departments";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -122,6 +123,7 @@ function App() {
 						element={<PurchasesReturns />}
 					/>
 					<Route path="/hrm/company" element={<Company />} />
+					<Route path="/hrm/departments" element={<Departments />} />
 				</Route>
 			</Routes>
 		</main>
