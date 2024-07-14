@@ -14,6 +14,7 @@ import classes from "../../../styles/global.module.css";
 import DepartmentsTable from "../../../components/HRM/Departments/DepartmentsTable/DepartmentsTable";
 import Button from "../../../components/Global/Button/Button";
 import { RxColorWheel } from "react-icons/rx";
+import { IoMdAlarm } from "react-icons/io";
 
 const HRMPage = [
 	{
@@ -30,6 +31,11 @@ const HRMPage = [
 		title: "Designation",
 		link: "/hrm/designation",
 		icon: <RxColorWheel className="fs-2 me-2" />,
+	},
+	{
+		title: "Office Shift",
+		link: "/hrm/office-shift",
+		icon: <IoMdAlarm className="fs-2 me-2" />,
 	},
 ];
 

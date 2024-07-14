@@ -1,20 +1,20 @@
 import React, { useState } from "react";
+import { FaStore } from "react-icons/fa6";
+import { IoMdAlarm } from "react-icons/io";
+import { PiBagSimpleLight } from "react-icons/pi";
+import { RxColorWheel } from "react-icons/rx";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
-import classes from "../../../styles/global.module.css";
-import privateClasses from "./Company.module.css";
 import Toolbar from "../../Accounting/Toolbar";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
-import { PiBagSimpleLight } from "react-icons/pi";
+import classes from "../../../styles/global.module.css";
+import privateClasses from "./OfficeShift.module.css";
 import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
 import Button from "../../../components/Global/Button/Button";
 import { FiPlusCircle } from "react-icons/fi";
 import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import CompanyTable from "../../../components/HRM/Company/CompanyTable/CompanyTable";
-import { FaStore } from "react-icons/fa6";
-import { RxColorWheel } from "react-icons/rx";
-import { IoMdAlarm } from "react-icons/io";
+import OfficeShiftTable from "../../../components/HRM/OfficeShift/OfficeShiftTable/OfficeShiftTable";
 
 const HRMPage = [
 	{
@@ -41,22 +41,13 @@ const HRMPage = [
 
 const columnsTable = [
 	{ label: "Name", visible: true },
-	{ label: "Phone", visible: true },
-	{ label: "Country", visible: true },
-	{ label: "Email", visible: true },
+	{ label: "Company", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const companyTableItems = [
-	{
-		name: "Brandmarks",
-		phone: "+20123456789",
-		country: "Egypt",
-		email: "Brandmarks2024@gmail.com",
-	},
-];
+const officeShiftTableItems = [{ name: "Saad Hussein", company: "Brandmarks" }];
 
-const Company = () => {
+const OfficeShift = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -75,7 +66,7 @@ const Company = () => {
 					<div
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
-						<Toolbar title={"Company"} path={["HRM", "Company"]} />
+						<Toolbar title={"Office Shift"} path={["HRM", "Office Shift"]} />
 						<PagesNavigationBar pages={HRMPage} />
 					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
@@ -111,9 +102,9 @@ const Company = () => {
 									/>
 								</div>
 							</div>
-							<CompanyTable
+							<OfficeShiftTable
 								columnsVisible={columns}
-								companyTableItems={companyTableItems}
+								officeShiftTableItems={officeShiftTableItems}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -147,4 +138,4 @@ const Company = () => {
 	);
 };
 
-export default Company;
+export default OfficeShift;

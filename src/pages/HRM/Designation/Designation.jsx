@@ -14,6 +14,7 @@ import ColumnVisibility from "../../../components/Global/ColumnVisibility/Column
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
 import DesignationTable from "../../../components/HRM/Designation/DesignationTable/DesignationTable";
+import { IoMdAlarm } from "react-icons/io";
 
 const HRMPage = [
 	{
@@ -30,6 +31,11 @@ const HRMPage = [
 		title: "Designation",
 		link: "/hrm/designation",
 		icon: <RxColorWheel className="fs-2 me-2" />,
+	},
+	{
+		title: "Office Shift",
+		link: "/hrm/office-shift",
+		icon: <IoMdAlarm className="fs-2 me-2" />,
 	},
 ];
 
