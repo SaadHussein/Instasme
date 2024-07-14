@@ -40,6 +40,8 @@ import Designation from "./pages/HRM/Designation/Designation";
 import OfficeShift from "./pages/HRM/OfficeShift/OfficeShift";
 import ListAccounts from "./pages/Accounting/ListAccounts/ListAccounts";
 import TransferMoney from "./pages/Accounting/TransferMoney/TransferMoney";
+import ExpenseCategory from "./pages/Accounting/ExpenseCategory/ExpenseCategory";
+import DepositeCategory from "./pages/Accounting/DepositeCategory/DepositeCategory";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -111,6 +113,14 @@ function App() {
 					<Route
 						path="/accounting/transfer-money"
 						element={<TransferMoney />}
+					/>
+					<Route
+						path="/accounting/expense-category"
+						element={<ExpenseCategory />}
+					/>
+					<Route
+						path="/accounting/deposite-category"
+						element={<DepositeCategory />}
 					/>
 					<Route
 						path="/settings/payment-gateway"
