@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
-import privateClasses from "./Suppliers.module.css";
-import classes from "../../../styles/global.module.css";
+import { GoPeople } from "react-icons/go";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
 import Toolbar from "../../Accounting/Toolbar";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
-import { GoPeople } from "react-icons/go";
+import privateClasses from "./Users.module.css";
+import classes from "../../../styles/global.module.css";
 import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
 import DateRange from "../../../components/Global/DateRange/DateRange";
-import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
 import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
-import SuppliersTable from "../../../components/People/Suppliers/SuppliersTable/SuppliersTable";
+import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
+import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
+import TablePagination from "../../../components/Global/TablePagination/TablePagination";
+import UsersTable from "../../../components/People/Users/UsersTable/UsersTable";
 
 const PeoplePage = [
 	{
@@ -32,29 +32,27 @@ const PeoplePage = [
 ];
 
 const columnsTable = [
-	{ label: "Code", visible: true },
-	{ label: "Name", visible: true },
-	{ label: "Phone", visible: true },
+	{ label: "First Name", visible: true },
+	{ label: "Last Name", visible: true },
+	{ label: "Username", visible: true },
 	{ label: "Email", visible: true },
-	{ label: "Tax Number", visible: true },
-	{ label: "Total Purchase Due", visible: true },
-	{ label: "Total Purchase Return Due", visible: true },
+	{ label: "Phone", visible: true },
+	{ label: "Status", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const suppliersTableItems = [
+const usersTableItems = [
 	{
-		code: "104",
-		name: "Saad Hussein",
-		phone: "0123456789",
+		firstName: "Buyer",
+		lastName: "Buyer",
+		username: "Buyer",
 		email: "Saad@gmail.com",
-		taxNumber: 0.0,
-		totalPurchaseDue: 0.0,
-		totalPurchaseReturnDue: 0.0,
+		phone: "0123456789",
+		status: "active",
 	},
 ];
 
-const Suppliers = () => {
+const Users = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -75,7 +73,7 @@ const Suppliers = () => {
 					<div
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
-						<Toolbar title={"Suppliers"} path={["People", "Suppliers"]} />
+						<Toolbar title={"Users"} path={["People", "Users"]} />
 						<PagesNavigationBar pages={PeoplePage} />
 					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
@@ -98,9 +96,9 @@ const Suppliers = () => {
 									/>
 								</div>
 							</div>
-							<SuppliersTable
+							<UsersTable
 								columnsVisible={columns}
-								suppliersTableItems={suppliersTableItems}
+								usersTableItems={usersTableItems}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -134,4 +132,4 @@ const Suppliers = () => {
 	);
 };
 
-export default Suppliers;
+export default Users;
