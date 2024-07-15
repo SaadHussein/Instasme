@@ -44,6 +44,8 @@ import ExpenseCategory from "./pages/Accounting/ExpenseCategory/ExpenseCategory"
 import DepositeCategory from "./pages/Accounting/DepositeCategory/DepositeCategory";
 import AllExpenses from "./pages/Accounting/AllExpenses/AllExpenses";
 import AllTransfers from "./pages/Transfer/AllTransfers/AllTransfers";
+import Customers from "./pages/People/Customers/Customers";
+import Suppliers from "./pages/People/Suppliers/Suppliers";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -149,6 +151,8 @@ function App() {
 					<Route path="/hrm/departments" element={<Departments />} />
 					<Route path="/hrm/designation" element={<Designation />} />
 					<Route path="/hrm/office-shift" element={<OfficeShift />} />
+					<Route path="/people/customers" element={<Customers />} />
+					<Route path="/people/suppliers" element={<Suppliers />} />
 				</Route>
 			</Routes>
 		</main>

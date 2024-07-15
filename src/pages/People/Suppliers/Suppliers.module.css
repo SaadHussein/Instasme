@@ -1,0 +1,79 @@
+.tableHeader {
+	flex-direction: row;
+}
+
+.numberPerPage {
+	margin: 0 !important;
+	margin-top: 1.25rem !important;
+}
+
+.paginationNumber {
+	margin: 0 !important;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.paginationNumberActive {
+	background-color: #1b84ff;
+	padding: 2px 8px;
+	border-radius: 8px;
+	color: white;
+}
+
+.paginationArrow {
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.paginationArrow:hover {
+	color: #1b84ff;
+}
+
+.navPages {
+	background-color: white;
+}
+
+.tableFooter {
+}
+
+.rowSelect {
+}
+
+.tableButtons {
+	flex-wrap: wrap !important;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1455px) {
+	.navPages {
+		flex-direction: column;
+		align-items: start !important;
+		justify-content: start !important;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.tableHeader {
+		flex-direction: column;
+		align-items: start !important;
+		justify-content: start !important;
+	}
+
+	.tableFooter {
+		flex-direction: column;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
+	.rowSelect {
+		justify-content: center !important;
+		margin-bottom: 16px;
+	}
+
+	.tableButtons {
+		flex-direction: column;
+		width: 100%;
+	}
+}

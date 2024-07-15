@@ -114,72 +114,25 @@ const LeftSidebar = () => {
 							icon={<MdOutlineCompareArrows size={21} />}
 							link={"/returns/sales-return"}
 						/>
-						{/* <Link
-							to={"/returns/sales-return"}
-							style={{
-								fontSize: "1.15rem",
-								color: "#252F4A",
-								fontWeight: "600",
-							}}
-						>
-							<div
-								data-kt-menu-trigger="click"
-								className={`menu-item here menu-accordion`}
-							>
-								<span className="menu-link">
-									<span className="menu-icon">
-										<IoArrowForward size={21} color="#99A1B7" />
-									</span>
-									<span className="menu-title">Sales Return</span>
-								</span>
-								<div className={`menu-sub menu-sub-accordion`}></div>
-							</div>
-						</Link>
-						<Link
-							to={"/returns/purchases-return"}
-							style={{
-								fontSize: "1.15rem",
-								color: "#252F4A",
-								fontWeight: "600",
-							}}
-						>
-							<div
-								data-kt-menu-trigger="click"
-								className={`menu-item here menu-accordion`}
-							>
-								<span className="menu-link">
-									<span className="menu-icon">
-										<IoArrowBackOutline size={21} color="#99A1B7" />
-									</span>
-									<span className="menu-title">Purchases Return</span>
-								</span>
-								<div className={`menu-sub menu-sub-accordion`}></div>
-							</div>
-						</Link> */}
 						<MenuItemToPage
 							title={"HRM"}
 							icon={<RiGovernmentLine size={21} />}
 							link={"/hrm/company"}
 						/>
-						{/* <Menu
-							menuItems={hrm}
-							title={"HRM"}
-							icon={<RiGovernmentLine size={21} />}
-						/> */}
-						<Menu
-							menuItems={transfer}
+						<MenuItemToPage
 							title={"Transfer"}
 							icon={<TbArrowBackUp size={21} />}
+							link={"/transfer/all-transfers"}
 						/>
 						<Menu
 							menuItems={accounting}
 							title={"Accounting"}
 							icon={<FaWallet size={21} />}
 						/>
-						<Menu
-							menuItems={people}
+						<MenuItemToPage
 							title={"People"}
 							icon={<MdPeople size={21} />}
+							link={"/people/customers"}
 						/>
 						<Menu
 							menuItems={settings}
