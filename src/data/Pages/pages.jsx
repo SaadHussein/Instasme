@@ -2,7 +2,7 @@ import { FaStore } from "react-icons/fa6";
 import { GrUserWorker } from "react-icons/gr";
 import { IoMdAlarm } from "react-icons/io";
 import { LiaMoneyCheckAltSolid } from "react-icons/lia";
-import { MdOutlineHolidayVillage } from "react-icons/md";
+import { MdAccessAlarm, MdOutlineHolidayVillage } from "react-icons/md";
 import { PiBagSimpleLight } from "react-icons/pi";
 import { RxColorWheel } from "react-icons/rx";
 
@@ -41,6 +41,11 @@ const HRMPage = [
 		title: "Employees",
 		link: "/hrm/employees",
 		icon: <GrUserWorker className="fs-2 me-2" />,
+	},
+	{
+		title: "Attendances",
+		link: "/hrm/attendances",
+		icon: <MdAccessAlarm className="fs-2 me-2" />,
 	},
 ];
 

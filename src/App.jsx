@@ -51,6 +51,7 @@ import Shipments from "./pages/Sales/Shipments/Shipments";
 import Payroll from "./pages/HRM/Payroll/Payroll";
 import Holidays from "./pages/HRM/Holidays/Holidays";
 import Employees from "./pages/HRM/Employees/Employees";
+import Attendances from "./pages/HRM/Attendances/Attendances";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -160,6 +161,7 @@ function App() {
 					<Route path="/hrm/payroll" element={<Payroll />} />
 					<Route path="/hrm/holidays" element={<Holidays />} />
 					<Route path="/hrm/employees" element={<Employees />} />
+					<Route path="/hrm/attendances" element={<Attendances />} />
 					<Route path="/people/customers" element={<Customers />} />
 					<Route path="/people/suppliers" element={<Suppliers />} />
 					<Route path="/people/users" element={<Users />} />
