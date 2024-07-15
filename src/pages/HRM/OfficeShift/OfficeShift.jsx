@@ -15,6 +15,7 @@ import ColumnVisibility from "../../../components/Global/ColumnVisibility/Column
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
 import OfficeShiftTable from "../../../components/HRM/OfficeShift/OfficeShiftTable/OfficeShiftTable";
+import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 
 const HRMPage = [
 	{
@@ -36,6 +37,11 @@ const HRMPage = [
 		title: "Office Shift",
 		link: "/hrm/office-shift",
 		icon: <IoMdAlarm className="fs-2 me-2" />,
+	},
+	{
+		title: "Payroll",
+		link: "/hrm/payroll",
+		icon: <LiaMoneyCheckAltSolid className="fs-2 me-2" />,
 	},
 ];
 

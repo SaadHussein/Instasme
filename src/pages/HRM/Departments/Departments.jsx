@@ -15,6 +15,7 @@ import DepartmentsTable from "../../../components/HRM/Departments/DepartmentsTab
 import Button from "../../../components/Global/Button/Button";
 import { RxColorWheel } from "react-icons/rx";
 import { IoMdAlarm } from "react-icons/io";
+import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 
 const HRMPage = [
 	{
@@ -36,6 +37,11 @@ const HRMPage = [
 		title: "Office Shift",
 		link: "/hrm/office-shift",
 		icon: <IoMdAlarm className="fs-2 me-2" />,
+	},
+	{
+		title: "Payroll",
+		link: "/hrm/payroll",
+		icon: <LiaMoneyCheckAltSolid className="fs-2 me-2" />,
 	},
 ];
 
