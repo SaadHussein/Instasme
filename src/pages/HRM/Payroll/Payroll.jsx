@@ -17,39 +17,7 @@ import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactS
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
 import PayrollTable from "../../../components/HRM/Payroll/PayrollTable/PayrollTable";
 import { MdOutlineHolidayVillage } from "react-icons/md";
-
-const HRMPage = [
-	{
-		title: "Company",
-		link: "/hrm/company",
-		icon: <PiBagSimpleLight className="fs-2 me-2" />,
-	},
-	{
-		title: "Departments",
-		link: "/hrm/departments",
-		icon: <FaStore className="fs-2 me-2" />,
-	},
-	{
-		title: "Designation",
-		link: "/hrm/designation",
-		icon: <RxColorWheel className="fs-2 me-2" />,
-	},
-	{
-		title: "Office Shift",
-		link: "/hrm/office-shift",
-		icon: <IoMdAlarm className="fs-2 me-2" />,
-	},
-	{
-		title: "Payroll",
-		link: "/hrm/payroll",
-		icon: <LiaMoneyCheckAltSolid className="fs-2 me-2" />,
-	},
-	{
-		title: "Holidays",
-		link: "/hrm/holidays",
-		icon: <MdOutlineHolidayVillage className="fs-2 me-2" />,
-	},
-];
+import { HRMPage } from "../../../data/Pages/pages";
 
 const columnsTable = [
 	{ label: "Date", visible: true },

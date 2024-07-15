@@ -50,6 +50,7 @@ import Users from "./pages/People/Users/Users";
 import Shipments from "./pages/Sales/Shipments/Shipments";
 import Payroll from "./pages/HRM/Payroll/Payroll";
 import Holidays from "./pages/HRM/Holidays/Holidays";
+import Employees from "./pages/HRM/Employees/Employees";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -158,6 +159,7 @@ function App() {
 					<Route path="/hrm/office-shift" element={<OfficeShift />} />
 					<Route path="/hrm/payroll" element={<Payroll />} />
 					<Route path="/hrm/holidays" element={<Holidays />} />
+					<Route path="/hrm/employees" element={<Employees />} />
 					<Route path="/people/customers" element={<Customers />} />
 					<Route path="/people/suppliers" element={<Suppliers />} />
 					<Route path="/people/users" element={<Users />} />

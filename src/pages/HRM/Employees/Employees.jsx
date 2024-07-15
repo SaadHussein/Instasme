@@ -1,33 +1,42 @@
 import React, { useState } from "react";
-import { FaStore } from "react-icons/fa6";
-import { IoMdAlarm } from "react-icons/io";
-import { PiBagSimpleLight } from "react-icons/pi";
-import { RxColorWheel } from "react-icons/rx";
+import { HRMPage } from "../../../data/Pages/pages";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
 import Toolbar from "../../Accounting/Toolbar";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import privateClasses from "./Employees.module.css";
 import classes from "../../../styles/global.module.css";
-import privateClasses from "./OfficeShift.module.css";
 import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
-import Button from "../../../components/Global/Button/Button";
-import { FiPlusCircle } from "react-icons/fi";
+import DateRange from "../../../components/Global/DateRange/DateRange";
+import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
 import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import OfficeShiftTable from "../../../components/HRM/OfficeShift/OfficeShiftTable/OfficeShiftTable";
-import { LiaMoneyCheckAltSolid } from "react-icons/lia";
-import { MdOutlineHolidayVillage } from "react-icons/md";
-import { HRMPage } from "../../../data/Pages/pages";
+import EmployeesTable from "../../../components/HRM/Employees/EmployeesTable/EmployeesTable";
 
 const columnsTable = [
-	{ label: "Name", visible: true },
+	{ label: "First Name", visible: true },
+	{ label: "Last Name", visible: true },
+	{ label: "Phone", visible: true },
 	{ label: "Company", visible: true },
+	{ label: "Department", visible: true },
+	{ label: "Designation", visible: true },
+	{ label: "Office Shift", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const officeShiftTableItems = [{ name: "Saad Hussein", company: "Brandmarks" }];
+const employeesTableItems = [
+	{
+		firstName: "Saad",
+		lastName: "Hussein",
+		phone: "0123456789",
+		company: "Brandmarks",
+		department: "Frontend Development",
+		designation: "Frontend Development",
+		officeShift: "Remotly",
+	},
+];
 
-const OfficeShift = () => {
+const Employees = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -37,6 +46,7 @@ const OfficeShift = () => {
 
 		setColumns([...updatedColumns]);
 	};
+
 	return (
 		<LoadingWrapper>
 			<div
@@ -46,7 +56,7 @@ const OfficeShift = () => {
 					<div
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
-						<Toolbar title={"Office Shift"} path={["HRM", "Office Shift"]} />
+						<Toolbar title={"Employees"} path={["HRM", "Employees"]} />
 						<PagesNavigationBar pages={HRMPage} />
 					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
@@ -61,30 +71,17 @@ const OfficeShift = () => {
 								<div
 									className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
 								>
-									<Button
-										text={"Create"}
-										className="btn btn-primary width-full-invoices fs-6"
-										color="#1B84FF"
-										isFullInMobile={true}
-										icon={
-											<FiPlusCircle
-												size={18}
-												style={{
-													marginRight: "4px",
-													fontWeight: "500",
-												}}
-											/>
-										}
-									/>
+									<DateRange />
+									<ExportButtonAndList />
 									<ColumnVisibility
 										columns={columns}
 										changeLabelVisiblity={changeLabelVisiblity}
 									/>
 								</div>
 							</div>
-							<OfficeShiftTable
+							<EmployeesTable
 								columnsVisible={columns}
-								officeShiftTableItems={officeShiftTableItems}
+								employeesTableItems={employeesTableItems}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -118,4 +115,4 @@ const OfficeShift = () => {
 	);
 };
 
-export default OfficeShift;
+export default Employees;
