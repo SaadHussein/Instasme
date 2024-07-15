@@ -43,6 +43,7 @@ import TransferMoney from "./pages/Accounting/TransferMoney/TransferMoney";
 import ExpenseCategory from "./pages/Accounting/ExpenseCategory/ExpenseCategory";
 import DepositeCategory from "./pages/Accounting/DepositeCategory/DepositeCategory";
 import AllExpenses from "./pages/Accounting/AllExpenses/AllExpenses";
+import AllTransfers from "./pages/Transfer/AllTransfers/AllTransfers";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -138,6 +139,7 @@ function App() {
 						path="/transfer/create-transfer"
 						element={<CreateTransfer />}
 					/>
+					<Route path="/transfer/all-transfers" element={<AllTransfers />} />
 					<Route path="/returns/sales-return" element={<SalesReturns />} />
 					<Route
 						path="/returns/purchases-return"

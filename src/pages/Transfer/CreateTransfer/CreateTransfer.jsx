@@ -12,6 +12,23 @@ import { MdPercent } from "react-icons/md";
 import { FaDollarSign } from "react-icons/fa6";
 import TextArea from "../../../components/Global/TextArea/TextArea";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import privateClasses from "./CreateTransfer.module.css";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { BsFiles } from "react-icons/bs";
+import { LuFilePlus2 } from "react-icons/lu";
+
+const TransferPage = [
+	{
+		title: "All Transfers",
+		link: "/transfer/all-transfers",
+		icon: <BsFiles className="fs-2 me-2" />,
+	},
+	{
+		title: "Create Transfer",
+		link: "/transfer/create-transfer",
+		icon: <LuFilePlus2 className="fs-2 me-2" />,
+	},
+];
 
 const CreateTransfer = () => {
 	return (
@@ -20,10 +37,15 @@ const CreateTransfer = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar
-						title={"Create Transfer"}
-						path={["Transfer", "Create Transfer"]}
-					/>
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"All Products"}
+							path={["Products", "All Products"]}
+						/>
+						<PagesNavigationBar pages={TransferPage} />
+					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"
