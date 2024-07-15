@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import { FaStore } from "react-icons/fa6";
-import { IoMdAlarm } from "react-icons/io";
-import { LiaMoneyCheckAltSolid } from "react-icons/lia";
-import { PiBagSimpleLight } from "react-icons/pi";
-import { RxColorWheel } from "react-icons/rx";
-import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
-import Toolbar from "../../Accounting/Toolbar";
-import classes from "../../../styles/global.module.css";
-import privateClasses from "./Payroll.module.css";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import Toolbar from "../../Accounting/Toolbar";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import privateClasses from "./Holidays.module.css";
+import classes from "../../../styles/global.module.css";
 import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
 import DateRange from "../../../components/Global/DateRange/DateRange";
-import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
 import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
+import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import PayrollTable from "../../../components/HRM/Payroll/PayrollTable/PayrollTable";
+import { PiBagSimpleLight } from "react-icons/pi";
+import { FaStore } from "react-icons/fa6";
+import { RxColorWheel } from "react-icons/rx";
+import { IoMdAlarm } from "react-icons/io";
+import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 import { MdOutlineHolidayVillage } from "react-icons/md";
+import HolidaysTable from "../../../components/HRM/Holidays/HolidaysTable/HolidaysTable";
 
 const HRMPage = [
 	{
@@ -52,29 +52,24 @@ const HRMPage = [
 ];
 
 const columnsTable = [
-	{ label: "Date", visible: true },
-	{ label: "Reference", visible: true },
-	{ label: "Employee", visible: true },
-	{ label: "Account", visible: true },
-	{ label: "Amount", visible: true },
-	{ label: "Paid By", visible: true },
-	{ label: "Payment Status", visible: true },
+	{ label: "Holiday", visible: true },
+	{ label: "Company", visible: true },
+	{ label: "Start Date", visible: true },
+	{ label: "Finish Date", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const payrollTableItems = [
+const holidaysTableItems = [
 	{
-		date: "2024-07-15 15:00:04",
-		reference: "SM_1117",
-		employee: "Mr. Hani Thabet",
-		account: "Mr.Hani@gmail.com",
-		amount: 4000,
-		paidBy: "Brandmarks",
+		holiday: "New Year",
+		company: "Brandmarks",
+		startDate: "01-01-2024",
+		finishDate: "02-01-2024",
 		paymentStatus: "success",
 	},
 ];
 
-const Payroll = () => {
+const Holidays = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -95,7 +90,7 @@ const Payroll = () => {
 					<div
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
-						<Toolbar title={"Payroll"} path={["HRM", "Payroll"]} />
+						<Toolbar title={"Holidays"} path={["HRM", "Holidays"]} />
 						<PagesNavigationBar pages={HRMPage} />
 					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
@@ -118,9 +113,9 @@ const Payroll = () => {
 									/>
 								</div>
 							</div>
-							<PayrollTable
+							<HolidaysTable
 								columnsVisible={columns}
-								payrollTableItems={payrollTableItems}
+								holidaysTableItems={holidaysTableItems}
 							/>
 							<div
 								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -154,4 +149,4 @@ const Payroll = () => {
 	);
 };
 
-export default Payroll;
+export default Holidays;

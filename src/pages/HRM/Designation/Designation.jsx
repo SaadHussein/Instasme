@@ -16,6 +16,7 @@ import TablePagination from "../../../components/Global/TablePagination/TablePag
 import DesignationTable from "../../../components/HRM/Designation/DesignationTable/DesignationTable";
 import { IoMdAlarm } from "react-icons/io";
 import { LiaMoneyCheckAltSolid } from "react-icons/lia";
+import { MdOutlineHolidayVillage } from "react-icons/md";
 
 const HRMPage = [
 	{
@@ -42,6 +43,11 @@ const HRMPage = [
 		title: "Payroll",
 		link: "/hrm/payroll",
 		icon: <LiaMoneyCheckAltSolid className="fs-2 me-2" />,
+	},
+	{
+		title: "Holidays",
+		link: "/hrm/holidays",
+		icon: <MdOutlineHolidayVillage className="fs-2 me-2" />,
 	},
 ];
 
