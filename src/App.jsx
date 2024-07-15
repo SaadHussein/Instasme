@@ -47,6 +47,7 @@ import AllTransfers from "./pages/Transfer/AllTransfers/AllTransfers";
 import Customers from "./pages/People/Customers/Customers";
 import Suppliers from "./pages/People/Suppliers/Suppliers";
 import Users from "./pages/People/Users/Users";
+import Shipments from "./pages/Sales/Shipments/Shipments";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -84,6 +85,7 @@ function App() {
 					<Route path="/purchases-return" element={<PurchasesReturn />} />
 					<Route path="/sales/all-sales" element={<AllSales />} />
 					<Route path="/sales/create-sale" element={<CreateSale />} />
+					<Route path="/sales/shipments" element={<Shipments />} />
 					<Route
 						path="/quotations/create-quotation"
 						element={<CreateQuotations />}
