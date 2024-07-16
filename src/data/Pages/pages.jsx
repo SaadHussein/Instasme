@@ -5,6 +5,7 @@ import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 import { MdAccessAlarm, MdOutlineHolidayVillage } from "react-icons/md";
 import { PiBagSimpleLight } from "react-icons/pi";
 import { RxColorWheel } from "react-icons/rx";
+import { SlCalender } from "react-icons/sl";
 
 const HRMPage = [
 	{
@@ -46,6 +47,11 @@ const HRMPage = [
 		title: "Attendances",
 		link: "/hrm/attendances",
 		icon: <MdAccessAlarm className="fs-2 me-2" />,
+	},
+	{
+		title: "Leave Request",
+		link: "/hrm/leave-request",
+		icon: <SlCalender className="fs-2 me-2" />,
 	},
 ];
 
