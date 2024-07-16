@@ -1,3 +1,4 @@
+import { CiDollar } from "react-icons/ci";
 import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 import { MdKey, MdStorefront } from "react-icons/md";
 
@@ -31,6 +32,11 @@ const SettingsPage = [
 		title: "Warehouse",
 		link: "/settings/warehouse",
 		icon: <MdStorefront className="fs-2 me-2" />,
+	},
+	{
+		title: "Currency",
+		link: "/settings/currency",
+		icon: <CiDollar className="fs-2 me-2" />,
 	},
 ];
 

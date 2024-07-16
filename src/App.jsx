@@ -55,6 +55,8 @@ import Attendances from "./pages/HRM/Attendances/Attendances";
 import LeaveRequest from "./pages/HRM/LeaveRequest/LeaveRequest";
 import LeaveType from "./pages/HRM/LeaveType/LeaveType";
 import GroupPermissions from "./pages/Settings/GroupPermissions/GroupPermissions";
+import Warehouse from "./pages/Settings/Warehouse/Warehouse";
+import Currency from "./pages/Settings/Currency/Currency";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -174,6 +176,8 @@ function App() {
 						path="/settings/group-permissions"
 						element={<GroupPermissions />}
 					/>
+					<Route path="/settings/warehouse" element={<Warehouse />} />
+					<Route path="/settings/currency" element={<Currency />} />
 				</Route>
 			</Routes>
 		</main>
