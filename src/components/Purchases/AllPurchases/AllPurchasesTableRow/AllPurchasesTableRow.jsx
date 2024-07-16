@@ -2,19 +2,19 @@ import { useWindowWidth } from "@react-hook/window-size";
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import Completed from "../../../Global/Status/Completed";
-import Ordered from "../../../Global/Status/Ordered";
 import Pending from "../../../Global/Status/Pending";
 
-const LeaveRequestTableRow = ({
+const AllPurchasesTableRow = ({
 	columnsVisible,
-	employee,
-	company,
-	department,
-	leaveType,
-	startDate,
-	finishDate,
-	days,
+	date,
+	reference,
+	supplier,
+	warehouse,
 	status,
+	grandTotal,
+	paid,
+	due,
+	paymentStatus,
 	index,
 }) => {
 	const [showActionsList, setShowActionsList] = useState(false);
@@ -57,64 +57,34 @@ const LeaveRequestTableRow = ({
 			</td>
 			{columnsVisible.map(
 				(column) =>
-					column.label === "Employee" &&
+					column.label === "Date" &&
+					column.visible && (
+						<td className="text-gray-800 text-hover-primary fw-bold">{date}</td>
+					)
+			)}
+			{columnsVisible.map(
+				(column) =>
+					column.label === "Reference" &&
 					column.visible && (
 						<td className="text-gray-800 text-hover-primary fw-bold">
-							{employee}
+							{reference}
 						</td>
 					)
 			)}
 			{columnsVisible.map(
 				(column) =>
-					column.label === "Company" &&
+					column.label === "Supplier" &&
 					column.visible && (
 						<td className="text-gray-800 text-hover-primary fw-bold">
-							{company}
+							{supplier}
 						</td>
 					)
 			)}
 			{columnsVisible.map(
 				(column) =>
-					column.label === "Department" &&
+					column.label === "Warehouse" &&
 					column.visible && (
-						<td className="text-gray-800 text-hover-primary fw-bold">
-							{department}
-						</td>
-					)
-			)}
-			{columnsVisible.map(
-				(column) =>
-					column.label === "Leave Type" &&
-					column.visible && (
-						<td className="text-end fw-bold text-gray-600">{leaveType}</td>
-					)
-			)}
-			{columnsVisible.map(
-				(column) =>
-					column.label === "Start Date" &&
-					column.visible && (
-						<td className="text-end fw-bold text-gray-600">{startDate}</td>
-					)
-			)}
-			{columnsVisible.map(
-				(column) =>
-					column.label === "Finish Date" &&
-					column.visible && (
-						<td className="text-end fw-bold text-gray-600">{finishDate}</td>
-					)
-			)}
-			{columnsVisible.map(
-				(column) =>
-					column.label === "Days" &&
-					column.visible && (
-						<td className="text-end text-primary fw-bold">
-							$
-							{count === 0 ? (
-								<CountUp start={0} end={days} duration={3} />
-							) : (
-								days
-							)}
-						</td>
+						<td className="text-end fw-bold text-gray-600">{warehouse}</td>
 					)
 			)}
 			{columnsVisible.map(
@@ -122,10 +92,63 @@ const LeaveRequestTableRow = ({
 					column.label === "Status" &&
 					column.visible && (
 						<td className="text-end fw-bold text-gray-600">
-							{status === "approved" ? (
+							{status === "Received" ? (
 								<Completed text={status} />
-							) : status === "pending" ? (
+							) : status === "Pending" ? (
 								<Pending text={status} />
+							) : (
+								""
+							)}
+						</td>
+					)
+			)}
+			{columnsVisible.map(
+				(column) =>
+					column.label === "Grand Total" &&
+					column.visible && (
+						<td className="text-end text-primary fw-bold">
+							$
+							{count === 0 ? (
+								<CountUp start={0} end={grandTotal} duration={3} />
+							) : (
+								grandTotal
+							)}
+						</td>
+					)
+			)}
+			{columnsVisible.map(
+				(column) =>
+					column.label === "Paid" &&
+					column.visible && (
+						<td className="text-end text-primary fw-bold">
+							$
+							{count === 0 ? (
+								<CountUp start={0} end={paid} duration={3} />
+							) : (
+								paid
+							)}
+						</td>
+					)
+			)}
+			{columnsVisible.map(
+				(column) =>
+					column.label === "Due" &&
+					column.visible && (
+						<td className="text-end text-primary fw-bold">
+							$
+							{count === 0 ? <CountUp start={0} end={due} duration={3} /> : due}
+						</td>
+					)
+			)}
+			{columnsVisible.map(
+				(column) =>
+					column.label === "Payment Status" &&
+					column.visible && (
+						<td className="text-end fw-bold text-gray-600">
+							{paymentStatus === "Paid" ? (
+								<Completed text={paymentStatus} />
+							) : paymentStatus === "Unpaid" ? (
+								<Pending text={paymentStatus} />
 							) : (
 								""
 							)}
@@ -184,10 +207,31 @@ const LeaveRequestTableRow = ({
 								}}
 							>
 								<div className="menu-item px-3">
-									<div className="menu-link px-3">Edit</div>
+									<div className="menu-link px-3">Purchase Detail</div>
 								</div>
 								<div className="menu-item px-3">
-									<div className="menu-link px-3">Delete</div>
+									<div className="menu-link px-3">Edit Purchase</div>
+								</div>
+								<div className="menu-item px-3">
+									<div className="menu-link px-3">Purchase Return</div>
+								</div>
+								<div className="menu-item px-3">
+									<div className="menu-link px-3">Show Payments</div>
+								</div>
+								<div className="menu-item px-3">
+									<div className="menu-link px-3">Create Payment</div>
+								</div>
+								<div className="menu-item px-3">
+									<div className="menu-link px-3">Download PDF</div>
+								</div>
+								<div className="menu-item px-3">
+									<div className="menu-link px-3">Email Notification</div>
+								</div>
+								<div className="menu-item px-3">
+									<div className="menu-link px-3">SMS Notification</div>
+								</div>
+								<div className="menu-item px-3">
+									<div className="menu-link px-3">Delete Purchase</div>
 								</div>
 							</div>
 						</td>
@@ -197,4 +241,4 @@ const LeaveRequestTableRow = ({
 	);
 };
 
-export default LeaveRequestTableRow;
+export default AllPurchasesTableRow;
