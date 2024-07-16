@@ -1,3 +1,4 @@
+import { CiCreditCard2 } from "react-icons/ci";
 import { FaStore } from "react-icons/fa6";
 import { GrUserWorker } from "react-icons/gr";
 import { IoMdAlarm } from "react-icons/io";
@@ -52,6 +53,11 @@ const HRMPage = [
 		title: "Leave Request",
 		link: "/hrm/leave-request",
 		icon: <SlCalender className="fs-2 me-2" />,
+	},
+	{
+		title: "Leave Type",
+		link: "/hrm/leave-type",
+		icon: <CiCreditCard2 className="fs-2 me-2" />,
 	},
 ];
 

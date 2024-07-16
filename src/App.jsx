@@ -53,6 +53,7 @@ import Holidays from "./pages/HRM/Holidays/Holidays";
 import Employees from "./pages/HRM/Employees/Employees";
 import Attendances from "./pages/HRM/Attendances/Attendances";
 import LeaveRequest from "./pages/HRM/LeaveRequest/LeaveRequest";
+import LeaveType from "./pages/HRM/LeaveType/LeaveType";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -164,6 +165,7 @@ function App() {
 					<Route path="/hrm/employees" element={<Employees />} />
 					<Route path="/hrm/attendances" element={<Attendances />} />
 					<Route path="/hrm/leave-request" element={<LeaveRequest />} />
+					<Route path="/hrm/leave-type" element={<LeaveType />} />
 					<Route path="/people/customers" element={<Customers />} />
 					<Route path="/people/suppliers" element={<Suppliers />} />
 					<Route path="/people/users" element={<Users />} />
