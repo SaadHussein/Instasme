@@ -1,6 +1,6 @@
 import { CiDollar } from "react-icons/ci";
 import { LiaMoneyCheckAltSolid } from "react-icons/lia";
-import { MdKey, MdStorefront } from "react-icons/md";
+import { MdKey, MdOutlineBackup, MdStorefront } from "react-icons/md";
 
 const SettingsPage = [
 	{
@@ -37,6 +37,11 @@ const SettingsPage = [
 		title: "Currency",
 		link: "/settings/currency",
 		icon: <CiDollar className="fs-2 me-2" />,
+	},
+	{
+		title: "Backup",
+		link: "/settings/backup",
+		icon: <MdOutlineBackup className="fs-2 me-2" />,
 	},
 ];
 

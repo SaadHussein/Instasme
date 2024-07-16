@@ -57,6 +57,7 @@ import LeaveType from "./pages/HRM/LeaveType/LeaveType";
 import GroupPermissions from "./pages/Settings/GroupPermissions/GroupPermissions";
 import Warehouse from "./pages/Settings/Warehouse/Warehouse";
 import Currency from "./pages/Settings/Currency/Currency";
+import Backup from "./pages/Settings/Backup/Backup";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -178,6 +179,7 @@ function App() {
 					/>
 					<Route path="/settings/warehouse" element={<Warehouse />} />
 					<Route path="/settings/currency" element={<Currency />} />
+					<Route path="/settings/backup" element={<Backup />} />
 				</Route>
 			</Routes>
 		</main>
