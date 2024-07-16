@@ -134,10 +134,10 @@ const LeftSidebar = () => {
 							icon={<MdPeople size={21} />}
 							link={"/people/customers"}
 						/>
-						<Menu
-							menuItems={settings}
+						<MenuItemToPage
 							title={"Settings"}
 							icon={<IoSettingsOutline size={21} />}
+							link={"/settings/payment-gateway"}
 						/>
 						<Menu
 							menuItems={reports}

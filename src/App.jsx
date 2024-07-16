@@ -54,6 +54,7 @@ import Employees from "./pages/HRM/Employees/Employees";
 import Attendances from "./pages/HRM/Attendances/Attendances";
 import LeaveRequest from "./pages/HRM/LeaveRequest/LeaveRequest";
 import LeaveType from "./pages/HRM/LeaveType/LeaveType";
+import GroupPermissions from "./pages/Settings/GroupPermissions/GroupPermissions";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -169,6 +170,10 @@ function App() {
 					<Route path="/people/customers" element={<Customers />} />
 					<Route path="/people/suppliers" element={<Suppliers />} />
 					<Route path="/people/users" element={<Users />} />
+					<Route
+						path="/settings/group-permissions"
+						element={<GroupPermissions />}
+					/>
 				</Route>
 			</Routes>
 		</main>

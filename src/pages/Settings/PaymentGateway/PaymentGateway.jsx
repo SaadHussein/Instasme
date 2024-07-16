@@ -5,6 +5,9 @@ import classes from "../../../styles/global.module.css";
 import Input from "../../../components/Global/Input/Input";
 import CheckInput from "../../../components/Global/CheckInput/CheckInput";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { SettingsPage } from "../../../data/Pages/settings";
+import privateClasses from "./PaymentGateway.module.css";
 
 const PaymentGateway = () => {
 	return (
@@ -13,10 +16,15 @@ const PaymentGateway = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar
-						title={"Payment Gateway"}
-						path={["Settings", "Payment Gateway"]}
-					/>
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"Payment Gateway"}
+							path={["Settings", "Payment Gateway"]}
+						/>
+						<PagesNavigationBar pages={SettingsPage} />
+					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"
