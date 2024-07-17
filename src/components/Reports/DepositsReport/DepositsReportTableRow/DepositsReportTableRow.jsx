@@ -1,6 +1,6 @@
 import { useWindowWidth } from "@react-hook/window-size";
 import React, { useEffect, useRef, useState } from "react";
-import CountUp from "react-countup/build/CountUp";
+import CountUp from "react-countup";
 
 const DepositsReportTableRow = ({
 	depositCategory,
