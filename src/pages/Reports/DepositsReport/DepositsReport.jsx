@@ -46,8 +46,8 @@ const DepositsReport = () => {
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
 						<Toolbar
-							title={"Stock Report"}
-							path={["Reports", "Stock Report"]}
+							title={"Deposits Report"}
+							path={["Reports", "Deposits Report"]}
 						/>
 						<PagesNavigationBar pages={ReportsPage} />
 					</div>
