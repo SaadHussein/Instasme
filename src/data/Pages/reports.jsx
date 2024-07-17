@@ -27,6 +27,11 @@ const ReportsPage = [
 		link: "/reports/expense-report",
 		icon: <GiChart className="fs-2 me-2" />,
 	},
+	{
+		title: "Stock Report",
+		link: "/reports/stock-report",
+		icon: <BsPieChart className="fs-2 me-2" />,
+	},
 ];
 
 export { ReportsPage };

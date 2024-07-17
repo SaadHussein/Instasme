@@ -63,6 +63,7 @@ import BestCustomers from "./pages/Reports/BestCustomers/BestCustomers";
 import TopSellingProducts from "./pages/Reports/TopSellingProducts/TopSellingProducts";
 import ProductReport from "./pages/Reports/ProductReport/ProductReport";
 import ExpenseReport from "./pages/Reports/ExpenseReport/ExpenseReport";
+import StockReport from "./pages/Reports/StockReport/StockReport";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -193,6 +194,7 @@ function App() {
 					/>
 					<Route path="/reports/product-report" element={<ProductReport />} />
 					<Route path="/reports/expense-report" element={<ExpenseReport />} />
+					<Route path="/reports/stock-report" element={<StockReport />} />
 				</Route>
 			</Routes>
 		</main>
