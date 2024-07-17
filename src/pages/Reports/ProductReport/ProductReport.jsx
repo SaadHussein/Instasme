@@ -1,36 +1,36 @@
 import React, { useState } from "react";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
-import privateClasses from "./TopSellingProducts.module.css";
+import privateClasses from "./ProductReport.module.css";
+import classes from "../../../styles/global.module.css";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
-import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
 import Toolbar from "../../Accounting/Toolbar";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
 import { ReportsPage } from "../../../data/Pages/reports";
 import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
 import DateRange from "../../../components/Global/DateRange/DateRange";
 import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
 import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
-import classes from "../../../styles/global.module.css";
-import TopSellingProductsTable from "../../../components/Reports/TopSellingProducts/TopSellingProductsTable/TopSellingProductsTable";
+import ProductReportTable from "../../../components/Reports/ProductReport/ProductReportTable/ProductReportTable";
 
 const columnsTable = [
 	{ label: "Code", visible: true },
 	{ label: "Product", visible: true },
 	{ label: "Total Sales", visible: true },
 	{ label: "Total Amount", visible: true },
-	// { label: "Actions", visible: true },
+	{ label: "Actions", visible: true },
 ];
 
-const topSellingProductsTableItems = [
+const productReportTableItems = [
 	{
-		code: "6753489384",
+		code: "645645645",
 		product: "Banana",
 		totalSales: 5,
 		totalAmount: 4463,
 	},
 ];
 
-const TopSellingProducts = () => {
+const ProductReport = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -51,8 +51,8 @@ const TopSellingProducts = () => {
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
 						<Toolbar
-							title={"Top Selling Products"}
-							path={["Reports", "Top Selling Products"]}
+							title={"Users Reports"}
+							path={["Reports", "Users Reports"]}
 						/>
 						<PagesNavigationBar pages={ReportsPage} />
 					</div>
@@ -90,11 +90,20 @@ const TopSellingProducts = () => {
 											columns={columns}
 											changeLabelVisiblity={changeLabelVisiblity}
 										/>
+										<LabelHeaderReactSelect
+											label={"Select a Warehouse"}
+											name={"Warehouse"}
+											placeholder="Select Value From Options"
+											options={[
+												{ value: "Warehouse One", label: "Warehouse One" },
+												{ value: "Warehouse Two", label: "Warehouse Two" },
+											]}
+										/>
 									</div>
 								</div>
-								<TopSellingProductsTable
+								<ProductReportTable
 									columnsVisible={columns}
-									topSellingProductsTableItems={topSellingProductsTableItems}
+									productReportTableItems={productReportTableItems}
 								/>
 								<div
 									className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -129,4 +138,4 @@ const TopSellingProducts = () => {
 	);
 };
 
-export default TopSellingProducts;
+export default ProductReport;
