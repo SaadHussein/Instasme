@@ -1,89 +1,42 @@
 import React, { useState } from "react";
-import Toolbar from "../../Accounting/Toolbar";
-import classes from "../../../styles/global.module.css";
-import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
-import privateClasses from "./AllSales.module.css";
-import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
-import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
-import DateRange from "../../../components/Global/DateRange/DateRange";
-import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
-import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
-import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import { LuFilePlus2 } from "react-icons/lu";
-import { BsFiles } from "react-icons/bs";
-import Button from "../../../components/Global/Button/Button";
-import { FiPlusCircle } from "react-icons/fi";
-import AllSalesTable from "../../../components/Sales/AllSales/AllSalesTable/AllSalesTable";
-
-const SalesPage = [
-	{
-		title: "Create Sale",
-		link: "/sales/create-sale",
-		icon: <LuFilePlus2 className="fs-2 me-2" />,
-	},
-	{
-		title: "All Sales",
-		link: "/sales/all-sales",
-		icon: <BsFiles className="fs-2 me-2" />,
-	},
-	{
-		title: "POS",
-		link: "/sales/pos",
-		icon: <BsFiles className="fs-2 me-2" />,
-	},
-	{
-		title: "Shipments",
-		link: "/sales/shipments",
-		icon: <BsFiles className="fs-2 me-2" />,
-	},
-];
+import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
+import privateClasses from "./UsersReports.module.css";
+import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import Toolbar from "../../Accounting/Toolbar";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { ReportsPage } from "../../../data/Pages/reports";
+import classes from "../../../styles/global.module.css";
+import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
+import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
+import UsersReportsTable from "../../../components/Reports/UsersReports/UsersReportsTable/UsersReportsTable";
 
 const columnsTable = [
-	{ label: "Date", visible: true },
-	{ label: "Reference", visible: true },
-	{ label: "Added By", visible: true },
-	{ label: "Customer", visible: true },
-	{ label: "Warehouse", visible: true },
-	{ label: "Status", visible: true },
-	{ label: "Grand Total", visible: true },
-	{ label: "Paid", visible: true },
-	{ label: "Due", visible: true },
-	{ label: "Payment Status", visible: true },
-	{ label: "Shipping Status", visible: true },
+	{ label: "Username", visible: true },
+	{ label: "Total Sales", visible: true },
+	{ label: "Total Purchases", visible: true },
+	{ label: "Total Quotations", visible: true },
+	{ label: "Total Return Sales", visible: true },
+	{ label: "Total Return Purchases", visible: true },
+	{ label: "Total Transfers", visible: true },
+	{ label: "Total Adjustments", visible: true },
 	{ label: "Actions", visible: true },
 ];
 
-const salesTableItems = [
+const userReportsTableItems = [
 	{
-		date: "2024-07-15 15:00:04",
-		reference: "SL_1117",
-		addedBy: "Saad Hussein",
-		customer: "Thomas M. Martin",
-		warehouse: "Warehouse 1",
-		status: "Completed",
-		grandTotal: 20.0,
-		due: 20.0,
-		paid: 20.0,
-		paymentStatus: "Paid",
-		shippingStatus: "Delivered",
-	},
-	{
-		date: "2024-07-15 15:00:04",
-		reference: "SL_1118",
-		addedBy: "Saad Hussein",
-		customer: "Thomas M. Martin",
-		warehouse: "Warehouse 2",
-		status: "Ordered",
-		grandTotal: 30.0,
-		due: 30.0,
-		paid: 30.0,
-		paymentStatus: "Unpaid",
-		shippingStatus: "Packed",
+		username: "Saad Hussein",
+		totalSales: 5,
+		totalPurchases: 4,
+		totalQuotations: 4,
+		totalReturnSales: 4,
+		totalReturnPurchases: 4,
+		totalTransfers: 4,
+		totalAdjustments: 4,
 	},
 ];
 
-const AllSales = () => {
+const UsersReports = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -104,10 +57,10 @@ const AllSales = () => {
 						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
 					>
 						<Toolbar
-							title={"All Purchases"}
-							path={["Purchases", "All Purchases"]}
+							title={"Users Reports"}
+							path={["Reports", "Users Reports"]}
 						/>
-						<PagesNavigationBar pages={SalesPage} />
+						<PagesNavigationBar pages={ReportsPage} />
 					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
@@ -122,9 +75,9 @@ const AllSales = () => {
 									<div
 										className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
 									>
-										<DateRange />
-										<ExportButtonAndList />
-										<Button
+										{/* <DateRange /> */}
+										{/* <ExportButtonAndList /> */}
+										{/* <Button
 											text={"Create"}
 											className="btn btn-primary width-full-invoices fs-6"
 											color="#1B84FF"
@@ -138,16 +91,16 @@ const AllSales = () => {
 													}}
 												/>
 											}
-										/>
+										/> */}
 										<ColumnVisibility
 											columns={columns}
 											changeLabelVisiblity={changeLabelVisiblity}
 										/>
 									</div>
 								</div>
-								<AllSalesTable
+								<UsersReportsTable
 									columnsVisible={columns}
-									salesTableItems={salesTableItems}
+									userReportsTableItems={userReportsTableItems}
 								/>
 								<div
 									className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -182,4 +135,4 @@ const AllSales = () => {
 	);
 };
 
-export default AllSales;
+export default UsersReports;
