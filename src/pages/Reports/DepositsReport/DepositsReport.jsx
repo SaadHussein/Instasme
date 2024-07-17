@@ -1,36 +1,31 @@
 import React, { useState } from "react";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import privateClasses from "./DepositsReport.module.css";
+import classes from "../../../styles/global.module.css";
 import Toolbar from "../../Accounting/Toolbar";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
 import { ReportsPage } from "../../../data/Pages/reports";
-import privateClasses from "./StockReport.module.css";
-import classes from "../../../styles/global.module.css";
 import SearchInputIvonInside from "../../../components/Global/SearchInputIvonInside/SearchInputIvonInside";
 import DateRange from "../../../components/Global/DateRange/DateRange";
 import ExportButtonAndList from "../../../components/Global/Export/ExportButtonAndList";
 import ColumnVisibility from "../../../components/Global/ColumnVisibility/ColumnVisibility";
 import LabelHeaderReactSelect from "../../../components/Global/LabelHeaderReactSelect/LabelHeaderReactSelect";
 import TablePagination from "../../../components/Global/TablePagination/TablePagination";
-import StockReportTable from "../../../components/Reports/StockReport/StockReportTable/StockReportTable";
+import DepositsReportTable from "../../../components/Reports/DepositsReport/DepositsReportTable/DepositsReportTable";
 
 const columnsTable = [
-	{ label: "Code", visible: true },
-	{ label: "Name", visible: true },
-	{ label: "Category", visible: true },
-	{ label: "Current Stock", visible: true },
-	{ label: "Actions", visible: true },
+	{ label: "Deposit Category", visible: true },
+	{ label: "Total Deposits", visible: true },
 ];
 
-const stockReportTableItems = [
+const depositsReportTableItems = [
 	{
-		code: "645645645",
-		name: "Banana",
-		category: "Fruits",
-		currentStock: "50 KG",
+		depositCategory: "Fruits",
+		totalDeposits: "50 KG",
 	},
 ];
 
-const StockReport = () => {
+const DepositsReport = () => {
 	const [columns, setColumns] = useState([...columnsTable]);
 
 	const changeLabelVisiblity = (label) => {
@@ -90,7 +85,7 @@ const StockReport = () => {
 											columns={columns}
 											changeLabelVisiblity={changeLabelVisiblity}
 										/>
-										<LabelHeaderReactSelect
+										{/* <LabelHeaderReactSelect
 											label={"Select a Warehouse"}
 											name={"Warehouse"}
 											placeholder="Select Value From Options"
@@ -98,12 +93,12 @@ const StockReport = () => {
 												{ value: "Warehouse One", label: "Warehouse One" },
 												{ value: "Warehouse Two", label: "Warehouse Two" },
 											]}
-										/>
+										/> */}
 									</div>
 								</div>
-								<StockReportTable
+								<DepositsReportTable
 									columnsVisible={columns}
-									stockReportTableItems={stockReportTableItems}
+									depositsReportTableItems={depositsReportTableItems}
 								/>
 								<div
 									className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
@@ -138,4 +133,4 @@ const StockReport = () => {
 	);
 };
 
-export default StockReport;
+export default DepositsReport;

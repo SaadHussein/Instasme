@@ -1,5 +1,7 @@
 import { BsPieChart } from "react-icons/bs";
+import { FaChartBar } from "react-icons/fa6";
 import { GiChart } from "react-icons/gi";
+import { LuBarChart3 } from "react-icons/lu";
 
 const ReportsPage = [
 	{
@@ -31,6 +33,11 @@ const ReportsPage = [
 		title: "Stock Report",
 		link: "/reports/stock-report",
 		icon: <BsPieChart className="fs-2 me-2" />,
+	},
+	{
+		title: "Deposits Report",
+		link: "/reports/deposits-report",
+		icon: <LuBarChart3 className="fs-2 me-2" />,
 	},
 ];
 
