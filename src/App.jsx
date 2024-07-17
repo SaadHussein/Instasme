@@ -60,6 +60,7 @@ import Currency from "./pages/Settings/Currency/Currency";
 import Backup from "./pages/Settings/Backup/Backup";
 import UsersReports from "./pages/Reports/UsersReports/UsersReports";
 import BestCustomers from "./pages/Reports/BestCustomers/BestCustomers";
+import TopSellingProducts from "./pages/Reports/TopSellingProducts/TopSellingProducts";
 
 function App() {
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
@@ -184,6 +185,10 @@ function App() {
 					<Route path="/settings/backup" element={<Backup />} />
 					<Route path="/reports/users-reports" element={<UsersReports />} />
 					<Route path="/reports/best-customers" element={<BestCustomers />} />
+					<Route
+						path="/reports/tob-selling-products"
+						element={<TopSellingProducts />}
+					/>
 				</Route>
 			</Routes>
 		</main>

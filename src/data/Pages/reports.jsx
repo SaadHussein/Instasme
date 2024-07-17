@@ -11,6 +11,11 @@ const ReportsPage = [
 		link: "/reports/best-customers",
 		icon: <BsPieChart className="fs-2 me-2" />,
 	},
+	{
+		title: "Top Selling Products",
+		link: "/reports/tob-selling-products",
+		icon: <BsPieChart className="fs-2 me-2" />,
+	},
 ];
 
 export { ReportsPage };
