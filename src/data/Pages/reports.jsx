@@ -1,4 +1,5 @@
 import { BsPieChart } from "react-icons/bs";
+import { GiChart } from "react-icons/gi";
 
 const ReportsPage = [
 	{
@@ -20,6 +21,11 @@ const ReportsPage = [
 		title: "Product Report",
 		link: "/reports/product-report",
 		icon: <BsPieChart className="fs-2 me-2" />,
+	},
+	{
+		title: "Expense Report",
+		link: "/reports/expense-report",
+		icon: <GiChart className="fs-2 me-2" />,
 	},
 ];
 
