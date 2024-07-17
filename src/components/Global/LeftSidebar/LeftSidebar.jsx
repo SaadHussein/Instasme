@@ -139,10 +139,10 @@ const LeftSidebar = () => {
 							icon={<IoSettingsOutline size={21} />}
 							link={"/settings/payment-gateway"}
 						/>
-						<Menu
-							menuItems={reports}
+						<MenuItemToPage
 							title={"Reports"}
 							icon={<FaChartLine size={21} />}
+							link={"/reports/users-reports"}
 						/>
 					</div>
 				</div>
