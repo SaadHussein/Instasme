@@ -54,6 +54,9 @@ const MainHeader = () => {
 					<div
 						className="btn btn-icon btn-active-color-primary w-35px h-35px ms-3 me-2 d-flex d-lg-none"
 						id="kt_app_sidebar_mobile_toggle"
+						onClick={() => {
+							dispatch(setIsLeftSidebarOpen({ value: !isLeftSidebarOpen }));
+						}}
 					>
 						<i className="ki-outline ki-abstract-14 fs-2"></i>
 					</div>

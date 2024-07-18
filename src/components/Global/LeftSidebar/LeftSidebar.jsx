@@ -32,17 +32,21 @@ import {
 import { FaChartLine, FaWallet } from "react-icons/fa";
 import MenuItemToPage from "./MenuItemToPage/MenuItemToPage";
 import { useSelector } from "react-redux";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const LeftSidebar = () => {
 	const isLeftSidebarOpen = useSelector(
 		(state) => state.global.isLeftSidebarOpen
 	);
+	const width = useWindowWidth();
 	return (
 		<div
 			id="kt_app_sidebar"
-			className={`app-sidebar flex-column ${classes.leftSidebarStyle} ${
-				isLeftSidebarOpen ? "" : classes.leftSidebarStyleClose
-			}`}
+			className={`app-sidebar flex-column ${
+				width <= 992 ? " drawer drawer-start " : ""
+			} ${isLeftSidebarOpen && width <= 992 ? ` drawer-on ` : ""} ${
+				classes.leftSidebarStyle
+			} ${isLeftSidebarOpen ? "" : classes.leftSidebarStyleClose} `}
 			data-kt-drawer="true"
 			data-kt-drawer-name="app-sidebar"
 			data-kt-drawer-activate="{default: true, lg: false}"

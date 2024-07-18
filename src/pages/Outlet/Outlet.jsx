@@ -7,12 +7,16 @@ import classes from "../../styles/global.module.css";
 import Footer from "../../components/Global/Footer/Footer";
 import privateClasses from "./Outlet.module.css";
 import { ScaleLoader } from "react-spinners";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useWindowWidth } from "@react-hook/window-size";
+import { setIsLeftSidebarOpen } from "../../redux/globalSlice";
 
 const PagesOutlet = () => {
 	const isLeftSidebarOpen = useSelector(
 		(state) => state.global.isLeftSidebarOpen
 	);
+	const dispatch = useDispatch();
+	const width = useWindowWidth();
 	const [isLoad, setIsLoad] = useState(true);
 
 	useEffect(() => {
@@ -59,6 +63,15 @@ const PagesOutlet = () => {
 					<Footer />
 				</div>
 			</div>
+			{isLeftSidebarOpen && width <= 992 && (
+				<div
+					style={{ zIndex: 105 }}
+					className="drawer-overlay"
+					onClick={() => {
+						dispatch(setIsLeftSidebarOpen({ value: !isLeftSidebarOpen }));
+					}}
+				></div>
+			)}
 		</>
 	);
 };

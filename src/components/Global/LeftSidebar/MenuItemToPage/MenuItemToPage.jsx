@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import classes from "../LeftSidebar.module.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsLeftSidebarOpen } from "../../../../redux/globalSlice";
 
 const MenuItemToPage = ({ title, icon, link }) => {
+	const dispatch = useDispatch();
+	const isLeftSidebarOpen = useSelector(
+		(state) => state.global.isLeftSidebarOpen
+	);
 	// const [isMenuOpen, setIsMenuOpen] = useState(false);
 	return (
 		// <Link to={link}>
@@ -13,6 +19,9 @@ const MenuItemToPage = ({ title, icon, link }) => {
 			// className={`menu-item here menu-accordion ${
 			// 	isMenuOpen ? "show hover" : ""
 			// }`}
+			onClick={() => {
+				dispatch(setIsLeftSidebarOpen({ value: !isLeftSidebarOpen }));
+			}}
 			className={`menu-item here menu-accordion`}
 		>
 			<span
