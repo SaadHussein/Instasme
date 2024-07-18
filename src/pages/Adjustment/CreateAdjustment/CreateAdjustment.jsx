@@ -47,8 +47,10 @@ const CreateAdjustment = () => {
 							id="kt_app_content_container"
 							class="app-container container-fluid"
 						>
-							<div className="d-flex align-items-center justify-content-between gap-5">
-								<div className="w-75">
+							<div
+								className={`d-flex align-items-center justify-content-between gap-5 ${privateClasses.selectsResponsive}`}
+							>
+								<div className={`w-75 ${privateClasses.dateSelectResponsive}`}>
 									<DateInput />
 								</div>
 								<Select

@@ -51,8 +51,10 @@ const CreateQuotations = () => {
 							id="kt_app_content_container"
 							class="app-container container-fluid"
 						>
-							<div className="d-flex align-items-center justify-content-between gap-5">
-								<div className="w-75">
+							<div
+								className={`d-flex align-items-center justify-content-between gap-5 ${privateClasses.selectsResponsive}`}
+							>
+								<div className={`w-75 ${privateClasses.dateSelectResponsive}`}>
 									<DateInput />
 								</div>
 								<Select
@@ -75,11 +77,13 @@ const CreateQuotations = () => {
 								<OrderItemsTable />
 							</div>
 							<div className="my-6 d-flex align-items-center justify-content-end w-100">
-								<div className="w-25">
+								<div className={`w-25 ${privateClasses.taxContainer}`}>
 									<OrderPriceDetails />
 								</div>
 							</div>
-							<div className="d-flex align-items-center justify-content-between gap-8">
+							<div
+								className={`d-flex align-items-center justify-content-between gap-8 ${privateClasses.inputsResponsive}`}
+							>
 								<InputWithIcon
 									icon={<MdPercent />}
 									label={"Order Tax"}
@@ -102,7 +106,9 @@ const CreateQuotations = () => {
 									value={"0"}
 								/>
 							</div>
-							<div className="w-50 my-5">
+							<div
+								className={`w-50 my-5 ${privateClasses.selectsBottomResponsive}`}
+							>
 								<Select
 									options={["Status One", "Status Two"]}
 									label={"Status *"}
