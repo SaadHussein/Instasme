@@ -10,6 +10,11 @@
 	}
 }
 
+.cardPadding {
+	width: 100%;
+	padding: 14px 28px;
+}
+
 .selectsResponsive,
 .inputsResponsive,
 .dateSelectResponsive,

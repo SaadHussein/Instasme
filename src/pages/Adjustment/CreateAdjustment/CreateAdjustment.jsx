@@ -12,6 +12,9 @@ import { AiOutlineProduct } from "react-icons/ai";
 import { IoCreateOutline } from "react-icons/io5";
 import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
 import privateClasses from "./CreateAdjustment.module.css";
+import ReactSelect from "../../../components/Global/ReactSelect/ReactSelect";
+import DateInputRow from "../../../components/Global/DateInputRow/DateInputRow";
+import NewInputWithSearchIcon from "../../../components/Global/NewInputWithSearchIcon/NewInputWithSearchIcon";
 
 const AdjustmentsPages = [
 	{
@@ -50,26 +53,61 @@ const CreateAdjustment = () => {
 							<div
 								className={`d-flex align-items-center justify-content-between gap-5 ${privateClasses.selectsResponsive}`}
 							>
-								<div className={`w-75 ${privateClasses.dateSelectResponsive}`}>
-									<DateInput />
+								<div
+									className={`card card-flush ${privateClasses.cardPadding}`}
+								>
+									<div
+										className={`w-100 ${privateClasses.dateSelectResponsive}`}
+									>
+										{/* <DateInput /> */}
+										<DateInputRow />
+									</div>
 								</div>
-								<Select
+								{/* <Select
 									options={["Warehouse One", "Warehouse Two"]}
 									label={"Warehouse"}
-								/>
+								/> */}
+								<div
+									className={`card card-flush ${privateClasses.cardPadding}`}
+								>
+									<ReactSelect
+										label={"Warehouse:"}
+										placeholder={"Choose Warehouse"}
+										options={[
+											{ value: "Warehouse 1", label: "Warehouse 1" },
+											{ value: "Warehouse 2", label: "Warehouse 2" },
+										]}
+										name={"warehouse"}
+									/>
+								</div>
 							</div>
 							<div className="mt-4 w-100 d-flex align-items-start justify-content-between gap-5">
-								<InputWithSearchIcon
+								{/* <InputWithSearchIcon
 									label={"Product"}
 									placeholder={"Scan/Search Product bu Code Or Name"}
 									type={"text"}
-								/>
+								/> */}
+								<div
+									className={`card card-flush ${privateClasses.cardPadding} `}
+								>
+									<NewInputWithSearchIcon
+										label={"Product:"}
+										placeholder={"Scan/Search Product by Code Or Name"}
+										type={"text"}
+									/>
+								</div>
 							</div>
 							<div className="w-100 my-4">
-								<ProductsTable />
+								<div className="card card-flush p-5">
+									<ProductsTable />
+								</div>
 							</div>
 							<div className="my-4 w-100">
-								<TextArea label={"Note"} placeholder={"A few words..."} />
+								<div
+									className={`card card-flush ${privateClasses.cardPadding} `}
+								>
+									<TextArea label={"Note"} placeholder={"A few words..."} />
+								</div>
 							</div>
 							<div className="mt-4">
 								<Button text={"Submit"} />

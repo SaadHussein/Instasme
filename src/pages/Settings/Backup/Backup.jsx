@@ -55,66 +55,68 @@ const Backup = () => {
 							id="kt_app_content_container"
 							className="app-container container-fluid"
 						>
-							<div
-								className={`d-flex align-items-start justify-content-between mb-8 gap-2 ${privateClasses.tableHeader}`}
-							>
-								<SearchInputIvonInside />
+							<div className="card card-flush p-5">
 								<div
-									className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
+									className={`d-flex align-items-start justify-content-between mb-8 gap-2 ${privateClasses.tableHeader}`}
 								>
-									<DateRange />
-									<Button
-										text={"Generate Backup"}
-										className="btn btn-primary width-full-invoices fs-6"
-										color="#1B84FF"
-										isFullInMobile={true}
-										icon={
-											<FiPlusCircle
-												size={18}
-												style={{
-													marginRight: "4px",
-													fontWeight: "500",
-												}}
-											/>
-										}
-									/>
-									<ColumnVisibility
-										columns={columns}
-										changeLabelVisiblity={changeLabelVisiblity}
-									/>
-								</div>
-							</div>
-							<div className={`badge badge-light-danger mb-3`}>
-								You will find your backup on /storage/app/public/backup and save
-								it to your pc
-							</div>
-							<BackupTable
-								columnsVisible={columns}
-								backupTableItems={backupTableItems}
-							/>
-							<div
-								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
-							>
-								<div
-									className={`d-flex align-items-center justify-content-start w-50 gap-3 ${privateClasses.rowSelect}`}
-								>
-									<div className="w-150px">
-										<LabelHeaderReactSelect
-											defaultValue={10}
-											label={""}
-											name={"Rows-Per-Page"}
-											placeholder={10}
-											options={[
-												{ value: 10, label: 10 },
-												{ value: 20, label: 20 },
-												{ value: 30, label: 30 },
-												{ value: 40, label: 40 },
-												{ value: 50, label: 50 },
-											]}
+									<SearchInputIvonInside />
+									<div
+										className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
+									>
+										<DateRange />
+										<Button
+											text={"Generate Backup"}
+											className="btn btn-primary width-full-invoices fs-6"
+											color="#1B84FF"
+											isFullInMobile={true}
+											icon={
+												<FiPlusCircle
+													size={18}
+													style={{
+														marginRight: "4px",
+														fontWeight: "500",
+													}}
+												/>
+											}
+										/>
+										<ColumnVisibility
+											columns={columns}
+											changeLabelVisiblity={changeLabelVisiblity}
 										/>
 									</div>
 								</div>
-								<TablePagination />
+								<div className={`badge badge-light-danger mb-3`}>
+									You will find your backup on /storage/app/public/backup and
+									save it to your pc
+								</div>
+								<BackupTable
+									columnsVisible={columns}
+									backupTableItems={backupTableItems}
+								/>
+								<div
+									className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
+								>
+									<div
+										className={`d-flex align-items-center justify-content-start w-50 gap-3 ${privateClasses.rowSelect}`}
+									>
+										<div className="w-150px">
+											<LabelHeaderReactSelect
+												defaultValue={10}
+												label={""}
+												name={"Rows-Per-Page"}
+												placeholder={10}
+												options={[
+													{ value: 10, label: 10 },
+													{ value: 20, label: 20 },
+													{ value: 30, label: 30 },
+													{ value: 40, label: 40 },
+													{ value: 50, label: 50 },
+												]}
+											/>
+										</div>
+									</div>
+									<TablePagination />
+								</div>
 							</div>
 						</div>
 					</div>

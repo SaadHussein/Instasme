@@ -97,48 +97,50 @@ const PurchasesReturns = () => {
 							id="kt_app_content_container"
 							class="app-container container-fluid"
 						>
-							<div
-								className={`d-flex align-items-start justify-content-between mb-8 gap-2 ${privateClasses.tableHeader}`}
-							>
-								<SearchInputIvonInside />
+							<div className="card card-flush p-5">
 								<div
-									className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
+									className={`d-flex align-items-start justify-content-between mb-8 gap-2 ${privateClasses.tableHeader}`}
 								>
-									<DateRange />
-									<ExportButtonAndList />
-									<ColumnVisibility
-										changeLabelVisiblity={changeLabelVisiblity}
-										columns={columns}
-									/>
-								</div>
-							</div>
-							<PurchasesReturnTable
-								columnsVisible={columns}
-								purchasesReturnsTable={purchasesReturnsTable}
-							/>
-							<div
-								className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
-							>
-								<div
-									className={`d-flex align-items-center justify-content-start w-50 gap-3 ${privateClasses.rowSelect}`}
-								>
-									<div className="w-150px">
-										<LabelHeaderReactSelect
-											defaultValue={10}
-											label={""}
-											name={"Rows-Per-Page"}
-											placeholder={10}
-											options={[
-												{ value: 10, label: 10 },
-												{ value: 20, label: 20 },
-												{ value: 30, label: 30 },
-												{ value: 40, label: 40 },
-												{ value: 50, label: 50 },
-											]}
+									<SearchInputIvonInside />
+									<div
+										className={`d-flex align-items-center justify-content-end gap-2 ${privateClasses.tableButtons}`}
+									>
+										<DateRange />
+										<ExportButtonAndList />
+										<ColumnVisibility
+											changeLabelVisiblity={changeLabelVisiblity}
+											columns={columns}
 										/>
 									</div>
 								</div>
-								<TablePagination />
+								<PurchasesReturnTable
+									columnsVisible={columns}
+									purchasesReturnsTable={purchasesReturnsTable}
+								/>
+								<div
+									className={`d-flex align-items-center justify-content-between ${privateClasses.tableFooter}`}
+								>
+									<div
+										className={`d-flex align-items-center justify-content-start w-50 gap-3 ${privateClasses.rowSelect}`}
+									>
+										<div className="w-150px">
+											<LabelHeaderReactSelect
+												defaultValue={10}
+												label={""}
+												name={"Rows-Per-Page"}
+												placeholder={10}
+												options={[
+													{ value: 10, label: 10 },
+													{ value: 20, label: 20 },
+													{ value: 30, label: 30 },
+													{ value: 40, label: 40 },
+													{ value: 50, label: 50 },
+												]}
+											/>
+										</div>
+									</div>
+									<TablePagination />
+								</div>
 							</div>
 						</div>
 					</div>
