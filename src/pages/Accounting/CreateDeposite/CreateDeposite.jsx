@@ -7,6 +7,9 @@ import TextArea from "../../../components/Global/TextArea/TextArea";
 import DateInput from "../../../components/Global/DateInput/DateInput";
 import Button from "../../../components/Global/Button/Button";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { AccountingPage } from "../../../data/Pages/accounting";
+import privateClasses from "./CreateDeposite.module.css";
 
 const CreateDeposite = () => {
 	return (
@@ -15,10 +18,15 @@ const CreateDeposite = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar
-						title={"Create Deposite"}
-						path={["Accounting", "Create Deposite"]}
-					/>
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"List Deposite"}
+							path={["Products", "List Deposite"]}
+						/>
+						<PagesNavigationBar pages={AccountingPage} />
+					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"

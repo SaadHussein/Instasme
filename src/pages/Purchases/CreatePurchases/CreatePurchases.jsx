@@ -12,6 +12,23 @@ import { MdPercent } from "react-icons/md";
 import { FaDollarSign } from "react-icons/fa6";
 import OrderPriceDetails from "../../../components/Global/OrderPriceDetails/OrderPriceDetails";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { BsFiles } from "react-icons/bs";
+import { VscNewFile } from "react-icons/vsc";
+import privateClasses from "./CreatePurchases.module.css";
+
+const PurchasesPage = [
+	{
+		title: "All Purchases",
+		link: "/purchases/all-purchases",
+		icon: <BsFiles className="fs-2 me-2" />,
+	},
+	{
+		title: "Create Purchase",
+		link: "/purchases/create-purchase",
+		icon: <VscNewFile className="fs-2 me-2" />,
+	},
+];
 
 const CreatePurchases = () => {
 	return (
@@ -20,10 +37,16 @@ const CreatePurchases = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar
-						title={"Create Purchase"}
-						path={["Purchases", "Create Purchase"]}
-					/>
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"Create Purchase"}
+							path={["Purchases", "Create Purchase"]}
+						/>
+						<PagesNavigationBar pages={PurchasesPage} />
+					</div>
+
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"

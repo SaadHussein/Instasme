@@ -67,18 +67,19 @@ const PrintLabels = () => {
 			>
 				<div className="d-flex flex-column flex-column-fluid">
 					<div
-						className={`w-100 d-flex align-items-center justify-content-end mt-1 ${pageClasses.navPages}`}
+						className={`d-flex align-items-center justify-content-between ${pageClasses.navPages}`}
 					>
+						<Toolbar
+							title={"Print Labels"}
+							path={["Products", "Print Labels"]}
+						/>
 						<PagesNavigationBar pages={ProductsPage} />
 					</div>
 					<div
 						style={{ backgroundColor: "white" }}
 						className={`w-100 d-flex align-items-center justify-content-between ${pageClasses.responsiveHeader}`}
 					>
-						<Toolbar
-							title={"Print Labels"}
-							path={["Products", "Print Labels"]}
-						/>
+						<div></div>
 
 						<div
 							className={`d-flex align-items-start justify-content-start gap-3 ${pageClasses.buttons}`}

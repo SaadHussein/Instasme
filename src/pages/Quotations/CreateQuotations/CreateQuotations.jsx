@@ -12,6 +12,23 @@ import { MdPercent } from "react-icons/md";
 import { FaDollarSign } from "react-icons/fa6";
 import OrderPriceDetails from "../../../components/Global/OrderPriceDetails/OrderPriceDetails";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import privateClasses from "./CreateQuotations.module.css";
+import { BsFiles } from "react-icons/bs";
+import { VscNewFile } from "react-icons/vsc";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+
+const QuotationsPage = [
+	{
+		title: "All Quotations",
+		link: "/quotations/all-quotations",
+		icon: <BsFiles className="fs-2 me-2" />,
+	},
+	{
+		title: "Create Quotation",
+		link: "/quotations/create-quotation",
+		icon: <VscNewFile className="fs-2 me-2" />,
+	},
+];
 
 const CreateQuotations = () => {
 	return (
@@ -20,10 +37,15 @@ const CreateQuotations = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar
-						title={"Create Quotation"}
-						path={["Quotations", "Create Quotation"]}
-					/>
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"Create Quotation"}
+							path={["Quotations", "Create Quotation"]}
+						/>
+						<PagesNavigationBar pages={QuotationsPage} />
+					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"

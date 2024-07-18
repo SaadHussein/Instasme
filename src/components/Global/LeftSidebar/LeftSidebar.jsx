@@ -93,21 +93,20 @@ const LeftSidebar = () => {
 							icon={<TfiMapAlt size={21} />}
 							link={"/adjustment/all-adjustments"}
 						/>
-
-						<Menu
-							menuItems={quotations}
+						<MenuItemToPage
 							title={"Quotations"}
 							icon={<PiShoppingCartSimple size={21} />}
+							link={"/quotations/all-quotations"}
 						/>
-						<Menu
-							menuItems={purchases}
+						<MenuItemToPage
 							title={"Purchases"}
 							icon={<RiBillLine size={21} />}
+							link={"/purchases/all-purchases"}
 						/>
-						<Menu
-							menuItems={sales}
+						<MenuItemToPage
 							title={"Sales"}
 							icon={<PiShoppingCartSimple size={21} />}
+							link={"/sales/all-sales"}
 						/>
 						<MenuItemToPage
 							title={"Returns"}
@@ -124,10 +123,10 @@ const LeftSidebar = () => {
 							icon={<TbArrowBackUp size={21} />}
 							link={"/transfer/all-transfers"}
 						/>
-						<Menu
-							menuItems={accounting}
+						<MenuItemToPage
 							title={"Accounting"}
 							icon={<FaWallet size={21} />}
+							link={"/accounting/list-accounts"}
 						/>
 						<MenuItemToPage
 							title={"People"}
