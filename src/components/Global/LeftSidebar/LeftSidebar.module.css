@@ -1,6 +1,14 @@
 .leftSidebarStyle {
 }
 
+.leftSidebarStyleClose {
+	width: 80px;
+}
+
+.overflowLeftSidebar {
+	overflow: hidden;
+}
+
 .menuClosed {
 	display: none;
 	overflow: hidden;

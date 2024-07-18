@@ -31,12 +31,18 @@ import {
 } from "react-icons/io5";
 import { FaChartLine, FaWallet } from "react-icons/fa";
 import MenuItemToPage from "./MenuItemToPage/MenuItemToPage";
+import { useSelector } from "react-redux";
 
 const LeftSidebar = () => {
+	const isLeftSidebarOpen = useSelector(
+		(state) => state.global.isLeftSidebarOpen
+	);
 	return (
 		<div
 			id="kt_app_sidebar"
-			className={`app-sidebar flex-column ${classes.leftSidebarStyle}`}
+			className={`app-sidebar flex-column ${classes.leftSidebarStyle} ${
+				isLeftSidebarOpen ? "" : classes.leftSidebarStyleClose
+			}`}
 			data-kt-drawer="true"
 			data-kt-drawer-name="app-sidebar"
 			data-kt-drawer-activate="{default: true, lg: false}"
@@ -47,7 +53,7 @@ const LeftSidebar = () => {
 		>
 			<div id="kt_app_sidebar_wrapper" className="app-sidebar-wrapper">
 				<div
-					className="hover-scroll-y my-5 my-lg-2 mx-4"
+					className={`hover-scroll-y my-5 my-lg-2 mx-4 ${classes.overflowLeftSidebar}`}
 					data-kt-scroll="true"
 					data-kt-scroll-activate="{default: false, lg: true}"
 					data-kt-scroll-height="auto"

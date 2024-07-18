@@ -9,6 +9,7 @@ import {
 	setIsSearchResultsMenuOpen,
 	setIsMiniProfileMenuOpen,
 	setIsFullScreen,
+	setIsLeftSidebarOpen,
 } from "../../../redux/globalSlice";
 import MiniProfileMenu from "./MiniProfileMenu/MiniProfileMenu";
 import classes from "./Header.module.css";
@@ -17,6 +18,9 @@ import { FaArrowsAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const MainHeader = () => {
+	const isLeftSidebarOpen = useSelector(
+		(state) => state.global.isLeftSidebarOpen
+	);
 	const isFullScreen = useSelector((state) => state.global.isFullScreen);
 	const [isQuickLinkMenuOpen, setIsQuickLinkMenuOpen] = useState(false);
 	const [isSearchMenuOpen, setIsSearchMenuOpen] = useState(false);
@@ -41,6 +45,9 @@ const MainHeader = () => {
 						data-kt-toggle-state="active"
 						data-kt-toggle-target="body"
 						data-kt-toggle-name="app-sidebar-minimize"
+						onClick={() => {
+							dispatch(setIsLeftSidebarOpen({ value: !isLeftSidebarOpen }));
+						}}
 					>
 						<i className="ki-outline ki-abstract-14 fs-3 mt-1"></i>
 					</div>
@@ -232,7 +239,11 @@ const MainHeader = () => {
 					</div> */}
 				</div>
 			</div>
-			<div className={`app-header-separator ${classes.separator}`}></div>
+			<div
+				className={`app-header-separator ${classes.separator} ${
+					isLeftSidebarOpen ? "" : classes.leftSidebarClose
+				}`}
+			></div>
 		</div>
 	);
 };

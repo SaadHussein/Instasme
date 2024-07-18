@@ -7,8 +7,12 @@ import classes from "../../styles/global.module.css";
 import Footer from "../../components/Global/Footer/Footer";
 import privateClasses from "./Outlet.module.css";
 import { ScaleLoader } from "react-spinners";
+import { useSelector } from "react-redux";
 
 const PagesOutlet = () => {
+	const isLeftSidebarOpen = useSelector(
+		(state) => state.global.isLeftSidebarOpen
+	);
 	const [isLoad, setIsLoad] = useState(true);
 
 	useEffect(() => {
@@ -42,7 +46,9 @@ const PagesOutlet = () => {
 			<div>
 				<MainHeader />
 				<div
-					className={`app-wrapper flex-column flex-row-fluid ${classes.globalStyle}`}
+					className={`app-wrapper flex-column flex-row-fluid ${
+						classes.globalStyle
+					} ${isLeftSidebarOpen ? "" : privateClasses.leftSidebarClose}`}
 					id="kt_app_wrapper"
 				>
 					<LeftSidebar />
