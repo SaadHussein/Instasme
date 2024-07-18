@@ -4,9 +4,11 @@ import classes from "../LeftSidebar.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsLeftSidebarOpen } from "../../../../redux/globalSlice";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const MenuItemToPage = ({ title, icon, link }) => {
 	const dispatch = useDispatch();
+	const width = useWindowWidth();
 	const isLeftSidebarOpen = useSelector(
 		(state) => state.global.isLeftSidebarOpen
 	);
@@ -20,7 +22,9 @@ const MenuItemToPage = ({ title, icon, link }) => {
 			// 	isMenuOpen ? "show hover" : ""
 			// }`}
 			onClick={() => {
-				dispatch(setIsLeftSidebarOpen({ value: !isLeftSidebarOpen }));
+				if (width <= 992) {
+					dispatch(setIsLeftSidebarOpen({ value: !isLeftSidebarOpen }));
+				}
 			}}
 			className={`menu-item here menu-accordion`}
 		>

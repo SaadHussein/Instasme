@@ -30,7 +30,9 @@ const PaymentGateway = () => {
 							id="kt_app_content_container"
 							class="app-container container-fluid"
 						>
-							<div className="mt-6 d-flex align-items-center justify-content-between gap-8">
+							<div
+								className={`mt-6 d-flex align-items-center justify-content-between gap-8 ${privateClasses.inputResponsive}`}
+							>
 								<Input
 									label={"STRIPE_KEY"}
 									placeholder={

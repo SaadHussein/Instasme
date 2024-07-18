@@ -1,6 +1,13 @@
 import { CiDollar } from "react-icons/ci";
 import { LiaMoneyCheckAltSolid } from "react-icons/lia";
-import { MdKey, MdOutlineBackup, MdStorefront } from "react-icons/md";
+import { LuHardDrive } from "react-icons/lu";
+import {
+	MdKey,
+	MdOutlineBackup,
+	MdOutlineMail,
+	MdStorefront,
+} from "react-icons/md";
+import { TiShoppingCart } from "react-icons/ti";
 
 const SettingsPage = [
 	{
@@ -11,17 +18,17 @@ const SettingsPage = [
 	{
 		title: "POS Settings",
 		link: "/settings/pos-settings",
-		icon: <MdKey className="fs-2 me-2" />,
+		icon: <TiShoppingCart className="fs-2 me-2" />,
 	},
 	{
 		title: "Mail Settings",
 		link: "/settings/mail-settings",
-		icon: <MdKey className="fs-2 me-2" />,
+		icon: <MdOutlineMail className="fs-2 me-2" />,
 	},
 	{
 		title: "Module Settings",
-		link: "/settings/group-settings",
-		icon: <MdKey className="fs-2 me-2" />,
+		link: "/settings/module-settings",
+		icon: <LuHardDrive className="fs-2 me-2" />,
 	},
 	{
 		title: "Group Permissions",

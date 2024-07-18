@@ -9,3 +9,30 @@
 		justify-content: start !important;
 	}
 }
+
+.selectsResponsive,
+.inputsResponsive,
+.dateSelectResponsive,
+.selectsBottomResponsive,
+.taxContainer {
+}
+
+@media screen and (max-width: 700px) {
+	.selectsResponsive,
+	.selectsBottomResponsive,
+	.inputsResponsive {
+		flex-direction: column;
+	}
+
+	.dateSelectResponsive,
+	.selectsBottomResponsive,
+	.taxContainer,
+	.inputsResponsive,
+	.fullTextArea {
+		width: 100% !important;
+	}
+
+	.taxContainer {
+		margin-top: 12px;
+	}
+}

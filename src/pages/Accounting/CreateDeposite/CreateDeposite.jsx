@@ -32,8 +32,10 @@ const CreateDeposite = () => {
 							id="kt_app_content_container"
 							class="app-container container-fluid"
 						>
-							<div className="d-flex align-items-center justify-content-between gap-5">
-								<div className="w-50">
+							<div
+								className={`d-flex align-items-center justify-content-between gap-5 ${privateClasses.selectsResponsive}`}
+							>
+								<div className={`w-50 ${privateClasses.dateSelectResponsive}`}>
 									<DateInput />
 								</div>
 								<Select
@@ -42,8 +44,10 @@ const CreateDeposite = () => {
 								/>
 								<Select options={["One"]} label={"Deposit Category"} />
 							</div>
-							<div className="mt-4 w-100 d-flex align-items-start justify-content-between gap-5">
-								<div style={{ width: "25%" }}>
+							<div
+								className={`mt-4 w-100 d-flex align-items-start justify-content-between gap-5 ${privateClasses.inputTextareaResponsive}`}
+							>
+								<div className={`w-25 ${privateClasses.inputFull}`}>
 									<Input
 										label={"Amount"}
 										placeholder={"Choose an Amount"}

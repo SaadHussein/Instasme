@@ -32,8 +32,10 @@ const CreateExpense = () => {
 							id="kt_app_content_container"
 							class="app-container container-fluid"
 						>
-							<div className="d-flex align-items-center justify-content-between gap-5">
-								<div className="w-50">
+							<div
+								className={`d-flex align-items-center justify-content-between gap-5 ${privateClasses.selectsResponsive}`}
+							>
+								<div className={`w-50 ${privateClasses.dateSelectResponsive}`}>
 									<DateInput />
 								</div>
 								<Select
@@ -42,7 +44,9 @@ const CreateExpense = () => {
 								/>
 								<Select options={["Bank 1", "Bank 2"]} label={"Account"} />
 							</div>
-							<div className="w-75 mt-4 d-flex align-items-center justify-content-start gap-5">
+							<div
+								className={`w-75 mt-4 d-flex align-items-center justify-content-start gap-5 ${privateClasses.inputsResponsive}`}
+							>
 								<Select
 									options={["Warehouse One", "Warehouse Two"]}
 									label={"Warehouse"}
@@ -53,7 +57,7 @@ const CreateExpense = () => {
 									type={"number"}
 								/>
 							</div>
-							<div className="mt-4 w-75">
+							<div className={`mt-4 w-75 ${privateClasses.fullTextArea}`}>
 								<TextArea label={"Details"} placeholder={"A few words..."} />
 							</div>
 							<div className="mt-4">

@@ -4,6 +4,9 @@ import Button from "../../../components/Global/Button/Button";
 import Toolbar from "../../Accounting/Toolbar";
 import classes from "../../../styles/global.module.css";
 import LoadingWrapper from "../../../components/Global/LoadingWrapper/LoadingWrapper";
+import PagesNavigationBar from "../../../components/Global/PagesNavigationBar/PagesNavigationBar";
+import { SettingsPage } from "../../../data/Pages/settings";
+import privateClasses from "./MailSettings.module.css";
 
 const MailSettings = () => {
 	return (
@@ -12,17 +15,24 @@ const MailSettings = () => {
 				className={`app-main flex-column flex-row-fluid" id="kt_app_main ${classes.mainApp}`}
 			>
 				<div className="d-flex flex-column flex-column-fluid">
-					<Toolbar
-						title={"Mail Settings"}
-						path={["Settings", "Mail Settings"]}
-					/>
+					<div
+						className={`d-flex align-items-center justify-content-between ${privateClasses.navPages}`}
+					>
+						<Toolbar
+							title={"Mail Settings"}
+							path={["Settings", "Mail Settings"]}
+						/>
+						<PagesNavigationBar pages={SettingsPage} />
+					</div>
 					<div id="kt_app_content" className="app-content flex-column-fluid">
 						<div
 							id="kt_app_content_container"
 							class="app-container container-fluid"
 						>
 							<h6>Mail Settings</h6>
-							<div className="d-flex align-items-start justify-content-between gap-8 mt-10">
+							<div
+								className={`d-flex align-items-start justify-content-between gap-8 mt-10 ${privateClasses.inputResponsive}`}
+							>
 								<Input
 									label={"MAIL_MAILER *"}
 									value="smtp"
@@ -43,7 +53,9 @@ const MailSettings = () => {
 									type={"text"}
 								/>
 							</div>
-							<div className="d-flex align-items-center justify-content-between gap-8 mt-10">
+							<div
+								className={`d-flex align-items-center justify-content-between gap-8 mt-10 ${privateClasses.inputResponsive}`}
+							>
 								<Input
 									label={"Sender Name *"}
 									value="Admin"

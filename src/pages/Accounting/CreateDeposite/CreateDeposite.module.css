@@ -9,3 +9,34 @@
 		justify-content: start !important;
 	}
 }
+
+.selectsResponsive,
+.inputsResponsive,
+.dateSelectResponsive,
+.selectsBottomResponsive,
+.inputTextareaResponsive,
+.taxContainer,
+.inputFull {
+}
+
+@media screen and (max-width: 700px) {
+	.selectsResponsive,
+	.selectsBottomResponsive,
+	.inputTextareaResponsive,
+	.inputsResponsive {
+		flex-direction: column;
+	}
+
+	.dateSelectResponsive,
+	.selectsBottomResponsive,
+	.taxContainer,
+	.inputsResponsive,
+	.inputFull,
+	.fullTextArea {
+		width: 100% !important;
+	}
+
+	.taxContainer {
+		margin-top: 12px;
+	}
+}
