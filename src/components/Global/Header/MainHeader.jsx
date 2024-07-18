@@ -54,7 +54,7 @@ const MainHeader = () => {
 						<img
 							alt="Logo"
 							src="/assets/media/logos/demo39.svg"
-							className="h-25px theme-light-show"
+							className={`h-25px theme-light-show ${classes.logoPhotoHeader}`}
 						/>
 						<img
 							alt="Logo"
@@ -193,7 +193,7 @@ const MainHeader = () => {
 						</div>
 					</div>
 					<div
-						className="app-navbar-item ms-2 ms-lg-6"
+						className={`app-navbar-item ms-2 ms-lg-6 ${classes.profilePhotoHeader}`}
 						id="kt_header_user_menu_toggle"
 					>
 						<div
