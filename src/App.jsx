@@ -67,24 +67,6 @@ import StockReport from "./pages/Reports/StockReport/StockReport";
 import DepositsReport from "./pages/Reports/DepositsReport/DepositsReport";
 
 function App() {
-	const isFullScreen = useSelector((state) => state.global.isFullScreen);
-
-	const toggleFull = () => {
-		const isFullScreen = document.fullscreenElement;
-		const web = document.getElementById("our-website");
-		console.log(web);
-
-		if (isFullScreen) {
-			document.exitFullscreen();
-		} else {
-			web.requestFullscreen();
-		}
-	};
-
-	useEffect(() => {
-		toggleFull();
-	}, [isFullScreen]);
-
 	return (
 		<main>
 			<Routes>

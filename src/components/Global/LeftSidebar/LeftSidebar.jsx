@@ -39,6 +39,7 @@ const LeftSidebar = () => {
 		(state) => state.global.isLeftSidebarOpen
 	);
 	const width = useWindowWidth();
+
 	return (
 		<div
 			id="kt_app_sidebar"
